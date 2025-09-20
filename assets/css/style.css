@@ -5570,7 +5570,7 @@ img {
         margin: 0 !important;
         padding: 0 !important;
         width: 100% !important;
-        max-width: 300px !important;
+        max-width: 250px !important;
         display: flex !important;
         justify-content: center !important;
     }
@@ -5626,7 +5626,7 @@ img {
 
     .nav-menu .nav-item.dropdown {
         width: 100% !important;
-        max-width: 300px !important;
+        max-width: 250px !important;
         margin-bottom: 0 !important;
         display: block !important;
     }
