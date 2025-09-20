@@ -5633,7 +5633,7 @@ img {
 
     .nav-menu .nav-item.dropdown .nav-link {
         display: flex !important;
-        justify-content: space-between !important;
+        justify-content: center !important;
         align-items: center !important;
         color: var(--primary-color) !important;
         background: var(--white) !important;
@@ -5646,6 +5646,7 @@ img {
         padding: 0.8rem 1.2rem !important;
         border-radius: 12px !important;
         text-align: center !important;
+        position: relative !important;
     }
 
     .nav-menu .nav-item.dropdown .nav-link:hover {
@@ -5657,10 +5658,14 @@ img {
     .nav-menu .nav-item.dropdown .nav-link i {
         transition: transform 0.3s ease !important;
         color: var(--primary-color) !important;
+        position: absolute !important;
+        right: 1.2rem !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
     }
 
     .nav-menu .nav-item.dropdown.active .nav-link i {
-        transform: rotate(180deg) !important;
+        transform: translateY(-50%) rotate(180deg) !important;
     }
 
     .nav-menu .nav-item.dropdown .dropdown-menu,
