@@ -1,0 +1,13 @@
+{
+  "name": "cleanspace-website",
+  "version": "1.0.0",
+  "description": "Pristine & Clean Professional Home Cleaning Website",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": ["cleaning", "website", "business"],
+  "author": "Huzaifa",
+  "license": "MIT"
+}
