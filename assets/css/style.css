@@ -1,7 +1,7 @@
 /*
  * Pristine & Clean Professional Cleaning Services - Stylesheet
  * Author: Pristine & Clean Development Team
- * Version: 2.0
+ * Version: 2.2 - Performance Optimized
  * Last Updated: 2024-12-19
  * 
  * Table of Contents:
@@ -28,6 +28,33 @@
     box-sizing: border-box;
 }
 
+/* Performance optimizations */
+img {
+    max-width: 100%;
+    height: auto;
+    content-visibility: auto;
+}
+
+/* Optimize background images */
+.services {
+    background-attachment: scroll !important;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Optimize video loading */
+.hero-video-bg {
+    will-change: transform;
+    transform: translateZ(0);
+}
+
 :root {
     --primary-color: #1e3a8a;    /* Navy blue */
     --secondary-color: #000000;  /* Black */
@@ -49,6 +76,7 @@ body {
     scroll-behavior: smooth;
     padding-top: 120px; /* Account for banner (40px) + navbar (~80px) */
     transition: background-color 0.3s ease;
+    font-display: swap;
 }
 
 

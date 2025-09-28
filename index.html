@@ -34,20 +34,28 @@
     <link rel="canonical" href="https://pristineandclean.com/">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/x-icon" href="pristinefav.ico">
+    <link rel="apple-touch-icon" href="pristinefav.ico">
     
     <!-- Preload Critical Resources -->
-    <link rel="preload" href="assets/css/style.css?v=1.1" as="style">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style">
+    <link rel="preload" href="assets/css/style.css?v=1.2" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="assets/css/style.css?v=1.1">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css?v=1.3">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
+    
+    <!-- Critical CSS for above-the-fold content -->
+    <style>
+        .hero-video { min-height: 100vh; position: relative; }
+        .navbar { position: fixed; top: 40px; left: 0; right: 0; z-index: 1000; }
+        .promo-banner { position: fixed; top: 0; left: 0; right: 0; z-index: 1001; }
+    </style>
     
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
@@ -143,7 +151,7 @@
         ]
     }
     </script>
-    <script src="https://pristinecleanservice.bookingkoala.com/resources/embed.js" defer></script>
+    <script src="https://pristinecleanservice.bookingkoala.com/resources/embed.js" defer async onload="this.onload=null;this.rel='preload'"></script>
 </head>
 <body>
     <!-- Promotional Banner -->
@@ -159,7 +167,7 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <img src="assets/images/logo.png" alt="Pristine & Clean" class="logo-img">
+                <img src="assets/images/logo.png" alt="Pristine & Clean" class="logo-img" loading="eager">
             </div>
             
             <!-- Mobile Menu Backdrop -->
@@ -201,7 +209,7 @@
 
     <!-- Hero Video Section -->
     <section id="home" class="hero-video">
-        <video class="hero-video-bg" autoplay muted loop playsinline>
+        <video class="hero-video-bg" autoplay muted loop playsinline preload="none" poster="assets/images/hero-poster.jpg">
             <source src="assets/videos/hero_background.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
@@ -216,7 +224,7 @@
                 <h1>Professional Home Cleaning Services</h1>
                 <p>Transform your home with our reliable, professional cleaning solutions. We deliver exceptional results so you can focus on what matters most.</p>
                 <div class="hero-buttons">
-                    <a href="#book" class="btn btn-primary">
+                    <a href="#booking" class="btn btn-primary">
                         <i class="fas fa-calendar-check"></i>
                         Book Now
                     </a>
@@ -230,7 +238,7 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="services" style="background-image: url('assets/images/service_background.png.png'); background-size: cover; background-position: center; background-attachment: fixed; position: relative;">
+    <section id="services" class="services" style="background-image: url('assets/images/service_background.png.png'); background-size: cover; background-position: center; background-attachment: scroll; position: relative;">
         <div class="services-overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(255, 255, 255, 0.75);"></div>
         <div class="container" style="position: relative; z-index: 1;">
             <div class="section-header">
@@ -347,7 +355,7 @@
                 </div>
                 
                 <div class="about-image">
-                    <img src="assets/images/choose_us.png" alt="Professional cleaning team">
+                    <img src="assets/images/choose_us.png" alt="Professional cleaning team" loading="lazy" width="500" height="400">
                 </div>
             </div>
         </div>
@@ -372,7 +380,7 @@
                     </div>
                     <p>"Pristine & Clean transformed our home! Their attention to detail is incredible, and the team is always professional and friendly. I couldn't be happier with their service."
                     <div class="customer">
-                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612c78f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" alt="Sarah Johnson">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612c78f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" alt="Sarah Johnson" loading="lazy">
                         <div>
                             <h4>Sarah Johnson</h4>
                             <span>Regular Customer</span>
@@ -390,7 +398,7 @@
                     </div>
                     <p>"The deep cleaning service was amazing! They got into every corner and crevice. My house has never looked better. Highly recommend!"</p>
                     <div class="customer">
-                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" alt="Mike Chen">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" alt="Mike Chen" loading="lazy">
                         <div>
                             <h4>Mike Chen</h4>
                             <span>One-Time Service</span>
@@ -408,7 +416,7 @@
                     </div>
                     <p>"Reliable, efficient, and thorough. Pristine & Clean has been cleaning our home for over two years, and they never disappoint. Worth every penny!"
                     <div class="customer">
-                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" alt="Emily Rodriguez">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" alt="Emily Rodriguez" loading="lazy">
                         <div>
                             <h4>Emily Rodriguez</h4>
                             <span>Loyal Customer</span>
@@ -515,6 +523,6 @@
 
 
 
-    <script src="assets/js/script.js"></script>
+    <script src="assets/js/script.js" defer></script>
 </body>
 </html>

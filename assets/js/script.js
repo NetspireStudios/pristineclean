@@ -1,7 +1,7 @@
 /**
  * Pristine & Clean Website - Interactive Features & Mobile Optimization
  * Author: Pristine & Clean Development Team
- * Version: 2.0
+ * Version: 2.1 - Performance Optimized
  * Last Updated: 2024-12-19
  * 
  * Features:
@@ -20,7 +20,6 @@ if ('serviceWorker' in navigator) {
     navigator.serviceWorker.getRegistrations().then(function(registrations) {
         for(let registration of registrations) {
             registration.unregister();
-            console.log('Service worker unregistered');
         }
     });
 }
@@ -294,22 +293,32 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Navbar background on scroll
+    // Navbar background on scroll - optimized with throttling
     const navbar = document.querySelector('.navbar');
     if (navbar) {
-        window.addEventListener('scroll', function() {
+        let ticking = false;
+        function updateNavbar() {
             if (window.scrollY > 50) {
                 navbar.style.background = 'rgba(255, 255, 255, 0.98)';
             } else {
                 navbar.style.background = 'rgba(255, 255, 255, 0.95)';
             }
-        });
+            ticking = false;
+        }
+        
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                requestAnimationFrame(updateNavbar);
+                ticking = true;
+            }
+        }, { passive: true });
     }
     
-    // Active navigation highlighting
+    // Active navigation highlighting - optimized with throttling
     const sections = document.querySelectorAll('section[id]');
     const navLinksForHighlight = document.querySelectorAll('.nav-link[href^="#"]');
     
+    let highlightTicking = false;
     function highlightNavigation() {
         const scrollPosition = window.scrollY + 100;
         
@@ -327,9 +336,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             }
         });
+        highlightTicking = false;
     }
     
-    window.addEventListener('scroll', highlightNavigation);
+    window.addEventListener('scroll', function() {
+        if (!highlightTicking) {
+            requestAnimationFrame(highlightNavigation);
+            highlightTicking = true;
+        }
+    }, { passive: true });
     
     // Contact form handling
     const contactForm = document.getElementById('contactForm');
