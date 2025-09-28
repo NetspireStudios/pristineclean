@@ -949,6 +949,17 @@ p {
     background-color: var(--white);
 }
 
+/* Google Reviews Widget */
+.google-reviews-widget {
+    margin-top: 40px;
+    min-height: 400px;
+}
+
+.google-reviews-widget .elfsight-app-10110614-e9e2-45af-97f3-7606a2caa967 {
+    width: 100%;
+    max-width: 100%;
+}
+
 .testimonials-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
