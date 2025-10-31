@@ -1,0 +1,35 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://cleanspace.com/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
+
+# Disallow common non-content files
+Disallow: /server.js
+Disallow: /package.json
+Disallow: /README.md
+Disallow: /*.pdf$
+Disallow: /*.doc$
+Disallow: /*.docx$
+
+# Allow important directories
+Allow: /style.css
+Allow: /script.js
+Allow: /*.html$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.gif$
+Allow: /*.webp$
+Allow: /*.svg$
+Allow: /*.ico$
+
+# Block access to sensitive files
+Disallow: /admin/
+Disallow: /private/
+Disallow: /.env
+Disallow: /config/
+Disallow: /logs/
