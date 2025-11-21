@@ -1212,7 +1212,10 @@ p {
     font-weight: bold;
     font-size: 1.1rem;
 }
-
+ul.checklist.bullet-align li::before{
+ position: inherit;
+ margin-right: 15px;
+}
 .checklist li:hover {
     background: rgba(136, 231, 136, 0.05);
     padding-left: 2rem;
