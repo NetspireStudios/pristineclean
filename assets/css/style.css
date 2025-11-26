@@ -3222,8 +3222,10 @@ ul.checklist.bullet-align li::before{
     
     /* Mobile logo sizing */
     .logo-img {
-        height: 70px;
-        max-width: 280px;
+      /*   height: 70px;
+        max-width: 280px; */
+        height: auto;
+        max-width: 200px;
     }
     
 
@@ -5982,13 +5984,14 @@ img {
 
     .nav-menu .nav-item.dropdown.active .dropdown-menu,
     .nav-menu .dropdown.active .dropdown-menu {
-        max-height: 400px !important;
+        max-height: 300px !important;
         opacity: 1 !important;
         visibility: visible !important;
         display: block !important;
         position: static !important;
         padding: 0.5rem 0 !important;
         transform: translateY(0) !important;
+        overflow-y: scroll !important;
     }
 
     .nav-menu .nav-item.dropdown .dropdown-link,
