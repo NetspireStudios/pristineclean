@@ -1,5 +1,5 @@
 /**
- * Pristine & Clean Service Worker
+ * Pristine Clean Services Service Worker
  * Provides offline functionality and caching for better performance
  */
 

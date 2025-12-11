@@ -1,7 +1,7 @@
 {
   "name": "cleanspace-website",
   "version": "1.0.0",
-  "description": "Pristine & Clean Professional Home Cleaning Website",
+  "description": "Pristine Clean Services Professional Home Cleaning Website",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

@@ -1,6 +1,6 @@
 /**
- * Pristine & Clean Website - Interactive Features & Mobile Optimization
- * Author: Pristine & Clean Development Team
+ * Pristine Clean Services Website - Interactive Features & Mobile Optimization
+ * Author: Pristine Clean Services Development Team
  * Version: 2.1 - Performance Optimized
  * Last Updated: 2025-12-19
  * 
