@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://cleanspace.com/sitemap.xml
+Sitemap: https://www.pristinecleanservices.ca/sitemap.xml
 
 
 # Disallow common non-content files
