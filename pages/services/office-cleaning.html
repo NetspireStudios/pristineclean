@@ -144,6 +144,18 @@
         .mobile-backdrop.active {
             display: block;
         }
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+        }
+        .hamburger span {
+            width: 25px;
+            height: 2px;
+            background: var(--gold);
+            transition: all 0.3s;
+        }
         @media (max-width: 768px) {
             h1 {
                 font-size: 2.5rem !important;
@@ -196,8 +208,13 @@
                 <a class="nav-link text-[var(--navy)]" href="../../#testimonials">Reviews</a>
                 <a class="nav-link text-[var(--navy)]" href="/blogs">Blog</a>
             </div>
-            <div>
-                <a class="px-8 py-4 text-[11px] font-bold tracking-[0.2em] text-white uppercase bg-[var(--navy)] hover:bg-[var(--gold)] transition-all shadow-lg hover:shadow-xl" href="../contact.html">Book Now</a>
+            <div class="flex items-center gap-4 shrink-0">
+                <a class="hidden lg:block px-8 py-4 text-[11px] font-bold tracking-[0.2em] text-white uppercase bg-[var(--navy)] hover:bg-[var(--gold)] transition-all shadow-lg hover:shadow-xl" href="/contact">Book Now</a>
+                <button class="lg:hidden hamburger" id="mobileMenuBtn" aria-label="Open navigation menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </nav>
 
