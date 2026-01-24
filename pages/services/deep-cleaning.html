@@ -105,13 +105,15 @@
             @apply w-7 h-0.5 bg-[var(--navy)] transition-all;
         }
         .mobile-backdrop {
-            @apply fixed inset-0 bg-black/50 opacity-0 invisible transition-all duration-300 z-[60];
+            @apply fixed inset-0 bg-black/50 opacity-0 invisible transition-all duration-300;
+            z-index: 9998;
         }
         .mobile-backdrop.active {
             @apply opacity-100 visible;
         }
         .mobile-menu {
-            @apply fixed top-0 right-0 w-80 h-full bg-[var(--navy)] transform translate-x-full transition-transform duration-300 z-[70] p-8 overflow-y-auto;
+            @apply fixed top-0 right-0 w-80 h-full bg-[var(--navy)] transform translate-x-full transition-transform duration-300 p-8 overflow-y-auto;
+            z-index: 9999;
         }
         .mobile-menu.active {
             @apply translate-x-0;
