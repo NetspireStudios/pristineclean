@@ -75,6 +75,10 @@
     {
       "source": "/king-standard",
       "destination": "/pages/services/king-standard.html"
+    },
+    {
+      "source": "/policy",
+      "destination": "/pages/policy.html"
     }
   ]
 }
