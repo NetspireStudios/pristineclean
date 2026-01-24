@@ -105,20 +105,22 @@
             @apply w-7 h-0.5 bg-[var(--navy)] transition-all;
         }
         .mobile-backdrop {
-            @apply fixed inset-0 bg-black/50 opacity-0 invisible transition-all duration-300;
-            z-index: 9998;
+            @apply fixed inset-0 bg-black/50 opacity-0 invisible transition-all duration-300 z-[60];
         }
         .mobile-backdrop.active {
             @apply opacity-100 visible;
         }
         .mobile-menu {
-            @apply fixed top-0 right-0 w-80 h-full bg-[var(--navy)] transform translate-x-full transition-transform duration-300 p-8 overflow-y-auto;
-            z-index: 9999;
+            @apply fixed top-0 right-0 w-80 h-full bg-[var(--navy)] transform translate-x-full transition-transform duration-300 z-[70] p-8 overflow-y-auto;
         }
         .mobile-menu.active {
             @apply translate-x-0;
         }
         
+        .promo-banner { position: fixed; top: 0; left: 0; right: 0; z-index: 1001; background: var(--gold); }
+        @media (max-width: 1024px) {
+            .promo-banner { z-index: 50 !important; }
+        }
         .popular-badge {
             @apply absolute top-40 right-5 bg-gradient-to-br from-green-500 to-green-600 text-white px-6 py-3 rounded-full font-bold text-sm shadow-xl z-10 flex items-center gap-2;
         }
@@ -136,12 +138,12 @@
     <!-- End Google Tag Manager (noscript) -->
 
     <!-- Top Banner -->
-    <div class="bg-[var(--gold)] text-white text-center py-1.5 px-4 text-[9px] font-bold tracking-[0.3em] uppercase relative z-[70]">
+    <div class="promo-banner bg-[var(--gold)] text-white text-center py-1.5 px-4 text-[9px] font-bold tracking-[0.3em] uppercase relative">
         New Year Sale: 20% Off First Clean - Ends Jan 31 • Limited Availability
     </div>
 
     <!-- Navigation -->
-    <header class="fixed top-8 left-0 right-0 z-50 px-6 lg:px-12">
+    <header class="fixed top-10 left-0 right-0 z-50 px-6 lg:top-8 lg:px-12">
         <nav class="mx-auto flex items-center justify-between h-24 bg-white shadow-sm border-b border-slate-100 px-10">
             <div class="flex items-center gap-3">
                 <span class="text-[var(--navy)] material-symbols-outlined text-3xl">diamond</span>
@@ -192,7 +194,10 @@
             <div class="flex items-center justify-between mb-8">
                 <div class="flex items-center gap-2">
                     <span class="text-[var(--gold)] material-symbols-outlined text-2xl">diamond</span>
-                    <span class="text-xl font-bold tracking-widest text-[var(--gold)] serif uppercase">Pristine</span>
+                    <div class="flex flex-col leading-tight">
+                        <span class="text-base font-bold tracking-widest text-[var(--gold)] serif uppercase">Pristine</span>
+                        <span class="text-[10px] tracking-[0.2em] text-[var(--gold)] uppercase font-semibold">Clean Services</span>
+                    </div>
                 </div>
                 <button class="text-[var(--gold)] text-3xl" id="closeMobileMenu" aria-label="Close menu">
                     <span class="material-symbols-outlined">close</span>
