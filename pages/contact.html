@@ -747,45 +747,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 }
             }, false);
         })();
-
-        // Mobile menu functionality
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const closeMobileMenu = document.getElementById('closeMobileMenu');
-        const mobileMenu = document.getElementById('mobileMenu');
-        const mobileBackdrop = document.getElementById('mobileBackdrop');
-        const mobileServicesToggle = document.getElementById('mobileServicesToggle');
-        const mobileServicesMenu = document.getElementById('mobileServicesMenu');
-        
-        // Open mobile menu
-        if (mobileMenuBtn) {
-            mobileMenuBtn.addEventListener('click', function() {
-                mobileMenu.classList.add('active');
-                mobileBackdrop.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            });
-        }
-        
-        // Close mobile menu
-        function closeMobileMenuFunc() {
-            mobileMenu.classList.remove('active');
-            mobileBackdrop.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-        
-        if (closeMobileMenu) {
-            closeMobileMenu.addEventListener('click', closeMobileMenuFunc);
-        }
-        
-        if (mobileBackdrop) {
-            mobileBackdrop.addEventListener('click', closeMobileMenuFunc);
-        }
-        
-        // Toggle services submenu
-        if (mobileServicesToggle) {
-            mobileServicesToggle.addEventListener('click', function() {
-                mobileServicesMenu.classList.toggle('hidden');
-            });
-        }
     </script>
 </body>
 </html>
