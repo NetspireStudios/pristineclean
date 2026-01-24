@@ -126,6 +126,37 @@
                 display: inline;
             }
         }
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 320px;
+            height: 100vh;
+            background: var(--navy);
+            padding: 2rem;
+            z-index: 1100;
+            overflow-y: auto;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
+        .mobile-menu.active {
+            display: block;
+            transform: translateX(0);
+        }
+        .mobile-backdrop {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1099;
+        }
+        .mobile-backdrop.active {
+            display: block;
+        }
         @media (max-width: 768px) {
             .editorial-title {
                 @apply text-[60px];
@@ -185,6 +216,50 @@
                 </button>
             </div>
         </nav>
+
+        <!-- Mobile Backdrop -->
+        <div class="mobile-backdrop" id="mobileBackdrop"></div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="flex items-center justify-between mb-8">
+                <div class="flex items-center gap-2">
+                    <span class="text-[var(--gold)] material-symbols-outlined text-2xl">diamond</span>
+                    <div class="flex flex-col leading-tight">
+                        <span class="text-base font-bold tracking-widest text-[var(--gold)] serif uppercase">Pristine</span>
+                        <span class="text-[10px] tracking-[0.2em] text-[var(--gold)] uppercase font-semibold">Clean Services</span>
+                    </div>
+                </div>
+                <button class="text-[var(--gold)] text-3xl" id="closeMobileMenu" aria-label="Close menu">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            <div class="space-y-4">
+                <a class="block py-3 text-sm font-bold tracking-widest uppercase text-white hover:text-[var(--gold)] transition-colors border-b border-white/10" href="../../">Home</a>
+                <div class="border-b border-white/10">
+                    <button class="flex items-center justify-between w-full py-3 text-sm font-bold tracking-widest uppercase text-white hover:text-[var(--gold)] transition-colors" id="mobileServicesToggle">
+                        Services
+                        <span class="material-symbols-outlined">expand_more</span>
+                    </button>
+                    <div class="pl-4 pb-3 space-y-2 hidden" id="mobileServicesMenu">
+                        <a class="block py-2 text-xs text-white/80 hover:text-[var(--gold)] transition-colors" href="https://www.pristinecleanservices.ca/services/standard-cleaning">Standard Cleaning</a>
+                        <a class="block py-2 text-xs text-white/80 hover:text-[var(--gold)] transition-colors" href="https://www.pristinecleanservices.ca/services/deep-cleaning">Deep Cleaning</a>
+                        <a class="block py-2 text-xs text-white/80 hover:text-[var(--gold)] transition-colors" href="https://www.pristinecleanservices.ca/services/move-in-out-cleaning">Move In/Out Cleaning</a>
+                        <a class="block py-2 text-xs text-white/80 hover:text-[var(--gold)] transition-colors" href="https://www.pristinecleanservices.ca/services/carpet-cleaning">Carpet Cleaning</a>
+                        <a class="block py-2 text-xs text-white/80 hover:text-[var(--gold)] transition-colors" href="https://www.pristinecleanservices.ca/services/house-cleaning">House Cleaning</a>
+                        <a class="block py-2 text-xs text-white/80 hover:text-[var(--gold)] transition-colors" href="https://www.pristinecleanservices.ca/services/kitchen-cleaning">Kitchen Cleaning</a>
+                        <a class="block py-2 text-xs text-white/80 hover:text-[var(--gold)] transition-colors" href="https://www.pristinecleanservices.ca/services/office-cleaning">Office Cleaning</a>
+                        <a class="block py-2 text-xs text-white/80 hover:text-[var(--gold)] transition-colors" href="https://www.pristinecleanservices.ca/services/post-construction">Post Construction</a>
+                        <a class="block py-2 text-xs text-white/80 hover:text-[var(--gold)] transition-colors" href="https://www.pristinecleanservices.ca/services/vacation-rental-cleaning">Air B&B / Rental</a>
+                    </div>
+                </div>
+                <a class="block py-3 text-sm font-bold tracking-widest uppercase text-white hover:text-[var(--gold)] transition-colors border-b border-white/10" href="https://www.pristinecleanservices.ca/king-standard">King Standard</a>
+                <a class="block py-3 text-sm font-bold tracking-widest uppercase text-white hover:text-[var(--gold)] transition-colors border-b border-white/10" href="../../#about">About</a>
+                <a class="block py-3 text-sm font-bold tracking-widest uppercase text-white hover:text-[var(--gold)] transition-colors border-b border-white/10" href="../../#testimonials">Reviews</a>
+                <a class="block py-3 text-sm font-bold tracking-widest uppercase text-white hover:text-[var(--gold)] transition-colors border-b border-white/10" href="/blogs">Blog</a>
+                <a class="block mt-6 px-6 py-4 text-center text-xs font-bold tracking-widest uppercase bg-[var(--gold)] text-[var(--navy)] hover:bg-[var(--gold-light)] transition-all" href="/contact">Book Now</a>
+            </div>
+        </div>
     </header>
     
     <main>
@@ -746,9 +821,40 @@
         // Mobile menu functionality
         document.addEventListener('DOMContentLoaded', function() {
             const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const closeMobileMenu = document.getElementById('closeMobileMenu');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileBackdrop = document.getElementById('mobileBackdrop');
+            const mobileServicesToggle = document.getElementById('mobileServicesToggle');
+            const mobileServicesMenu = document.getElementById('mobileServicesMenu');
+            
+            // Open mobile menu
             if (mobileMenuBtn) {
                 mobileMenuBtn.addEventListener('click', function() {
-                    alert('Mobile menu functionality would go here');
+                    mobileMenu.classList.add('active');
+                    mobileBackdrop.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            }
+            
+            // Close mobile menu
+            function closeMobileMenuFunc() {
+                mobileMenu.classList.remove('active');
+                mobileBackdrop.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+            
+            if (closeMobileMenu) {
+                closeMobileMenu.addEventListener('click', closeMobileMenuFunc);
+            }
+            
+            if (mobileBackdrop) {
+                mobileBackdrop.addEventListener('click', closeMobileMenuFunc);
+            }
+            
+            // Toggle services submenu
+            if (mobileServicesToggle) {
+                mobileServicesToggle.addEventListener('click', function() {
+                    mobileServicesMenu.classList.toggle('hidden');
                 });
             }
         });
