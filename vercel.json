@@ -1,0 +1,85 @@
+{
+  "rewrites": [
+    {
+      "source": "/blogs",
+      "destination": "/blogs/blog.html"
+    },
+    {
+      "source": "/blog",
+      "destination": "/blogs/blog.html"
+    },
+    {
+      "source": "/blog/Seasonal-Allergies",
+      "destination": "/blogs/blog-seasonal-allergies.html"
+    },
+    {
+      "source": "/blog/Asthma-Cleaning",
+      "destination": "/blogs/blog-asthma-cleaning.html"
+    },
+    {
+      "source": "/blog/Eco-Friendly-Cleaning",
+      "destination": "/blogs/blog-eco-friendly-cleaning.html"
+    },
+    {
+      "source": "/blog/Drain-Cleaning",
+      "destination": "/blogs/blog-drain-cleaning.html"
+    },
+    {
+      "source": "/blog/:path*",
+      "destination": "/blogs/:path*"
+    },
+    {
+      "source": "/contact",
+      "destination": "/pages/contact.html"
+    },
+    {
+      "source": "/contact.html",
+      "destination": "/pages/contact.html"
+    },
+    {
+      "source": "/services/standard-cleaning",
+      "destination": "/pages/services/standard-cleaning.html"
+    },
+    {
+      "source": "/services/move-in-out-cleaning",
+      "destination": "/pages/services/move-in-out-cleaning.html"
+    },
+    {
+      "source": "/services/carpet-cleaning",
+      "destination": "/pages/services/carpet-cleaning.html"
+    },
+    {
+      "source": "/services/deep-cleaning",
+      "destination": "/pages/services/deep-cleaning.html"
+    },
+    {
+      "source": "/services/house-cleaning",
+      "destination": "/pages/services/house-cleaning.html"
+    },
+    {
+      "source": "/services/kitchen-cleaning",
+      "destination": "/pages/services/kitchen-cleaning.html"
+    },
+    {
+      "source": "/services/office-cleaning",
+      "destination": "/pages/services/office-cleaning.html"
+    },
+    {
+      "source": "/services/post-construction",
+      "destination": "/pages/services/post-construction.html"
+    },
+    {
+      "source": "/services/vacation-rental-cleaning",
+      "destination": "/pages/services/vacation-rental-cleaning.html"
+    },
+    {
+      "source": "/king-standard",
+      "destination": "/pages/services/king-standard.html"
+    },
+    {
+      "source": "/policy",
+      "destination": "/pages/policy.html"
+    }
+  ]
+}
+
