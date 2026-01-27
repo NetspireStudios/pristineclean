@@ -1,6 +1,30 @@
 {
   "rewrites": [
     {
+      "source": "/blogs",
+      "destination": "/blogs/blog.html"
+    },
+    {
+      "source": "/blog",
+      "destination": "/blogs/blog.html"
+    },
+    {
+      "source": "/blog/Seasonal-Allergies",
+      "destination": "/blogs/blog-seasonal-allergies.html"
+    },
+    {
+      "source": "/blog/Asthma-Cleaning",
+      "destination": "/blogs/blog-asthma-cleaning.html"
+    },
+    {
+      "source": "/blog/Eco-Friendly-Cleaning",
+      "destination": "/blogs/blog-eco-friendly-cleaning.html"
+    },
+    {
+      "source": "/blog/Drain-Cleaning",
+      "destination": "/blogs/blog-drain-cleaning.html"
+    },
+    {
       "source": "/blog/:path*",
       "destination": "/blogs/:path*"
     },
@@ -51,6 +75,10 @@
     {
       "source": "/king-standard",
       "destination": "/pages/services/king-standard.html"
+    },
+    {
+      "source": "/policy",
+      "destination": "/pages/policy.html"
     }
   ]
 }

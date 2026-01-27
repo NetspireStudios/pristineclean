@@ -65,6 +65,10 @@
         .luxury-shadow {
             box-shadow: 0 20px 50px rgba(2, 2, 76, 0.05);
         }
+        .promo-banner { position: fixed; top: 0; left: 0; right: 0; z-index: 1001; background: var(--gold); }
+        @media (max-width: 1024px) {
+            .promo-banner { z-index: 50 !important; }
+        }
         /* Mobile Menu Styles */
         .mobile-menu {
             display: none;
@@ -209,20 +213,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
     <!-- Top Banner -->
-    <div class="bg-[var(--gold)] text-white text-center py-1.5 px-4 text-[9px] font-bold tracking-[0.3em] uppercase relative z-[70]">
+    <div class="promo-banner bg-[var(--gold)] text-white text-center py-1.5 px-4 text-[9px] font-bold tracking-[0.3em] uppercase relative">
         New Year Sale: 20% Off First Clean - Ends Jan 31 • Limited Availability
     </div>
 
     <!-- Navigation -->
-    <header class="fixed top-8 left-0 right-0 z-50 px-6 lg:px-12">
+    <header class="fixed top-10 left-0 right-0 z-50 px-6 lg:top-8 lg:px-12">
         <nav class="mx-auto flex items-center justify-between h-24 bg-white shadow-sm border-b border-slate-100 px-10">
-            <div class="flex items-center gap-3">
+            <a href="/" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
                 <span class="text-[var(--navy)] material-symbols-outlined text-3xl">diamond</span>
                 <div class="flex flex-col">
                     <span class="text-xl font-bold tracking-widest text-[var(--navy)] serif uppercase leading-none">Pristine</span>
                     <span class="text-[9px] tracking-[0.4em] text-[var(--gold)] uppercase font-bold">Clean Services</span>
                 </div>
-            </div>
+            </a>
             <div class="hidden lg:flex items-center gap-10">
                 <a class="nav-link text-[var(--navy)]" href="../../">Home</a>
                 <div class="relative group h-full flex items-center">
@@ -245,7 +249,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <a class="nav-link text-[var(--navy)]" href="https://www.pristinecleanservices.ca/king-standard">King Standard</a>
                 <a class="nav-link text-[var(--navy)]" href="../../#about">About</a>
                 <a class="nav-link text-[var(--navy)]" href="../../#testimonials">Reviews</a>
-                <a class="nav-link text-[var(--navy)]" href="../../blogs/blog.html">Blog</a>
+                <a class="nav-link text-[var(--navy)]" href="/blogs">Blog</a>
             </div>
             <div class="flex items-center gap-4 shrink-0">
                 <a class="hidden lg:block px-8 py-4 text-[11px] font-bold tracking-[0.2em] text-white uppercase bg-[var(--navy)] hover:bg-[var(--gold)] transition-all shadow-lg hover:shadow-xl" href="../contact.html">Book Now</a>
@@ -265,7 +269,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="flex items-center justify-between mb-8">
                 <div class="flex items-center gap-2">
                     <span class="text-[var(--gold)] material-symbols-outlined text-2xl">diamond</span>
-                    <span class="text-xl font-bold tracking-widest text-[var(--gold)] serif uppercase">Pristine</span>
+                    <div class="flex flex-col leading-tight">
+                        <span class="text-base font-bold tracking-widest text-[var(--gold)] serif uppercase">Pristine</span>
+                        <span class="text-[10px] tracking-[0.2em] text-[var(--gold)] uppercase font-semibold">Clean Services</span>
+                    </div>
                 </div>
                 <button class="text-[var(--gold)] text-3xl" id="closeMobileMenu" aria-label="Close menu">
                     <span class="material-symbols-outlined">close</span>
@@ -293,7 +300,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <a class="block py-3 text-sm font-bold tracking-widest uppercase text-white hover:text-[var(--gold)] transition-colors border-b border-white/10" href="https://www.pristinecleanservices.ca/king-standard">King Standard</a>
                 <a class="block py-3 text-sm font-bold tracking-widest uppercase text-white hover:text-[var(--gold)] transition-colors border-b border-white/10" href="../../#about">About</a>
                 <a class="block py-3 text-sm font-bold tracking-widest uppercase text-white hover:text-[var(--gold)] transition-colors border-b border-white/10" href="../../#testimonials">Reviews</a>
-                <a class="block py-3 text-sm font-bold tracking-widest uppercase text-white hover:text-[var(--gold)] transition-colors border-b border-white/10" href="../../blogs/blog.html">Blog</a>
+                <a class="block py-3 text-sm font-bold tracking-widest uppercase text-white hover:text-[var(--gold)] transition-colors border-b border-white/10" href="/blogs">Blog</a>
                 <a class="block mt-6 px-6 py-4 text-center text-xs font-bold tracking-widest uppercase bg-[var(--gold)] text-[var(--navy)] hover:bg-[var(--gold-light)] transition-all" href="../contact.html">Book Now</a>
             </div>
         </div>
@@ -704,63 +711,65 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-[var(--navy)] text-white pt-24 pb-12 px-6">
-        <div class="max-w-7xl mx-auto">
-            <div class="grid md:grid-cols-4 gap-16 mb-20">
-                <div class="col-span-1 md:col-span-1">
+    <footer class="text-white bg-[var(--navy)] border-t border-[var(--gold)]/20">
+        <div class="container px-8 py-24 mx-auto">
+            <div class="grid gap-16 lg:grid-cols-4">
+                <div class="col-span-1 lg:col-span-1">
                     <div class="flex items-center gap-3 mb-8">
-                        <span class="text-[var(--gold)] material-symbols-outlined text-3xl">diamond</span>
+                        <div class="flex items-center justify-center w-10 h-10 border border-[var(--gold)]">
+                            <span class="text-[var(--gold)] text-xl material-symbols-outlined">cleaning_services</span>
+                        </div>
                         <div class="flex flex-col">
                             <span class="text-xl font-bold tracking-widest text-[var(--gold)] serif uppercase">Pristine</span>
+                            <span class="text-[8px] tracking-[0.3em] text-white/50 uppercase">Clean Services</span>
                         </div>
                     </div>
-                    <p class="text-xs text-white/50 font-light leading-loose max-w-xs mb-6">
-                        Professional home cleaning services you can trust. Making homes sparkle since 2014.
-                    </p>
+                    <p class="mb-10 text-sm font-light leading-relaxed text-slate-400">Professional home cleaning services you can trust. Making homes sparkle since 2018.</p>
                     <div class="flex gap-4">
-                        <a href="https://www.facebook.com/profile.php?id=61581666118073" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:border-[var(--gold)] hover:text-[var(--gold)] transition-colors">
+                        <a href="https://www.facebook.com/profile.php?id=61581666118073" target="_blank" rel="noopener noreferrer" class="w-10 h-10 border border-[var(--gold)]/30 flex items-center justify-center hover:bg-[var(--gold)] hover:text-[var(--navy)] transition-all">
                             <i class="fab fa-facebook"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:border-[var(--gold)] hover:text-[var(--gold)] transition-colors">
+                        <a href="#" class="w-10 h-10 border border-[var(--gold)]/30 flex items-center justify-center hover:bg-[var(--gold)] hover:text-[var(--navy)] transition-all">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:border-[var(--gold)] hover:text-[var(--gold)] transition-colors">
+                        <a href="#" class="w-10 h-10 border border-[var(--gold)]/30 flex items-center justify-center hover:bg-[var(--gold)] hover:text-[var(--navy)] transition-all">
                             <i class="fab fa-twitter"></i>
                         </a>
                     </div>
                 </div>
+                
                 <div>
-                    <h5 class="text-[10px] font-bold tracking-[0.3em] uppercase text-[var(--gold)] mb-8">Policies</h5>
-                    <ul class="space-y-4 text-[10px] tracking-widest uppercase text-white/70">
-                        <li><a class="hover:text-white transition-colors" href="../policy.html#booking">Booking & Scheduling</a></li>
-                        <li><a class="hover:text-white transition-colors" href="../policy.html#cancellation">Cancellation Policy</a></li>
-                        <li><a class="hover:text-white transition-colors" href="../policy.html#payment">Payment Terms</a></li>
-                        <li><a class="hover:text-white transition-colors" href="../policy.html#quality">Quality Guarantee</a></li>
+                    <h5 class="mb-8 text-xs font-bold tracking-[0.3em] uppercase text-[var(--gold)]">Policies</h5>
+                    <ul class="space-y-4 text-[10px] tracking-widest uppercase font-medium text-slate-400">
+                        <li><a class="hover:text-[var(--gold)] transition-colors" href="/policy#booking">Booking & Scheduling</a></li>
+                        <li><a class="hover:text-[var(--gold)] transition-colors" href="/policy#cancellation">Cancellation Policy</a></li>
+                        <li><a class="hover:text-[var(--gold)] transition-colors" href="/policy#payment">Payment Terms</a></li>
+                        <li><a class="hover:text-[var(--gold)] transition-colors" href="/policy#quality">Quality Guarantee</a></li>
                     </ul>
                 </div>
+                
                 <div>
-                    <h5 class="text-[10px] font-bold tracking-[0.3em] uppercase text-[var(--gold)] mb-8">Contact</h5>
-                    <ul class="space-y-4 text-[10px] tracking-widest uppercase text-white/70">
-                        <li><a class="hover:text-white transition-colors" href="tel:+14375458704"><span class="material-symbols-outlined text-sm align-middle mr-1">phone</span> (437) 545-8704</a></li>
-                        <li><a class="hover:text-white transition-colors" href="mailto:contact@pristineandclean.ca"><span class="material-symbols-outlined text-sm align-middle mr-1">mail</span> contact@pristineandclean.ca</a></li>
-                        <li><span class="material-symbols-outlined text-sm align-middle mr-1">location_on</span> Toronto, Canada</li>
+                    <h5 class="mb-8 text-xs font-bold tracking-[0.3em] uppercase text-[var(--gold)]">Contact</h5>
+                    <ul class="space-y-6 text-[10px] tracking-widest uppercase font-medium text-slate-400">
+                        <li class="flex items-center gap-3"><span class="material-symbols-outlined text-sm text-[var(--gold)]">call</span> <a href="tel:+14375458704" class="hover:text-[var(--gold)] transition-colors">(437) 545-8704</a></li>
+                        <li class="flex items-center gap-3"><span class="material-symbols-outlined text-sm text-[var(--gold)]">mail</span> <a href="mailto:contact@pristineandclean.ca" class="hover:text-[var(--gold)] transition-colors">contact@pristineandclean.ca</a></li>
+                        <li class="flex items-center gap-3"><span class="material-symbols-outlined text-sm text-[var(--gold)]">location_on</span> Toronto, Canada</li>
                     </ul>
                 </div>
+                
                 <div>
-                    <h5 class="text-[10px] font-bold tracking-[0.3em] uppercase text-[var(--gold)] mb-8">Hours</h5>
-                    <ul class="space-y-4 text-[10px] tracking-widest uppercase text-white/70">
-                        <li>Monday - Sunday: 9AM - 7PM</li>
-                        <li>All Days of the Week</li>
-                        <li class="italic text-[var(--gold)]">Emergency service available</li>
+                    <h5 class="mb-8 text-xs font-bold tracking-[0.3em] uppercase text-[var(--gold)]">Hours</h5>
+                    <ul class="space-y-4 text-[10px] tracking-widest uppercase font-medium text-slate-400">
+                        <li>Monday - Sunday</li>
+                        <li class="text-white">9AM - 7PM</li>
+                        <li class="pt-4">All Days of the Week</li>
+                        <li>Emergency service available</li>
                     </ul>
                 </div>
             </div>
-            <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
-                <span class="text-[9px] tracking-[0.4em] uppercase text-white/30">© 2025 Pristine Clean Services. All Rights Reserved.</span>
-                <div class="flex gap-8">
-                    <a class="text-[9px] tracking-widest uppercase text-white/30 hover:text-white" href="../policy.html">Privacy Policy</a>
-                    <a class="text-[9px] tracking-widest uppercase text-white/30 hover:text-white" href="../policy.html">Terms of Service</a>
-                </div>
+            
+            <div class="pt-12 mt-20 text-[10px] tracking-[0.4em] uppercase text-center border-t border-white/5 text-slate-500">
+                <p>&copy; 2025 Pristine Clean Services. All rights reserved.</p>
             </div>
         </div>
     </footer>
