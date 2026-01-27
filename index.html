@@ -238,6 +238,123 @@
                 font-size: 16px !important;
             }
         }
+        
+        /* Mobile Text Centering and Alignment */
+        @media screen and (max-width: 1023px) {
+            /* Hero Section - Center text on mobile */
+            #home .lg\:w-1\/2 {
+                text-align: center;
+            }
+            
+            #home .lg\:w-1\/2 .max-w-xl {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            #home h1,
+            #home p,
+            #home span {
+                text-align: center;
+            }
+            
+            #home .flex.flex-wrap {
+                justify-content: center;
+            }
+            
+            /* Services Section - Center text on mobile */
+            #services .text-center {
+                text-align: center !important;
+            }
+            
+            #services h2,
+            #services p {
+                text-align: center;
+            }
+            
+            #services .grid > a > div {
+                text-align: center;
+            }
+            
+            /* About Section - Center text on mobile */
+            #about .text-center {
+                text-align: center !important;
+            }
+            
+            #about h2,
+            #about p {
+                text-align: center;
+            }
+            
+            #about .grid > div {
+                text-align: center;
+            }
+            
+            #about h4,
+            #about .text-xs {
+                text-align: center;
+            }
+            
+            /* Testimonials Section - Center text on mobile */
+            #testimonials .text-center {
+                text-align: center !important;
+            }
+            
+            #testimonials h2,
+            #testimonials p {
+                text-align: center;
+            }
+            
+            /* FAQ/Contact CTA Section - Center text on mobile */
+            section[aria-labelledby="contact-cta-title"] h2,
+            section[aria-labelledby="contact-cta-title"] p,
+            section[aria-labelledby="contact-cta-title"] span {
+                text-align: center;
+            }
+            
+            section[aria-labelledby="contact-cta-title"] .flex.flex-wrap {
+                justify-content: center;
+            }
+            
+            section[aria-labelledby="contact-cta-title"] .space-y-4 > div {
+                text-align: center;
+            }
+            
+            /* About Content Sections - Center text on mobile */
+            .bg-\[var\(--cream\)\] h2,
+            .bg-\[var\(--cream\)\] p {
+                text-align: center;
+            }
+            
+            .bg-white h2,
+            .bg-white p {
+                text-align: center;
+            }
+            
+            /* Footer - Center text on mobile */
+            footer .grid {
+                text-align: center;
+            }
+            
+            footer h5,
+            footer p,
+            footer li {
+                text-align: center;
+            }
+            
+            footer .flex.gap-4 {
+                justify-content: center;
+            }
+            
+            footer ul {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            footer .flex.items-center {
+                justify-content: center;
+            }
+        }
     </style>
     
     <!-- JSON-LD Structured Data -->
