@@ -260,6 +260,87 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             background: var(--gold);
             transition: all 0.3s;
         }
+        
+        /* Mobile Text Centering and Alignment */
+        @media screen and (max-width: 1023px) {
+            /* Contact/Booking Section - Center text on mobile */
+            #booking .lg\:w-1\/2 {
+                text-align: center;
+            }
+            
+            #booking .lg\:w-1\/2 .max-w-xl {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            #booking h1,
+            #booking p,
+            #booking span {
+                text-align: center;
+            }
+            
+            #booking .space-y-8 > div {
+                justify-content: center;
+                text-align: center;
+            }
+            
+            #booking .flex.items-center.gap-6 {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            
+            /* Form area - Center on mobile */
+            #booking .glassmorphism h3,
+            #booking .glassmorphism label,
+            #booking .glassmorphism .form-success {
+                text-align: center;
+            }
+            
+            /* FAQ Section - Center text on mobile */
+            section.px-8.py-32.bg-\[var\(--navy\)\] h2,
+            section.px-8.py-32.bg-\[var\(--navy\)\] p,
+            section.px-8.py-32.bg-\[var\(--navy\)\] span {
+                text-align: center;
+            }
+            
+            section.px-8.py-32.bg-\[var\(--navy\)\] .grid > div {
+                text-align: center;
+            }
+            
+            section.px-8.py-32.bg-\[var\(--navy\)\] .flex.items-center {
+                justify-content: center;
+            }
+            
+            section.px-8.py-32.bg-\[var\(--navy\)\] .space-y-4 > div {
+                text-align: center;
+            }
+            
+            /* Footer - Center text on mobile */
+            footer .grid {
+                text-align: center;
+            }
+            
+            footer h5,
+            footer p,
+            footer li {
+                text-align: center;
+            }
+            
+            footer .flex.gap-4 {
+                justify-content: center;
+            }
+            
+            footer ul {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            footer .flex.items-center {
+                justify-content: center;
+            }
+        }
     </style>
 </head>
 <body>
