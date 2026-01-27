@@ -129,6 +129,49 @@
                 @apply static inline-flex mx-auto mb-5 w-fit;
             }
         }
+        
+        /* Mobile hero: centered text, two text blocks with CTA in between */
+        @media (max-width: 1023px) {
+            .service-hero-mobile.flex {
+                flex-direction: column;
+                gap: 0;
+            }
+            .service-hero-mobile .hero-content-box {
+                @apply flex flex-col text-center;
+            }
+            .service-hero-mobile .hero-content-box * {
+                @apply text-center mx-auto;
+            }
+            .service-hero-mobile .hero-content-box .mx-auto {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .service-hero-mobile .popular-badge {
+                @apply flex mx-auto mb-6;
+            }
+            .service-hero-mobile .hero-block-1,
+            .service-hero-mobile .hero-block-2 {
+                @apply text-center;
+            }
+            .service-hero-mobile .hero-block-1 p,
+            .service-hero-mobile .hero-block-2 p {
+                @apply mx-auto text-center;
+            }
+            .service-hero-mobile .hero-cta-mid {
+                @apply flex flex-col items-center justify-center gap-4 text-center;
+            }
+            .service-hero-mobile .hero-cta-mid .flex {
+                @apply justify-center;
+            }
+        }
+        @media (min-width: 1024px) {
+            .service-hero-mobile .hero-cta-mid {
+                order: 3;
+            }
+            .service-hero-mobile .hero-block-2 {
+                order: 2;
+            }
+        }
     </style>
 </head>
 <body>
@@ -233,7 +276,7 @@
 
     <main>
         <!-- Service Hero -->
-        <section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-32 pb-16">
+        <section class="service-hero-mobile relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-32 pb-16">
             <div class="popular-badge">
                 <i class="fas fa-star" style="color: #ffd54d;"></i>
                 Most Popular Pick
@@ -242,29 +285,37 @@
             <div class="absolute inset-0 bg-black/30"></div>
             <div class="relative z-10 max-w-3xl w-full px-6">
                 <div class="bg-white/95 p-12 md:p-20 border-[1px] border-[var(--gold)] shadow-2xl text-center">
-                    <span class="text-[var(--gold)] text-[11px] tracking-[0.6em] uppercase font-bold block mb-8">Most Popular Service</span>
-                    <h1 class="text-5xl md:text-7xl text-[var(--navy)] serif font-normal mb-8 leading-tight">Deep <span class="italic block text-[var(--gold)]">Cleaning</span></h1>
-                    <div class="w-20 h-[2px] bg-[var(--gold)] mx-auto mb-10"></div>
-                    <p class="text-slate-600 text-sm md:text-lg font-light tracking-wide mb-4 leading-relaxed mx-auto max-w-xl">
-                        Services for Toronto Homes That Need a Fresh Start
-                    </p>
-                    <p class="text-slate-600 text-sm md:text-base font-light tracking-wide mb-6 leading-relaxed mx-auto max-w-xl">
-                        Homes go through busy seasons. Some weeks everything is in order, and other weeks life gets away from you. Dust builds up, corners start to collect things you meant to sort, and the smaller tasks that do not seem urgent begin to pile into something noticeable. Many homeowners reach a point where regular cleaning is not enough. What they need is a proper reset. That is where a deep cleaning becomes important.
-                    </p>
-                    <p class="text-slate-600 text-sm md:text-base font-light tracking-wide mb-12 leading-relaxed mx-auto max-w-xl">
-                        Pristine Clean Services created its deep cleaning approach for people who want their homes to feel lighter, fresher, and renewed. This type of cleaning reaches areas that often get missed during weekly upkeep. When someone searches for a deep cleaning service Toronto, they are usually looking for a reliable team that can handle the work with care and respect for their home. That is exactly what we provide. To start, schedule your appointment today.
-                    </p>
-                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 text-sm">
-                        <div class="flex items-center gap-2">
-                            <span class="material-symbols-outlined text-[var(--gold)]">schedule</span>
-                            <span class="font-semibold">4-8 Hours</span>
+                    <div class="hero-content-box flex flex-col">
+                        <span class="text-[var(--gold)] text-[11px] tracking-[0.6em] uppercase font-bold block mb-8">Most Popular Service</span>
+                        <h1 class="text-5xl md:text-7xl text-[var(--navy)] serif font-normal mb-8 leading-tight">Deep <span class="italic block text-[var(--gold)]">Cleaning</span></h1>
+                        <div class="w-20 h-[2px] bg-[var(--gold)] mx-auto mb-10"></div>
+                        <div class="hero-block-1">
+                            <p class="text-slate-600 text-sm md:text-lg font-light tracking-wide mb-4 leading-relaxed mx-auto max-w-xl">
+                                Services for Toronto Homes That Need a Fresh Start
+                            </p>
+                            <p class="text-slate-600 text-sm md:text-base font-light tracking-wide mb-6 leading-relaxed mx-auto max-w-xl">
+                                Homes go through busy seasons. Some weeks everything is in order, and other weeks life gets away from you. Dust builds up, corners start to collect things you meant to sort, and the smaller tasks that do not seem urgent begin to pile into something noticeable. Many homeowners reach a point where regular cleaning is not enough. What they need is a proper reset. That is where a deep cleaning becomes important.
+                            </p>
                         </div>
-                        <div class="flex items-center gap-2">
-                            <span class="material-symbols-outlined text-[var(--gold)]">event</span>
-                            <span class="font-semibold">One-time or Seasonal</span>
+                        <div class="hero-cta-mid">
+                            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6 text-sm">
+                                <div class="flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-[var(--gold)]">schedule</span>
+                                    <span class="font-semibold">4-8 Hours</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-[var(--gold)]">event</span>
+                                    <span class="font-semibold">One-time or Seasonal</span>
+                                </div>
+                            </div>
+                            <a class="inline-block bg-[var(--navy)] text-white px-12 py-6 text-[10px] tracking-[0.4em] uppercase hover:bg-[var(--gold)] transition-all font-bold shadow-2xl" href="../contact.html">Get Inquiry</a>
+                        </div>
+                        <div class="hero-block-2">
+                            <p class="text-slate-600 text-sm md:text-base font-light tracking-wide mb-0 leading-relaxed mx-auto max-w-xl">
+                                Pristine Clean Services created its deep cleaning approach for people who want their homes to feel lighter, fresher, and renewed. This type of cleaning reaches areas that often get missed during weekly upkeep. When someone searches for a deep cleaning service Toronto, they are usually looking for a reliable team that can handle the work with care and respect for their home. That is exactly what we provide. To start, schedule your appointment today.
+                            </p>
                         </div>
                     </div>
-                    <a class="inline-block bg-[var(--navy)] text-white px-12 py-6 text-[10px] tracking-[0.4em] uppercase hover:bg-[var(--gold)] transition-all font-bold shadow-2xl" href="../contact.html">Get Inquiry</a>
                 </div>
             </div>
         </section>
