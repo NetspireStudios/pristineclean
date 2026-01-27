@@ -164,6 +164,9 @@
         .banner-text { color: var(--navy); font-weight: 600; font-size: 0.875rem; }
         .mobile-banner { display: inline; }
         .desktop-banner { display: none; }
+        @media (max-width: 1024px) {
+            .promo-banner { z-index: 50 !important; }
+        }
         @media (min-width: 768px) {
             .mobile-banner { display: none; }
             .desktop-banner { display: inline; }
@@ -233,6 +236,123 @@
             input[type="email"],
             input[type="tel"] {
                 font-size: 16px !important;
+            }
+        }
+        
+        /* Mobile Text Centering and Alignment */
+        @media screen and (max-width: 1023px) {
+            /* Hero Section - Center text on mobile */
+            #home .lg\:w-1\/2 {
+                text-align: center;
+            }
+            
+            #home .lg\:w-1\/2 .max-w-xl {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            #home h1,
+            #home p,
+            #home span {
+                text-align: center;
+            }
+            
+            #home .flex.flex-wrap {
+                justify-content: center;
+            }
+            
+            /* Services Section - Center text on mobile */
+            #services .text-center {
+                text-align: center !important;
+            }
+            
+            #services h2,
+            #services p {
+                text-align: center;
+            }
+            
+            #services .grid > a > div {
+                text-align: center;
+            }
+            
+            /* About Section - Center text on mobile */
+            #about .text-center {
+                text-align: center !important;
+            }
+            
+            #about h2,
+            #about p {
+                text-align: center;
+            }
+            
+            #about .grid > div {
+                text-align: center;
+            }
+            
+            #about h4,
+            #about .text-xs {
+                text-align: center;
+            }
+            
+            /* Testimonials Section - Center text on mobile */
+            #testimonials .text-center {
+                text-align: center !important;
+            }
+            
+            #testimonials h2,
+            #testimonials p {
+                text-align: center;
+            }
+            
+            /* FAQ/Contact CTA Section - Center text on mobile */
+            section[aria-labelledby="contact-cta-title"] h2,
+            section[aria-labelledby="contact-cta-title"] p,
+            section[aria-labelledby="contact-cta-title"] span {
+                text-align: center;
+            }
+            
+            section[aria-labelledby="contact-cta-title"] .flex.flex-wrap {
+                justify-content: center;
+            }
+            
+            section[aria-labelledby="contact-cta-title"] .space-y-4 > div {
+                text-align: center;
+            }
+            
+            /* About Content Sections - Center text on mobile */
+            .bg-\[var\(--cream\)\] h2,
+            .bg-\[var\(--cream\)\] p {
+                text-align: center;
+            }
+            
+            .bg-white h2,
+            .bg-white p {
+                text-align: center;
+            }
+            
+            /* Footer - Center text on mobile */
+            footer .grid {
+                text-align: center;
+            }
+            
+            footer h5,
+            footer p,
+            footer li {
+                text-align: center;
+            }
+            
+            footer .flex.gap-4 {
+                justify-content: center;
+            }
+            
+            footer ul {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            footer .flex.items-center {
+                justify-content: center;
             }
         }
     </style>
@@ -367,7 +487,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   "url": "https://www.pristinecleanservices.ca/",
   "potentialAction": {
     "@type": "SearchAction",
-    "target": "https://www.pristinecleanservices.ca/blogs/blog.html{search_term_string}",
+    "target": "https://www.pristinecleanservices.ca/blogs{search_term_string}",
     "query-input": "required name=search_term_string"
   }
 }
@@ -381,20 +501,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
     <!-- Top Banner -->
-    <div class="bg-[var(--gold)] text-white text-center py-1.5 px-4 text-[9px] font-bold tracking-[0.3em] uppercase relative z-[70]">
+    <div class="promo-banner bg-[var(--gold)] text-white text-center py-1.5 px-4 text-[9px] font-bold tracking-[0.3em] uppercase relative">
         New Year Sale: 20% Off First Clean - Ends Jan 31 • Limited Availability
                 </div>
 
     <!-- Navigation -->
-    <header class="fixed top-8 left-0 right-0 z-50 px-6 lg:px-12">
+    <header class="fixed top-10 left-0 right-0 z-50 px-6 lg:top-8 lg:px-12">
         <nav class="mx-auto flex items-center justify-between h-24 bg-white shadow-sm border-b border-slate-100 px-10">
-            <div class="flex items-center gap-3">
+            <a href="/" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
                 <span class="text-[var(--navy)] material-symbols-outlined text-3xl">diamond</span>
                 <div class="flex flex-col">
                     <span class="text-xl font-bold tracking-widest text-[var(--navy)] serif uppercase leading-none">Pristine</span>
                     <span class="text-[9px] tracking-[0.4em] text-[var(--gold)] uppercase font-bold">Clean Services</span>
                 </div>
-            </div>
+            </a>
             <div class="hidden lg:flex items-center gap-10">
                 <a class="nav-link text-[var(--navy)]" href="/">Home</a>
                 <div class="relative group h-full flex items-center">
@@ -417,10 +537,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <a class="nav-link text-[var(--navy)]" href="https://www.pristinecleanservices.ca/king-standard">King Standard</a>
                 <a class="nav-link text-[var(--navy)]" href="#about">About</a>
                 <a class="nav-link text-[var(--navy)]" href="#testimonials">Reviews</a>
-                <a class="nav-link text-[var(--navy)]" href="blogs/blog.html">Blog</a>
+                <a class="nav-link text-[var(--navy)]" href="/blogs">Blog</a>
                 </div>
             <div class="flex items-center gap-4 shrink-0">
-                <a class="hidden lg:block px-8 py-4 text-[11px] font-bold tracking-[0.2em] text-white uppercase bg-[var(--navy)] hover:bg-[var(--gold)] transition-all shadow-lg hover:shadow-xl" href="pages/contact.html">Book Now</a>
+                <a class="hidden lg:block px-8 py-4 text-[11px] font-bold tracking-[0.2em] text-white uppercase bg-[var(--navy)] hover:bg-[var(--gold)] transition-all shadow-lg hover:shadow-xl" href="/contact">Book Now</a>
                 <button class="lg:hidden hamburger" id="mobileMenuBtn" aria-label="Open navigation menu">
                     <span></span>
                     <span></span>
@@ -437,7 +557,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="flex items-center justify-between mb-8">
                 <div class="flex items-center gap-2">
                     <span class="text-[var(--gold)] material-symbols-outlined text-2xl">diamond</span>
-                    <span class="text-xl font-bold tracking-widest text-[var(--gold)] serif uppercase">Pristine</span>
+                    <div class="flex flex-col leading-tight">
+                        <span class="text-base font-bold tracking-widest text-[var(--gold)] serif uppercase">Pristine</span>
+                        <span class="text-[10px] tracking-[0.2em] text-[var(--gold)] uppercase font-semibold">Clean Services</span>
+                    </div>
                 </div>
                 <button class="text-[var(--gold)] text-3xl" id="closeMobileMenu" aria-label="Close menu">
                     <span class="material-symbols-outlined">close</span>
@@ -834,10 +957,10 @@ We don't rush through rooms. We don't cut corners. We focus on doing the work pr
                 <div>
                     <h5 class="mb-8 text-xs font-bold tracking-[0.3em] uppercase text-[var(--gold)]">Policies</h5>
                     <ul class="space-y-4 text-[10px] tracking-widest uppercase font-medium text-slate-400">
-                        <li><a class="hover:text-[var(--gold)] transition-colors" href="pages/policy.html#booking">Booking & Scheduling</a></li>
-                        <li><a class="hover:text-[var(--gold)] transition-colors" href="pages/policy.html#cancellation">Cancellation Policy</a></li>
-                        <li><a class="hover:text-[var(--gold)] transition-colors" href="pages/policy.html#payment">Payment Terms</a></li>
-                        <li><a class="hover:text-[var(--gold)] transition-colors" href="pages/policy.html#quality">Quality Guarantee</a></li>
+                        <li><a class="hover:text-[var(--gold)] transition-colors" href="/policy#booking">Booking & Scheduling</a></li>
+                        <li><a class="hover:text-[var(--gold)] transition-colors" href="/policy#cancellation">Cancellation Policy</a></li>
+                        <li><a class="hover:text-[var(--gold)] transition-colors" href="/policy#payment">Payment Terms</a></li>
+                        <li><a class="hover:text-[var(--gold)] transition-colors" href="/policy#quality">Quality Guarantee</a></li>
                     </ul>
                 </div>
                 
