@@ -263,6 +263,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         
         /* Mobile Text Centering and Alignment */
         @media screen and (max-width: 1023px) {
+            /* Contact page: Booking form above contact info on mobile */
+            #booking .flex.flex-col.lg\:flex-row > div:first-child {
+                order: 2;
+            }
+            #booking .flex.flex-col.lg\:flex-row > div:last-child {
+                order: 1;
+            }
+            
             /* Contact/Booking Section - Center text on mobile */
             #booking .lg\:w-1\/2 {
                 text-align: center;
