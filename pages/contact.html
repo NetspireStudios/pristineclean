@@ -263,20 +263,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         
         /* Mobile Text Centering and Alignment */
         @media screen and (max-width: 1023px) {
-            /* Contact page: Booking form above contact info on mobile */
-            #booking .flex.flex-col.lg\:flex-row > div:first-child {
-                order: 2;
-            }
-            #booking .flex.flex-col.lg\:flex-row > div:last-child {
-                order: 1;
-            }
-            
             /* Contact/Booking Section - Center text on mobile */
-            #booking .lg\:w-1\/2 {
+            #booking .grid > div {
                 text-align: center;
             }
             
-            #booking .lg\:w-1\/2 .max-w-xl {
+            #booking .max-w-xl {
                 margin-left: auto;
                 margin-right: auto;
             }
@@ -454,11 +446,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <!-- Contact Section -->
     <main>
-        <section id="booking" class="relative min-h-screen flex items-stretch overflow-hidden bg-[var(--soft-white)] pt-24">
-            <div class="flex flex-col lg:flex-row w-full">
-                <!-- Left Side: Contact Info -->
-                <div class="lg:w-1/2 flex items-center px-12 lg:px-32 py-20 relative z-10 bg-white">
-                    <div class="max-w-xl">
+        <section id="booking" class="relative min-h-screen overflow-hidden bg-[var(--soft-white)] pt-24">
+            <div class="grid grid-cols-1 lg:grid-cols-2 w-full">
+                <!-- 1. Title (mobile first, desktop left top) -->
+                <div class="flex items-center px-12 lg:px-32 py-12 lg:py-20 relative z-10 bg-white order-1 lg:order-1">
+                    <div class="max-w-xl w-full">
                         <span class="block mb-6 text-[var(--gold)] tracking-[0.4em] uppercase text-xs font-bold">
                             Get Your Clean Today!
                         </span>
@@ -468,40 +460,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <p class="mb-12 text-xl leading-relaxed text-slate-600 font-light max-w-md">
                             Book your cleaning service in just 60 seconds. Have Questions? Call Us!
                         </p>
-                        <div class="space-y-8 pt-8 border-t border-slate-100">
-                            <div class="flex items-center gap-6">
-                                <div class="w-12 h-12 border border-[var(--gold)]/30 flex items-center justify-center shrink-0">
-                                    <span class="material-symbols-outlined text-[var(--gold)]">call</span>
-                                </div>
-                                <div>
-                                    <p class="text-[10px] font-bold tracking-widest uppercase text-slate-400 mb-1">Phone</p>
-                                    <p class="text-[var(--navy)] font-semibold tracking-wide">(437) 545-8704</p>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-6">
-                                <div class="w-12 h-12 border border-[var(--gold)]/30 flex items-center justify-center shrink-0">
-                                    <span class="material-symbols-outlined text-[var(--gold)]">mail</span>
-                                </div>
-                                <div>
-                                    <p class="text-[10px] font-bold tracking-widest uppercase text-slate-400 mb-1">Email</p>
-                                    <p class="text-[var(--navy)] font-semibold tracking-wide lowercase">contact@pristineandclean.ca</p>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-6">
-                                <div class="w-12 h-12 border border-[var(--gold)]/30 flex items-center justify-center shrink-0">
-                                    <span class="material-symbols-outlined text-[var(--gold)]">location_on</span>
-                                </div>
-                                <div>
-                                    <p class="text-[10px] font-bold tracking-widest uppercase text-slate-400 mb-1">Location</p>
-                                    <p class="text-[var(--navy)] font-semibold tracking-wide uppercase">Toronto, Canada</p>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 
-                <!-- Right Side: Form with Background Image -->
-                <div class="lg:w-1/2 relative min-h-[600px] lg:min-h-0 flex items-center justify-center px-8">
+                <!-- 2. Form (mobile second, desktop right full height) -->
+                <div class="relative min-h-[500px] lg:min-h-0 flex items-center justify-center px-8 order-2 lg:order-2 lg:row-span-2">
                     <img alt="Professional home cleaning service interior" class="absolute inset-0 w-full h-full object-cover" src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?q=80&w=2000&auto=format&fit=crop"/>
                     <div class="absolute inset-0 bg-[var(--navy)]/30"></div>
                     <div class="relative z-20 w-full max-w-[520px] glassmorphism p-10 lg:p-14 luxury-shadow border border-[var(--gold)]/30">
@@ -565,8 +528,43 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </form>
                 </div>
             </div>
-        </div>
-    </section>
+                
+                <!-- 3. Contact info (mobile third, desktop left bottom) -->
+                <div class="flex items-center px-12 lg:px-32 py-12 lg:py-20 relative z-10 bg-white order-3 lg:order-3">
+                    <div class="max-w-xl w-full">
+                        <div class="space-y-8 pt-8 border-t border-slate-100">
+                            <div class="flex items-center gap-6">
+                                <div class="w-12 h-12 border border-[var(--gold)]/30 flex items-center justify-center shrink-0">
+                                    <span class="material-symbols-outlined text-[var(--gold)]">call</span>
+                                </div>
+                                <div>
+                                    <p class="text-[10px] font-bold tracking-widest uppercase text-slate-400 mb-1">Phone</p>
+                                    <p class="text-[var(--navy)] font-semibold tracking-wide">(437) 545-8704</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-6">
+                                <div class="w-12 h-12 border border-[var(--gold)]/30 flex items-center justify-center shrink-0">
+                                    <span class="material-symbols-outlined text-[var(--gold)]">mail</span>
+                                </div>
+                                <div>
+                                    <p class="text-[10px] font-bold tracking-widest uppercase text-slate-400 mb-1">Email</p>
+                                    <p class="text-[var(--navy)] font-semibold tracking-wide lowercase">contact@pristineandclean.ca</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-6">
+                                <div class="w-12 h-12 border border-[var(--gold)]/30 flex items-center justify-center shrink-0">
+                                    <span class="material-symbols-outlined text-[var(--gold)]">location_on</span>
+                                </div>
+                                <div>
+                                    <p class="text-[10px] font-bold tracking-widest uppercase text-slate-400 mb-1">Location</p>
+                                    <p class="text-[var(--navy)] font-semibold tracking-wide uppercase">Toronto, Canada</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- FAQ Section -->
