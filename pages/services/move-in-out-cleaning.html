@@ -191,6 +191,26 @@
                 margin-left: auto;
                 margin-right: auto;
             }
+            
+            /* Mobile Carousel for Our Work Section */
+            .work-carousel {
+                display: flex !important;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+                gap: 1rem;
+                padding: 0 1.5rem;
+                margin: 0 -1.5rem;
+            }
+            .work-carousel::-webkit-scrollbar {
+                display: none;
+            }
+            .work-carousel > div {
+                flex: 0 0 85%;
+                scroll-snap-align: center;
+                max-width: 85%;
+            }
         }
     </style>
 </head>
@@ -585,7 +605,7 @@
                         See the difference our professional move-in/out cleaning services make
                     </p>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 work-carousel">
                     <div class="space-y-6">
                         <div class="aspect-[4/5] overflow-hidden">
                             <img alt="Clean floors after move cleaning" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" src="../../assets/images/floor.jpg" loading="lazy" onerror="this.onerror=null;this.src='../../assets/images/@floor.jpg';"/>
