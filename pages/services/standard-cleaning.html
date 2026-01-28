@@ -114,15 +114,22 @@
             background: var(--gold);
             transition: all 0.3s;
         }
-        /* Mobile text centering */
+        
+        /* Mobile Centering Styles */
         @media (max-width: 768px) {
-            section h1, section h2, section h3, section h4, section p {
+            h1, h2, h3, h4, h5, h6 {
                 text-align: center !important;
             }
-            section .flex:not(.mobile-menu *):not(nav *):not(header *) {
-                justify-content: center !important;
+            section p, section span:not(.material-symbols-outlined) {
+                text-align: center !important;
             }
-            section ul, section div {
+            section > div {
+                text-align: center;
+            }
+            .text-left {
+                text-align: center !important;
+            }
+            section ul, section ol {
                 margin-left: auto;
                 margin-right: auto;
             }
