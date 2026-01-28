@@ -897,31 +897,42 @@
             const mobileServicesToggle = document.getElementById('mobileServicesToggle');
             const mobileServicesMenu = document.getElementById('mobileServicesMenu');
             
-            // Open mobile menu
+            function closeMobileMenuFunc() {
+                if (mobileMenu) mobileMenu.classList.remove('active');
+                if (mobileBackdrop) mobileBackdrop.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+            
             if (mobileMenuBtn) {
-                mobileMenuBtn.addEventListener('click', function() {
-                    mobileMenu.classList.add('active');
-                    mobileBackdrop.classList.add('active');
+                mobileMenuBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    if (mobileMenu) mobileMenu.classList.add('active');
+                    if (mobileBackdrop) mobileBackdrop.classList.add('active');
                     document.body.style.overflow = 'hidden';
                 });
             }
             
-            // Close mobile menu
-            function closeMobileMenuFunc() {
-                mobileMenu.classList.remove('active');
-                mobileBackdrop.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-            
             if (closeMobileMenu) {
-                closeMobileMenu.addEventListener('click', closeMobileMenuFunc);
+                closeMobileMenu.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    closeMobileMenuFunc();
+                });
             }
             
             if (mobileBackdrop) {
-                mobileBackdrop.addEventListener('click', closeMobileMenuFunc);
+                mobileBackdrop.addEventListener('click', function(e) {
+                    if (e.target === mobileBackdrop) {
+                        closeMobileMenuFunc();
+                    }
+                });
             }
             
-            // Toggle services submenu
+            if (mobileMenu) {
+                mobileMenu.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                });
+            }
+            
             if (mobileServicesToggle) {
                 mobileServicesToggle.addEventListener('click', function() {
                     mobileServicesMenu.classList.toggle('hidden');
@@ -929,6 +940,12 @@
                     icon.textContent = mobileServicesMenu.classList.contains('hidden') ? 'expand_more' : 'expand_less';
                 });
             }
+            
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && mobileMenu && mobileMenu.classList.contains('active')) {
+                    closeMobileMenuFunc();
+                }
+            });
             
             // Close menu when clicking on links
             const mobileLinks = mobileMenu.querySelectorAll('a');
