@@ -135,7 +135,7 @@
             height: 100vh;
             background: var(--navy);
             padding: 2rem;
-            z-index: 1100;
+            z-index: 10001;
             overflow-y: auto;
             transform: translateX(100%);
             transition: transform 0.3s ease;
@@ -151,8 +151,12 @@
             left: 0;
             width: 100%;
             height: 100%;
+            width: 100vw;
+            height: 100vh;
             background: rgba(0, 0, 0, 0.5);
-            z-index: 1099;
+            z-index: 10000;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
         }
         .mobile-backdrop.active {
             display: block;
@@ -172,6 +176,44 @@
         @media (max-width: 768px) {
             .editorial-title {
                 @apply text-[60px];
+            }
+            
+            /* Mobile Centering Styles */
+            h1, h2, h3, h4, h5, h6 {
+                text-align: center !important;
+            }
+            section p, section span:not(.material-symbols-outlined) {
+                text-align: center !important;
+            }
+            section > div {
+                text-align: center;
+            }
+            .text-left {
+                text-align: center !important;
+            }
+            section ul, section ol {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            /* Mobile Carousel for Our Work Section */
+            .work-carousel {
+                display: flex !important;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+                gap: 1rem;
+                padding: 0 1.5rem;
+                margin: 0 -1.5rem;
+            }
+            .work-carousel::-webkit-scrollbar {
+                display: none;
+            }
+            .work-carousel > div {
+                flex: 0 0 85%;
+                scroll-snap-align: center;
+                max-width: 85%;
             }
         }
     </style>
@@ -557,25 +599,43 @@
             </div>
         </section>
 
-        <!-- Gallery Section -->
-        <section class="py-32 px-8 bg-[var(--soft-white)]">
-            <div class="max-w-[1800px] mx-auto">
-                <div class="flex flex-col lg:flex-row justify-between items-end mb-24 gap-8">
-                    <div class="max-w-2xl">
-                        <span class="text-[var(--gold)] text-[11px] tracking-[0.5em] uppercase font-bold block mb-6">Our Work</span>
-                        <h2 class="text-7xl serif text-[var(--navy)] leading-tight">See the<br/><span class="italic">Difference</span></h2>
-                    </div>
-                    <a class="text-[10px] tracking-[0.4em] uppercase font-bold border-b-2 border-[var(--gold)] pb-2 mb-4" href="#">View Full Portfolio</a>
+        <!-- Our Work Section -->
+        <section class="py-32 px-6 bg-white">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-20">
+                    <span class="text-[var(--gold)] text-[10px] tracking-[0.4em] uppercase font-bold block mb-4">The Results</span>
+                    <h2 class="text-4xl md:text-5xl serif text-[var(--navy)] mb-6">Our <span class="italic text-[var(--gold)]">Work</span></h2>
+                    <p class="max-w-md text-sm text-slate-500 font-light leading-relaxed mx-auto">
+                        See the difference our professional move-in/out cleaning services make
+                    </p>
                 </div>
-                <div class="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8">
-                    <div class="masonry-item">
-                        <img alt="Clean floors after move cleaning" class="w-full h-[600px] object-cover" src="../../assets/images/floor.jpg" onerror="this.onerror=null;this.src='../../assets/images/@floor.jpg';"/>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 work-carousel">
+                    <div class="space-y-6">
+                        <div class="aspect-[4/5] overflow-hidden">
+                            <img alt="Clean floors after move cleaning" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" src="../../assets/images/floor.jpg" loading="lazy" onerror="this.onerror=null;this.src='../../assets/images/@floor.jpg';"/>
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-bold tracking-[0.2em] uppercase mt-2 mb-3">Floor Clean</h4>
+                            <p class="text-xs text-slate-500 leading-loose font-light">Pristine floors ready for your new beginning</p>
+                        </div>
                     </div>
-                    <div class="masonry-item">
-                        <img alt="Clean wood floors" class="w-full h-[400px] object-cover" src="../../assets/images/wood floor.jpg" onerror="this.onerror=null;this.src='../../assets/images/@wood floor.jpg';"/>
+                    <div class="space-y-6">
+                        <div class="aspect-[4/5] overflow-hidden">
+                            <img alt="Clean wood floors" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" src="../../assets/images/wood floor.jpg" loading="lazy" onerror="this.onerror=null;this.src='../../assets/images/@wood floor.jpg';"/>
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-bold tracking-[0.2em] uppercase mt-2 mb-3">Wood Floor Clean</h4>
+                            <p class="text-xs text-slate-500 leading-loose font-light">Beautiful hardwood restored to perfect condition</p>
+                        </div>
                     </div>
-                    <div class="masonry-item">
-                        <img alt="Clean apartment" class="w-full h-[550px] object-cover" src="../../assets/images/apartment.jpg" onerror="this.onerror=null;this.src='../../assets/images/@apartment.jpg';"/>
+                    <div class="space-y-6">
+                        <div class="aspect-[4/5] overflow-hidden">
+                            <img alt="Clean apartment" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" src="../../assets/images/apartment.jpg" loading="lazy" onerror="this.onerror=null;this.src='../../assets/images/@apartment.jpg';"/>
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-bold tracking-[0.2em] uppercase mt-2 mb-3">Full Space Clean</h4>
+                            <p class="text-xs text-slate-500 leading-loose font-light">Complete spaces transformed for move day</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -841,36 +901,53 @@
             const mobileServicesToggle = document.getElementById('mobileServicesToggle');
             const mobileServicesMenu = document.getElementById('mobileServicesMenu');
             
-            // Open mobile menu
+            function closeMobileMenuFunc() {
+                if (mobileMenu) mobileMenu.classList.remove('active');
+                if (mobileBackdrop) mobileBackdrop.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+            
             if (mobileMenuBtn) {
-                mobileMenuBtn.addEventListener('click', function() {
-                    mobileMenu.classList.add('active');
-                    mobileBackdrop.classList.add('active');
+                mobileMenuBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    if (mobileMenu) mobileMenu.classList.add('active');
+                    if (mobileBackdrop) mobileBackdrop.classList.add('active');
                     document.body.style.overflow = 'hidden';
                 });
             }
             
-            // Close mobile menu
-            function closeMobileMenuFunc() {
-                mobileMenu.classList.remove('active');
-                mobileBackdrop.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-            
             if (closeMobileMenu) {
-                closeMobileMenu.addEventListener('click', closeMobileMenuFunc);
+                closeMobileMenu.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    closeMobileMenuFunc();
+                });
             }
             
             if (mobileBackdrop) {
-                mobileBackdrop.addEventListener('click', closeMobileMenuFunc);
+                mobileBackdrop.addEventListener('click', function(e) {
+                    if (e.target === mobileBackdrop) {
+                        closeMobileMenuFunc();
+                    }
+                });
             }
             
-            // Toggle services submenu
+            if (mobileMenu) {
+                mobileMenu.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                });
+            }
+            
             if (mobileServicesToggle) {
                 mobileServicesToggle.addEventListener('click', function() {
                     mobileServicesMenu.classList.toggle('hidden');
                 });
             }
+            
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && mobileMenu && mobileMenu.classList.contains('active')) {
+                    closeMobileMenuFunc();
+                }
+            });
         });
         
         // Auto-hide Navigation on Scroll

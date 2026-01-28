@@ -79,7 +79,7 @@
             max-width: 400px;
             height: 100vh;
             background: var(--navy);
-            z-index: 1100;
+            z-index: 10001;
             padding: 2rem;
             overflow-y: auto;
             transform: translateX(100%);
@@ -96,8 +96,12 @@
             left: 0;
             width: 100%;
             height: 100%;
+            width: 100vw;
+            height: 100vh;
             background: rgba(0, 0, 0, 0.5);
-            z-index: 1099;
+            z-index: 10000;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
         }
         .mobile-backdrop.active {
             display: block;
@@ -113,6 +117,54 @@
             height: 2px;
             background: var(--gold);
             transition: all 0.3s;
+        }
+        
+        /* Mobile Centering Styles */
+        @media (max-width: 768px) {
+            h1, h2, h3, h4, h5, h6 {
+                text-align: center !important;
+            }
+            section p, section span:not(.material-symbols-outlined) {
+                text-align: center !important;
+            }
+            section > div {
+                text-align: center;
+            }
+            .text-left {
+                text-align: center !important;
+            }
+            section ul, section ol {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            /* Mobile Carousel for Our Work Section */
+            .work-carousel {
+                display: flex !important;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+                gap: 1rem;
+                padding: 0 1.5rem;
+                margin: 0 -1.5rem;
+            }
+            .work-carousel::-webkit-scrollbar {
+                display: none;
+            }
+            .work-carousel > div {
+                flex: 0 0 85%;
+                scroll-snap-align: center;
+                max-width: 85%;
+            }
+            
+            /* Reduce spacing between Our Work and Booking sections on mobile */
+            section:has(.work-carousel) {
+                padding-bottom: 3rem !important;
+            }
+            section:has(.work-carousel) + section {
+                padding-top: 3rem !important;
+            }
         }
     </style>
      <!-- Google tag (gtag.js) -->
@@ -230,8 +282,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="hidden lg:flex items-center gap-10">
                 <a class="nav-link text-[var(--navy)]" href="../../">Home</a>
                 <div class="relative group h-full flex items-center">
-                    <button class="nav-link text-[var(--gold)]">
-                        <span style="text-decoration: underline; text-underline-offset: 8px; text-decoration-color: var(--gold);">Services</span>
+                    <button class="nav-link text-[var(--navy)]">
+                            Services 
                         <span class="material-symbols-outlined text-sm">expand_more</span>
                     </button>
                     <div class="absolute top-[100%] left-0 w-64 bg-white shadow-2xl border-t-2 border-[var(--gold)] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[60]">
@@ -281,7 +333,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="space-y-4">
                 <a class="block py-3 text-sm font-bold tracking-widest uppercase text-white hover:text-[var(--gold)] transition-colors border-b border-white/10" href="../../">Home</a>
                 <div class="border-b border-white/10">
-                    <button class="flex items-center justify-between w-full py-3 text-sm font-bold tracking-widest uppercase text-[var(--gold)]" id="mobileServicesToggle">
+                    <button class="flex items-center justify-between w-full py-3 text-sm font-bold tracking-widest uppercase text-white hover:text-[var(--gold)] transition-colors" id="mobileServicesToggle">
                         Services
                         <span class="material-symbols-outlined">expand_more</span>
                     </button>
@@ -301,7 +353,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <a class="block py-3 text-sm font-bold tracking-widest uppercase text-white hover:text-[var(--gold)] transition-colors border-b border-white/10" href="../../#about">About</a>
                 <a class="block py-3 text-sm font-bold tracking-widest uppercase text-white hover:text-[var(--gold)] transition-colors border-b border-white/10" href="../../#testimonials">Reviews</a>
                 <a class="block py-3 text-sm font-bold tracking-widest uppercase text-white hover:text-[var(--gold)] transition-colors border-b border-white/10" href="/blogs">Blog</a>
-                <a class="block mt-6 px-6 py-4 text-center text-xs font-bold tracking-widest uppercase bg-[var(--gold)] text-[var(--navy)] hover:bg-[var(--gold-light)] transition-all" href="../contact.html">Book Now</a>
+                <a class="block mt-6 px-6 py-4 text-center text-xs font-bold tracking-widest uppercase bg-[var(--gold)] text-[var(--navy)] hover:bg-[var(--gold-light)] transition-all" href="/contact">Book Now</a>
             </div>
         </div>
     </header>
@@ -333,106 +385,106 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Service Details -->
     <section class="py-32 px-6 bg-white">
         <div class="max-w-7xl mx-auto">
-            <div class="mb-20">
+            <div class="mb-20 text-center">
                 <h2 class="text-[var(--gold)] text-[10px] tracking-[0.5em] uppercase font-bold mb-4">The Standard</h2>
                 <h3 class="text-4xl md:text-5xl serif text-[var(--navy)]">What's Included in Standard <span class="italic text-[var(--gold)]">Cleaning</span></h3>
-                <p class="text-sm text-slate-500 font-light mt-6 max-w-3xl leading-loose">Our comprehensive standard cleaning service covers every room in your home with meticulous attention to detail. Our dedicated team ensures a clutter-free environment that simplifies your life and enhances the welcoming atmosphere of your home.</p>
+                <p class="text-sm text-slate-500 font-light mt-6 max-w-3xl leading-loose mx-auto">Our comprehensive standard cleaning service covers every room in your home with meticulous attention to detail. Our dedicated team ensures a clutter-free environment that simplifies your life and enhances the welcoming atmosphere of your home.</p>
             </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-x-24 gap-y-12">
-                <div>
-                    <div class="flex items-center gap-3 mb-6">
+                <div class="text-center md:text-left">
+                    <div class="flex items-center gap-3 mb-6 justify-center md:justify-start">
                         <span class="material-symbols-outlined text-[var(--gold)] text-3xl">countertops</span>
                         <h3 class="text-lg font-bold tracking-wide uppercase text-[var(--navy)]">Kitchen</h3>
                     </div>
-                    <ul class="space-y-3">
-                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="material-symbols-outlined text-[var(--gold)] text-lg">check_circle</span><span>Inside Microwave</span></li>
-                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="material-symbols-outlined text-[var(--gold)] text-lg">check_circle</span><span>Glass Surfaces</span></li>
-                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="material-symbols-outlined text-[var(--gold)] text-lg">check_circle</span><span>Stovetop</span></li>
-                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="material-symbols-outlined text-[var(--gold)] text-lg">check_circle</span><span>Outside of Appliances</span></li>
-                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="material-symbols-outlined text-[var(--gold)] text-lg">check_circle</span><span>Empty Trash</span></li>
-                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="material-symbols-outlined text-[var(--gold)] text-lg">check_circle</span><span>Backsplash</span></li>
-                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="material-symbols-outlined text-[var(--gold)] text-lg">check_circle</span><span>Exterior of Trash Can</span></li>
-                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="material-symbols-outlined text-[var(--gold)] text-lg">check_circle</span><span>Sweep Floors</span></li>
-                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="material-symbols-outlined text-[var(--gold)] text-lg">check_circle</span><span>Outside of Stove Hood</span></li>
-                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="material-symbols-outlined text-[var(--gold)] text-lg">check_circle</span><span>Mop Floors</span></li>
-                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="material-symbols-outlined text-[var(--gold)] text-lg">check_circle</span><span>Counter Tops</span></li>
-                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="material-symbols-outlined text-[var(--gold)] text-lg">check_circle</span><span>Sink</span></li>
-                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="material-symbols-outlined text-[var(--gold)] text-lg">check_circle</span><span>Mirrors</span></li>
-                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="material-symbols-outlined text-[var(--gold)] text-lg">check_circle</span><span>Shelves</span></li>
+                    <ul class="space-y-3 flex flex-col items-center md:items-start">
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Inside Microwave</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Glass Surfaces</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Stovetop</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Outside of Appliances</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Empty Trash</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Backsplash</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Exterior of Trash Can</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Sweep Floors</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Outside of Stove Hood</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Mop Floors</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Counter Tops</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Sink</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Mirrors</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Shelves</span></li>
                     </ul>
                 </div>
 
-                <div>
-                    <div class="flex items-center gap-3 mb-6">
+                <div class="text-center md:text-left">
+                    <div class="flex items-center gap-3 mb-6 justify-center md:justify-start">
                         <span class="material-symbols-outlined text-[var(--gold)] text-3xl">bathtub</span>
                         <h3 class="text-lg font-bold tracking-wide uppercase text-[var(--navy)]">Bathrooms</h3>
                     </div>
-                    <ul class="space-y-3">
-                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="material-symbols-outlined text-[var(--gold)] text-lg">check_circle</span><span>Shower</span></li>
-                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="material-symbols-outlined text-[var(--gold)] text-lg">check_circle</span><span>Tub</span></li>
-                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="material-symbols-outlined text-[var(--gold)] text-lg">check_circle</span><span>Polish Faucets</span></li>
-                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="material-symbols-outlined text-[var(--gold)] text-lg">check_circle</span><span>Mirrors</span></li>
-                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="material-symbols-outlined text-[var(--gold)] text-lg">check_circle</span><span>Empty Trash</span></li>
-                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="material-symbols-outlined text-[var(--gold)] text-lg">check_circle</span><span>Toilets</span></li>
-                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="material-symbols-outlined text-[var(--gold)] text-lg">check_circle</span><span>Glass Surfaces</span></li>
-                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="material-symbols-outlined text-[var(--gold)] text-lg">check_circle</span><span>Sweep Floors</span></li>
-                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="material-symbols-outlined text-[var(--gold)] text-lg">check_circle</span><span>Counters</span></li>
-                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="material-symbols-outlined text-[var(--gold)] text-lg">check_circle</span><span>Shelves</span></li>
-                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="material-symbols-outlined text-[var(--gold)] text-lg">check_circle</span><span>Mop Floors</span></li>
-                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="material-symbols-outlined text-[var(--gold)] text-lg">check_circle</span><span>Sink</span></li>
+                    <ul class="space-y-3 flex flex-col items-center md:items-start">
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Shower</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Tub</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Polish Faucets</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Mirrors</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Empty Trash</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Toilets</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Glass Surfaces</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Sweep Floors</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Counters</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Shelves</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Mop Floors</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Sink</span></li>
                     </ul>
                 </div>
 
-                <div>
-                    <div class="flex items-center gap-3 mb-6">
+                <div class="text-center md:text-left">
+                    <div class="flex items-center gap-3 mb-6 justify-center md:justify-start">
                         <span class="material-symbols-outlined text-[var(--gold)] text-3xl">bed</span>
                         <h3 class="text-lg font-bold tracking-wide uppercase text-[var(--navy)]">Bedrooms</h3>
                     </div>
-                    <ul class="space-y-3">
-                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="material-symbols-outlined text-[var(--gold)] text-lg">check_circle</span><span>Sweep Floors</span></li>
-                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="material-symbols-outlined text-[var(--gold)] text-lg">check_circle</span><span>Make Beds</span></li>
-                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="material-symbols-outlined text-[var(--gold)] text-lg">check_circle</span><span>Mirrors</span></li>
-                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="material-symbols-outlined text-[var(--gold)] text-lg">check_circle</span><span>Shelves</span></li>
-                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="material-symbols-outlined text-[var(--gold)] text-lg">check_circle</span><span>Empty Trash</span></li>
-                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="material-symbols-outlined text-[var(--gold)] text-lg">check_circle</span><span>Mop Floors</span></li>
-                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="material-symbols-outlined text-[var(--gold)] text-lg">check_circle</span><span>Light Dusting of Furniture</span></li>
-                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="material-symbols-outlined text-[var(--gold)] text-lg">check_circle</span><span>Vacuum Floors</span></li>
+                    <ul class="space-y-3 flex flex-col items-center md:items-start">
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Sweep Floors</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Make Beds</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Mirrors</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Shelves</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Empty Trash</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Mop Floors</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Light Dusting of Furniture</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Vacuum Floors</span></li>
                     </ul>
                 </div>
 
-                <div>
-                    <div class="flex items-center gap-3 mb-6">
+                <div class="text-center md:text-left">
+                    <div class="flex items-center gap-3 mb-6 justify-center md:justify-start">
                         <span class="material-symbols-outlined text-[var(--gold)] text-3xl">weekend</span>
                         <h3 class="text-lg font-bold tracking-wide uppercase text-[var(--navy)]">Living Area</h3>
                     </div>
-                    <ul class="space-y-3">
-                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="material-symbols-outlined text-[var(--gold)] text-lg">check_circle</span><span>Glass Surfaces</span></li>
-                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="material-symbols-outlined text-[var(--gold)] text-lg">check_circle</span><span>Empty Trash</span></li>
-                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="material-symbols-outlined text-[var(--gold)] text-lg">check_circle</span><span>Mirrors</span></li>
-                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="material-symbols-outlined text-[var(--gold)] text-lg">check_circle</span><span>Shelves</span></li>
-                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="material-symbols-outlined text-[var(--gold)] text-lg">check_circle</span><span>Mop Floor</span></li>
-                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="material-symbols-outlined text-[var(--gold)] text-lg">check_circle</span><span>Light Dusting of Furniture</span></li>
-                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="material-symbols-outlined text-[var(--gold)] text-lg">check_circle</span><span>Vacuum Floors & Rugs</span></li>
+                    <ul class="space-y-3 flex flex-col items-center md:items-start">
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Glass Surfaces</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Empty Trash</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Mirrors</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Shelves</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Mop Floor</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Light Dusting of Furniture</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Vacuum Floors & Rugs</span></li>
                     </ul>
                 </div>
 
-                <div>
-                    <div class="flex items-center gap-3 mb-6">
+                <div class="text-center md:text-left">
+                    <div class="flex items-center gap-3 mb-6 justify-center md:justify-start">
                         <span class="material-symbols-outlined text-[var(--gold)] text-3xl">local_laundry_service</span>
                         <h3 class="text-lg font-bold tracking-wide uppercase text-[var(--navy)]">Laundry Room</h3>
                     </div>
-                    <ul class="space-y-3">
-                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="material-symbols-outlined text-[var(--gold)] text-lg">check_circle</span><span>Outside of Appliances</span></li>
-                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="material-symbols-outlined text-[var(--gold)] text-lg">check_circle</span><span>Glass Surfaces</span></li>
-                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="material-symbols-outlined text-[var(--gold)] text-lg">check_circle</span><span>Empty Trash</span></li>
-                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="material-symbols-outlined text-[var(--gold)] text-lg">check_circle</span><span>Sinks</span></li>
-                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="material-symbols-outlined text-[var(--gold)] text-lg">check_circle</span><span>Sweep Floors</span></li>
-                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="material-symbols-outlined text-[var(--gold)] text-lg">check_circle</span><span>Counters</span></li>
-                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="material-symbols-outlined text-[var(--gold)] text-lg">check_circle</span><span>Light Dusting of Furniture</span></li>
-                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="material-symbols-outlined text-[var(--gold)] text-lg">check_circle</span><span>Mop Floor</span></li>
-                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="material-symbols-outlined text-[var(--gold)] text-lg">check_circle</span><span>Mirrors</span></li>
-                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="material-symbols-outlined text-[var(--gold)] text-lg">check_circle</span><span>Shelves</span></li>
-                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="material-symbols-outlined text-[var(--gold)] text-lg">check_circle</span><span>Vacuum Rugs</span></li>
+                    <ul class="space-y-3 flex flex-col items-center md:items-start">
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Outside of Appliances</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Glass Surfaces</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Empty Trash</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Sinks</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Sweep Floors</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Counters</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Light Dusting of Furniture</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Mop Floor</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Mirrors</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Shelves</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Vacuum Rugs</span></li>
                     </ul>
                 </div>
             </div>
@@ -493,8 +545,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 At Pristine Clean Services, we're committed to eco-friendly cleaning practices that protect your family, pets, and the environment. Our Toronto, Mississauga, Oakville, Brampton, and Milton cleaning services use green cleaning products and sustainable methods that deliver exceptional results without harmful chemicals.
             </p>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-left max-w-5xl mx-auto">
-                <div>
-                    <div class="flex items-center gap-3 mb-4">
+                <div class="text-center md:text-left">
+                    <div class="flex items-center gap-3 mb-4 justify-center md:justify-start">
                         <span class="material-symbols-outlined text-[var(--gold)] text-3xl">grass</span>
                         <h3 class="text-sm font-bold tracking-widest uppercase text-[var(--navy)]">Green Cleaning Products</h3>
             </div>
@@ -505,8 +557,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <li>• Effective cleaning power without toxic residues</li>
                     </ul>
                 </div>
-                <div>
-                    <div class="flex items-center gap-3 mb-4">
+                <div class="text-center md:text-left">
+                    <div class="flex items-center gap-3 mb-4 justify-center md:justify-start">
                         <span class="material-symbols-outlined text-[var(--gold)] text-3xl">recycling</span>
                         <h3 class="text-sm font-bold tracking-widest uppercase text-[var(--navy)]">Sustainable Practices</h3>
                     </div>
@@ -517,8 +569,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <li>• Environmentally responsible disposal of cleaning materials</li>
                     </ul>
                 </div>
-                <div>
-                    <div class="flex items-center gap-3 mb-4">
+                <div class="text-center md:text-left">
+                    <div class="flex items-center gap-3 mb-4 justify-center md:justify-start">
                         <span class="material-symbols-outlined text-[var(--gold)] text-3xl">health_and_safety</span>
                         <h3 class="text-sm font-bold tracking-widest uppercase text-[var(--navy)]">Health Benefits</h3>
                     </div>
@@ -539,16 +591,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Our Work Section -->
     <section class="py-32 px-6 bg-white">
         <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
-                <div>
-                    <span class="text-[var(--gold)] text-[10px] tracking-[0.4em] uppercase font-bold block mb-4">The Results</span>
-                    <h2 class="text-4xl md:text-5xl serif text-[var(--navy)]">Our <span class="italic text-[var(--gold)]">Work</span></h2>
-                </div>
-                <p class="max-w-md text-sm text-slate-500 font-light leading-relaxed">
+            <div class="text-center mb-20">
+                <span class="text-[var(--gold)] text-[10px] tracking-[0.4em] uppercase font-bold block mb-4">The Results</span>
+                <h2 class="text-4xl md:text-5xl serif text-[var(--navy)] mb-6">Our <span class="italic text-[var(--gold)]">Work</span></h2>
+                <p class="max-w-md text-sm text-slate-500 font-light leading-relaxed mx-auto">
                     See the difference our professional cleaning services make
                 </p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 work-carousel">
                 <div class="space-y-6">
                     <div class="aspect-[4/5] overflow-hidden">
                         <img alt="Clean polished floor" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" src="../../assets/images/floor.jpg" loading="lazy" onerror="this.onerror=null;this.src='../../assets/images/@floor.jpg';"/>
@@ -774,10 +824,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </footer>
 
-    <script src="../../assets/js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <!-- EmailJS for sending email notifications -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="../../assets/js/script.js" defer></script>
     <script src="../../assets/js/hero-form.js" defer></script>
     
     <script>
@@ -790,26 +840,39 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             const mobileServicesToggle = document.getElementById('mobileServicesToggle');
             const mobileServicesMenu = document.getElementById('mobileServicesMenu');
 
-            function openMenu() {
-                mobileMenu.classList.add('active');
-                mobileBackdrop.classList.add('active');
-                document.body.style.overflow = 'hidden';
+            function closeMenu() {
+                if (mobileMenu) mobileMenu.classList.remove('active');
+                if (mobileBackdrop) mobileBackdrop.classList.remove('active');
+                document.body.style.overflow = '';
             }
 
-            function closeMenu() {
-                mobileMenu.classList.remove('active');
-                mobileBackdrop.classList.remove('active');
-                document.body.style.overflow = '';
+            function openMenu(e) {
+                e.stopPropagation();
+                if (mobileMenu) mobileMenu.classList.add('active');
+                if (mobileBackdrop) mobileBackdrop.classList.add('active');
+                document.body.style.overflow = 'hidden';
             }
 
             if (mobileMenuBtn) {
                 mobileMenuBtn.addEventListener('click', openMenu);
             }
             if (closeMobileMenu) {
-                closeMobileMenu.addEventListener('click', closeMenu);
+                closeMobileMenu.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    closeMenu();
+                });
             }
             if (mobileBackdrop) {
-                mobileBackdrop.addEventListener('click', closeMenu);
+                mobileBackdrop.addEventListener('click', function(e) {
+                    if (e.target === mobileBackdrop) {
+                        closeMenu();
+                    }
+                });
+            }
+            if (mobileMenu) {
+                mobileMenu.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                });
             }
             if (mobileServicesToggle) {
                 mobileServicesToggle.addEventListener('click', function() {
@@ -820,6 +883,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     }
                 });
             }
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && mobileMenu && mobileMenu.classList.contains('active')) {
+                    closeMenu();
+                }
+            });
         });
 
         // Form Navigation

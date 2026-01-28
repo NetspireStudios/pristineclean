@@ -178,7 +178,7 @@
             max-width: 400px;
             height: 100vh;
             background: var(--navy);
-            z-index: 1100;
+            z-index: 10001;
             padding: 2rem;
             overflow-y: auto;
             transform: translateX(100%);
@@ -195,8 +195,12 @@
             left: 0;
             width: 100%;
             height: 100%;
+            width: 100vw;
+            height: 100vh;
             background: rgba(0, 0, 0, 0.5);
-            z-index: 1099;
+            z-index: 10000;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
         }
         .mobile-backdrop.active {
             display: block;
@@ -564,16 +568,17 @@
         const mobileServicesToggle = document.getElementById('mobileServicesToggle');
         const mobileServicesMenu = document.getElementById('mobileServicesMenu');
 
-        function openMobileMenu() {
-            mobileMenu.classList.add('active');
-            mobileBackdrop.classList.add('active');
-            document.body.style.overflow = 'hidden';
+        function closeMobileMenuFunc() {
+            if (mobileMenu) mobileMenu.classList.remove('active');
+            if (mobileBackdrop) mobileBackdrop.classList.remove('active');
+            document.body.style.overflow = '';
         }
 
-        function closeMobileMenuFunc() {
-            mobileMenu.classList.remove('active');
-            mobileBackdrop.classList.remove('active');
-            document.body.style.overflow = '';
+        function openMobileMenu(e) {
+            e.stopPropagation();
+            if (mobileMenu) mobileMenu.classList.add('active');
+            if (mobileBackdrop) mobileBackdrop.classList.add('active');
+            document.body.style.overflow = 'hidden';
         }
 
         if (mobileMenuBtn) {
@@ -581,11 +586,24 @@
         }
 
         if (closeMobileMenu) {
-            closeMobileMenu.addEventListener('click', closeMobileMenuFunc);
+            closeMobileMenu.addEventListener('click', function(e) {
+                e.stopPropagation();
+                closeMobileMenuFunc();
+            });
         }
 
         if (mobileBackdrop) {
-            mobileBackdrop.addEventListener('click', closeMobileMenuFunc);
+            mobileBackdrop.addEventListener('click', function(e) {
+                if (e.target === mobileBackdrop) {
+                    closeMobileMenuFunc();
+                }
+            });
+        }
+
+        if (mobileMenu) {
+            mobileMenu.addEventListener('click', function(e) {
+                e.stopPropagation();
+            });
         }
 
         if (mobileServicesToggle) {
@@ -595,6 +613,12 @@
                 icon.style.transform = mobileServicesMenu.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
             });
         }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && mobileMenu && mobileMenu.classList.contains('active')) {
+                closeMobileMenuFunc();
+            }
+        });
     </script>
 </body>
 </html>
