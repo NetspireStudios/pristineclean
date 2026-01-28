@@ -1127,6 +1127,43 @@ We don't rush through rooms. We don't cut corners. We focus on doing the work pr
         // Make goToSlide2 available globally
         window.goToSlide2 = goToSlide2;
         
+        // Handle form submission
+        const heroQuoteForm = document.getElementById('heroQuoteForm');
+        if (heroQuoteForm) {
+            heroQuoteForm.addEventListener('submit', function(e) {
+                e.preventDefault(); // Prevent default form submission
+                
+                // Validate slide 2 fields
+                const city = document.getElementById('hero-city');
+                const timeline = document.querySelector('input[name="timeline"]:checked');
+                
+                if (!city.value.trim()) {
+                    alert('Please enter your city');
+                    city.focus();
+                    return;
+                }
+                
+                if (!timeline) {
+                    alert('Please select a timeline');
+                    return;
+                }
+                
+                // Show success message
+                document.getElementById('slide2').style.display = 'none';
+                const successDiv = document.getElementById('formSuccess');
+                if (successDiv) {
+                    successDiv.style.display = 'block';
+                }
+                
+                // Optional: Reset form after 3 seconds and go back to slide 1
+                setTimeout(function() {
+                    heroQuoteForm.reset();
+                    if (successDiv) successDiv.style.display = 'none';
+                    document.getElementById('slide1').style.display = 'block';
+                }, 3000);
+            });
+        }
+        
         // Smooth scroll to booking section
         function scrollToBooking(e) {
                             e.preventDefault();
