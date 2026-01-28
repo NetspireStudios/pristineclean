@@ -157,6 +157,14 @@
                 scroll-snap-align: center;
                 max-width: 85%;
             }
+            
+            /* Reduce spacing between Our Work and Booking sections on mobile */
+            section:has(.work-carousel) {
+                padding-bottom: 3rem !important;
+            }
+            section:has(.work-carousel) + section {
+                padding-top: 3rem !important;
+            }
         }
     </style>
      <!-- Google tag (gtag.js) -->
