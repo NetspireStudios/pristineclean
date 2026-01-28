@@ -221,39 +221,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             .mobile-banner { display: none; }
             .desktop-banner { display: inline; }
         }
-        .mobile-menu {
-            display: none;
-            position: fixed;
-            top: 0;
-            right: 0;
-            width: 80%;
-            max-width: 400px;
-            height: 100vh;
-            background: var(--navy);
-            padding: 2rem;
-            z-index: 1100;
-            overflow-y: auto;
-            transform: translateX(100%);
-            transition: transform 0.3s ease;
-        }
-        .mobile-menu.active {
-            display: block;
-            transform: translateX(0);
-        }
-        .mobile-backdrop {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 1099;
-            cursor: pointer;
-        }
-        .mobile-backdrop.active {
-            display: block;
-        }
         .hamburger {
             display: flex;
             flex-direction: column;
