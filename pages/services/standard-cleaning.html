@@ -114,6 +114,19 @@
             background: var(--gold);
             transition: all 0.3s;
         }
+        /* Mobile text centering */
+        @media (max-width: 768px) {
+            section h1, section h2, section h3, section h4, section p {
+                text-align: center !important;
+            }
+            section .flex:not(.mobile-menu *):not(nav *):not(header *) {
+                justify-content: center !important;
+            }
+            section ul, section div {
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
     </style>
      <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-65SGS6S839"></script>
