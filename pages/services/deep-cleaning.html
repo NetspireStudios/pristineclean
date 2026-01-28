@@ -1,11 +1,25 @@
 <!DOCTYPE html>
-<html class="scroll-smooth" lang="en">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
     <title>Deep Cleaning Service Toronto | Pristine Clean Services</title>
     <meta name="description" content="Looking for a reliable deep cleaning service Toronto? Pristine Clean Services delivers thorough, professional deep cleans for homes and offices. Refresh your space today.">
     <meta name="keywords" content="deep cleaning Toronto, deep cleaning service GTA, eco-friendly deep cleaning, green cleaning Mississauga, sustainable deep cleaning Oakville, move-in cleaning Brampton, deep house cleaning Milton, eco deep cleaning Etobicoke">
+    <meta name="author" content="Pristine Clean Services">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Deep Cleaning Service Toronto | Pristine Clean Services">
+    <meta property="og:description" content="Professional deep cleaning service for homes and offices in Toronto. Thorough, eco-friendly cleaning that reaches every corner.">
+    <meta property="og:type" content="service">
+    <meta property="og:url" content="https://www.pristinecleanservices.ca/services/deep-cleaning">
+    <meta property="og:image" content="https://www.pristinecleanservices.ca/assets/images/washroom%205.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" content="https://www.pristinecleanservices.ca/services/deep-cleaning">
     
     <!-- Preload Resources -->
     <link rel="preload" href="../../assets/css/style.css?v=1.1" as="style">
@@ -19,48 +33,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-65SGS6S839"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-65SGS6S839');
-    </script>
-
-    <meta name="google-site-verification" content="TXpqjXFvFjIQq_nZPzFqf2eOiTgTKymEA_WJPUI35kw" />
-    
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-NPQCLFBX');</script>
-    <!-- End Google Tag Manager -->
-    
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Pristine Clean Services",
-      "url": "https://www.pristinecleanservices.ca/",
-      "logo": "https://www.pristinecleanservices.ca/assets/images/logo.png"
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org/",
-      "@type": "WebSite",
-      "name": "Pristine Clean Services",
-      "url": "https://www.pristinecleanservices.ca/",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://www.pristinecleanservices.ca/blogs{search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
-    }
-    </script>
     
     <style type="text/tailwindcss">
         :root {
@@ -91,6 +63,9 @@
         .dropdown-item {
             @apply block px-6 py-3 text-[10px] tracking-widest uppercase text-[var(--navy)] hover:bg-slate-50 hover:text-[var(--gold)] transition-colors border-b border-slate-50 last:border-0;
         }
+        .luxury-shadow {
+            box-shadow: 0 20px 50px rgba(2, 2, 76, 0.05);
+        }
         .glass-card {
             background: rgba(255, 255, 255, 0.92);
             backdrop-filter: blur(12px);
@@ -103,99 +78,135 @@
             content: '';
             @apply absolute inset-1 border border-white/30 pointer-events-none;
         }
-        
-        /* Mobile Menu Styles */
-        .hamburger {
-            @apply flex flex-col gap-1.5 cursor-pointer lg:hidden;
-        }
-        .hamburger span {
-            @apply w-7 h-0.5 bg-[var(--navy)] transition-all;
-        }
-        .mobile-backdrop {
-            @apply fixed inset-0 bg-black/50 opacity-0 invisible transition-all duration-300 z-[60];
-        }
-        .mobile-backdrop.active {
-            @apply opacity-100 visible;
-        }
-        .mobile-menu {
-            @apply fixed top-0 right-0 w-80 h-full bg-[var(--navy)] transform translate-x-full transition-transform duration-300 z-[70] p-8 overflow-y-auto;
-        }
-        .mobile-menu.active {
-            @apply translate-x-0;
-        }
-        
         .promo-banner { position: fixed; top: 0; left: 0; right: 0; z-index: 1001; background: var(--gold); }
         @media (max-width: 1024px) {
             .promo-banner { z-index: 50 !important; }
         }
         .popular-badge {
-            @apply absolute top-40 right-5 bg-gradient-to-br from-green-500 to-green-600 text-white px-6 py-3 rounded-full font-bold text-sm shadow-xl z-10 flex items-center gap-2;
+            @apply inline-flex items-center gap-2 bg-gradient-to-br from-green-500 to-green-600 text-white px-4 py-2 rounded-full font-bold text-xs shadow-lg mb-6;
         }
+        /* Mobile Menu Styles */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 80%;
+            max-width: 400px;
+            height: 100vh;
+            background: var(--navy);
+            z-index: 1100;
+            padding: 2rem;
+            overflow-y: auto;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
+        .mobile-menu.active {
+            display: block;
+            transform: translateX(0);
+        }
+        .mobile-backdrop {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1099;
+        }
+        .mobile-backdrop.active {
+            display: block;
+        }
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+        }
+        .hamburger span {
+            width: 25px;
+            height: 2px;
+            background: var(--gold);
+            transition: all 0.3s;
+        }
+        /* Mobile text centering */
         @media (max-width: 768px) {
-            .popular-badge {
-                @apply static inline-flex mx-auto mb-5 w-fit;
+            .mobile-center {
+                text-align: center !important;
             }
-        }
-        
-        /* Mobile hero: centered text, two text blocks with CTA in between */
-        @media (max-width: 1023px) {
-            .service-hero-mobile.flex {
-                flex-direction: column;
-                gap: 0;
-            }
-            .service-hero-mobile .hero-content-box {
-                @apply flex flex-col text-center;
-            }
-            .service-hero-mobile .hero-content-box * {
-                @apply text-center mx-auto;
-            }
-            .service-hero-mobile .hero-content-box h1,
-            .service-hero-mobile .hero-content-box h2,
-            .service-hero-mobile .hero-content-box h3,
-            .service-hero-mobile .hero-content-box span,
-            .service-hero-mobile .hero-content-box p {
+            .mobile-center * {
                 text-align: center !important;
                 margin-left: auto !important;
                 margin-right: auto !important;
-            }
-            .service-hero-mobile .popular-badge {
-                @apply flex mx-auto mb-6;
-                position: static !important;
-                display: inline-flex !important;
-                margin-left: auto !important;
-                margin-right: auto !important;
-            }
-            .service-hero-mobile .hero-block-1,
-            .service-hero-mobile .hero-block-2 {
-                @apply text-center mb-8;
-            }
-            .service-hero-mobile .hero-block-1 p,
-            .service-hero-mobile .hero-block-2 p {
-                @apply mx-auto text-center;
-                text-align: center !important;
-            }
-            .service-hero-mobile .hero-cta-mid {
-                @apply flex flex-col items-center justify-center gap-4 text-center my-8;
-            }
-            .service-hero-mobile .hero-cta-mid .flex {
-                @apply justify-center;
-            }
-            .service-hero-mobile .hero-cta-mid a {
-                @apply mx-auto;
-            }
-        }
-        @media (min-width: 1024px) {
-            .service-hero-mobile .hero-block-1 {
-                order: 1;
-            }
-            .service-hero-mobile .hero-block-2 {
-                order: 2;
-            }
-            .service-hero-mobile .hero-cta-mid {
-                order: 3;
             }
         }
     </style>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-65SGS6S839"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-65SGS6S839');
+    </script>
+
+    <meta name="google-site-verification" content="TXpqjXFvFjIQq_nZPzFqf2eOiTgTKymEA_WJPUI35kw" />
+    
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NPQCLFBX');</script>
+    <!-- End Google Tag Manager -->
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Deep Cleaning Service",
+        "description": "Professional deep cleaning service for homes and offices in Toronto and GTA. Thorough cleaning that reaches every corner.",
+        "provider": {
+            "@type": "LocalBusiness",
+            "name": "Pristine Clean Services",
+            "url": "https://www.pristinecleanservices.ca",
+            "telephone": "+14375458704",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Toronto",
+                "addressRegion": "ON",
+                "addressCountry": "CA"
+            }
+        },
+        "serviceType": "Deep Cleaning",
+        "areaServed": "Greater Toronto Area"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Pristine Clean Services",
+      "url": "https://www.pristinecleanservices.ca/",
+      "logo": "https://www.pristinecleanservices.ca/assets/images/logo.png"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "WebSite",
+      "name": "Pristine Clean Services",
+      "url": "https://www.pristinecleanservices.ca/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.pristinecleanservices.ca/blogs{search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
@@ -222,7 +233,7 @@
                 <a class="nav-link text-[var(--navy)]" href="../../">Home</a>
                 <div class="relative group h-full flex items-center">
                     <button class="nav-link text-[var(--gold)]">
-                        Services
+                        <span style="text-decoration: underline; text-underline-offset: 8px; text-decoration-color: var(--gold);">Services</span>
                         <span class="material-symbols-outlined text-sm">expand_more</span>
                     </button>
                     <div class="absolute top-[100%] left-0 w-64 bg-white shadow-2xl border-t-2 border-[var(--gold)] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[60]">
@@ -251,10 +262,10 @@
                 </button>
             </div>
         </nav>
-
+        
         <!-- Mobile Menu Backdrop -->
         <div class="mobile-backdrop" id="mobileBackdrop"></div>
-
+        
         <!-- Mobile Menu -->
         <div class="mobile-menu" id="mobileMenu">
             <div class="flex items-center justify-between mb-8">
@@ -297,469 +308,479 @@
         </div>
     </header>
 
-    <main>
-        <!-- Service Hero -->
-        <section class="service-hero-mobile relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-32 pb-16">
+    <!-- Service Hero -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden pt-32">
+        <img alt="Sparkling clean washroom" class="absolute inset-0 w-full h-full object-cover" src="../../assets/images/washroom 5.jpg" loading="lazy"/>
+        <div class="absolute inset-0 bg-black/30"></div>
+        <div class="relative z-10 text-center px-6 max-w-4xl mobile-center">
             <div class="popular-badge">
                 <i class="fas fa-star" style="color: #ffd54d;"></i>
                 Most Popular Pick
             </div>
-            <img alt="Sparkling clean washroom" class="absolute inset-0 w-full h-full object-cover" src="../../assets/images/washroom 5.jpg" loading="lazy"/>
-            <div class="absolute inset-0 bg-black/30"></div>
-            <div class="relative z-10 max-w-3xl w-full px-6">
-                <div class="bg-white/95 p-12 md:p-20 border-[1px] border-[var(--gold)] shadow-2xl text-center">
-                    <div class="hero-content-box flex flex-col">
-                        <div class="popular-badge lg:hidden">
-                            <i class="fas fa-star" style="color: #ffd54d;"></i>
-                            Most Popular Pick
-                        </div>
-                        <span class="text-[var(--gold)] text-[11px] tracking-[0.6em] uppercase font-bold block mb-8 text-center">Most Popular Service</span>
-                        <h1 class="text-5xl md:text-7xl text-[var(--navy)] serif font-normal mb-8 leading-tight text-center mx-auto">Deep <span class="italic block text-[var(--gold)]">Cleaning</span></h1>
-                        <div class="w-20 h-[2px] bg-[var(--gold)] mx-auto mb-10"></div>
-                        <div class="hero-block-1 text-center">
-                            <p class="text-slate-600 text-sm md:text-lg font-light tracking-wide mb-4 leading-relaxed mx-auto max-w-xl text-center">
-                                Services for Toronto Homes That Need a Fresh Start
-                            </p>
-                            <p class="text-slate-600 text-sm md:text-base font-light tracking-wide mb-0 leading-relaxed mx-auto max-w-xl text-center">
-                                Homes go through busy seasons. Some weeks everything is in order, and other weeks life gets away from you. Dust builds up, corners start to collect things you meant to sort, and the smaller tasks that do not seem urgent begin to pile into something noticeable. Many homeowners reach a point where regular cleaning is not enough. What they need is a proper reset. That is where a deep cleaning becomes important.
-                            </p>
-                        </div>
-                        <div class="hero-cta-mid text-center">
-                            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6 text-sm">
-                                <div class="flex items-center gap-2">
-                                    <span class="material-symbols-outlined text-[var(--gold)]">schedule</span>
-                                    <span class="font-semibold">4-8 Hours</span>
-                                </div>
-                                <div class="flex items-center gap-2">
-                                    <span class="material-symbols-outlined text-[var(--gold)]">event</span>
-                                    <span class="font-semibold">One-time or Seasonal</span>
-                                </div>
-                            </div>
-                            <a class="inline-block bg-[var(--navy)] text-white px-12 py-6 text-[10px] tracking-[0.4em] uppercase hover:bg-[var(--gold)] transition-all font-bold shadow-2xl mx-auto" href="../contact.html">Get Inquiry</a>
-                        </div>
-                        <div class="hero-block-2 text-center">
-                            <p class="text-slate-600 text-sm md:text-base font-light tracking-wide mb-0 leading-relaxed mx-auto max-w-xl text-center">
-                                Pristine Clean Services created its deep cleaning approach for people who want their homes to feel lighter, fresher, and renewed. This type of cleaning reaches areas that often get missed during weekly upkeep. When someone searches for a deep cleaning service Toronto, they are usually looking for a reliable team that can handle the work with care and respect for their home. That is exactly what we provide. To start, schedule your appointment today.
-                            </p>
-                        </div>
-                    </div>
+            <span class="text-white text-[10px] tracking-[0.6em] uppercase mb-6 block font-medium">Most Popular Service</span>
+            <h1 class="text-6xl md:text-8xl text-white serif font-normal mb-8 leading-tight">Deep <span class="italic">Cleaning</span></h1>
+            <p class="text-white/90 text-lg md:text-xl font-light tracking-wide max-w-2xl mx-auto mb-4 leading-relaxed">
+                Services for Toronto Homes That Need a Fresh Start
+            </p>
+            <p class="text-white/85 text-base md:text-lg font-light max-w-2xl mx-auto mb-6 leading-relaxed">
+                Homes go through busy seasons. Some weeks everything is in order, and other weeks life gets away from you. Dust builds up, corners start to collect things you meant to sort, and the smaller tasks that do not seem urgent begin to pile into something noticeable. Many homeowners reach a point where regular cleaning is not enough. What they need is a proper reset. That is where a deep cleaning becomes important.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-6 mb-6 text-white/90">
+                <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-[var(--gold)]">schedule</span>
+                    <span class="text-sm font-light">4-8 Hours</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-[var(--gold)]">event</span>
+                    <span class="text-sm font-light">One-time or Seasonal</span>
                 </div>
             </div>
-        </section>
+            <p class="text-white/85 text-base font-light max-w-2xl mx-auto mb-10 leading-relaxed">
+                Pristine Clean Services created its deep cleaning approach for people who want their homes to feel lighter, fresher, and renewed. This type of cleaning reaches areas that often get missed during weekly upkeep. When someone searches for a deep cleaning service Toronto, they are usually looking for a reliable team that can handle the work with care and respect for their home. That is exactly what we provide. To start, schedule your appointment today.
+            </p>
+            <a class="inline-block border border-white text-white px-10 py-4 text-[10px] tracking-[0.3em] uppercase hover:bg-white hover:text-[var(--navy)] transition-all font-bold" href="../contact.html">Get Inquiry</a>
+        </div>
+    </section>
 
-        <!-- What's Included Section -->
-        <section class="py-32 px-6 bg-white">
-            <div class="max-w-7xl mx-auto">
-                <div class="text-center mb-24">
-                    <span class="text-[var(--gold)] text-[11px] tracking-[0.5em] uppercase font-bold block mb-4">The Standard</span>
-                    <h2 class="text-4xl md:text-5xl serif text-[var(--navy)]">What's Included in Deep Cleaning</h2>
-                    <p class="mt-6 text-slate-500 font-light italic">Our deep cleaning service includes everything in our standard cleaning package, plus intensive cleaning of areas that require special attention. Perfect for seasonal cleaning, post-renovation cleanup, or preparing for special events.</p>
+    <!-- What's Included Section -->
+    <section class="py-32 px-6 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-24 mobile-center">
+                <span class="text-[var(--gold)] text-[11px] tracking-[0.5em] uppercase font-bold block mb-4">The Standard</span>
+                <h2 class="text-4xl md:text-5xl serif text-[var(--navy)]">What's Included in Deep Cleaning</h2>
+                <p class="mt-6 text-slate-500 font-light italic max-w-3xl mx-auto">Our deep cleaning service includes everything in our standard cleaning package, plus intensive cleaning of areas that require special attention. Perfect for seasonal cleaning, post-renovation cleanup, or preparing for special events.</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="p-10 border border-slate-100 hover:border-[var(--gold)] transition-colors group mobile-center">
+                    <span class="material-symbols-outlined text-4xl text-[var(--gold)] mb-6">check_circle</span>
+                    <h3 class="text-xl serif mb-4 text-[var(--navy)]">Standard Cleaning Included</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3 text-sm text-slate-500"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full"></span> All kitchen surfaces and appliances (exterior)</li>
+                        <li class="flex items-center gap-3 text-sm text-slate-500"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full"></span> Complete bathroom sanitization</li>
+                        <li class="flex items-center gap-3 text-sm text-slate-500"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full"></span> Dusting and vacuuming all rooms</li>
+                        <li class="flex items-center gap-3 text-sm text-slate-500"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full"></span> Floor mopping and carpet vacuuming</li>
+                        <li class="flex items-center gap-3 text-sm text-slate-500"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full"></span> Trash removal and basic organizing</li>
+                    </ul>
                 </div>
-                <div class="grid md:grid-cols-2 gap-12">
-                    <div class="p-10 border border-slate-100 hover:border-[var(--gold)] transition-colors group">
-                        <span class="material-symbols-outlined text-4xl text-[var(--gold)] mb-6">check_circle</span>
-                        <h3 class="text-xl serif mb-4 text-[var(--navy)]">Standard Cleaning Included</h3>
-                        <ul class="space-y-3">
-                            <li class="flex items-center gap-3 text-sm text-slate-500"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full"></span> All kitchen surfaces and appliances (exterior)</li>
-                            <li class="flex items-center gap-3 text-sm text-slate-500"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full"></span> Complete bathroom sanitization</li>
-                            <li class="flex items-center gap-3 text-sm text-slate-500"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full"></span> Dusting and vacuuming all rooms</li>
-                            <li class="flex items-center gap-3 text-sm text-slate-500"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full"></span> Floor mopping and carpet vacuuming</li>
-                            <li class="flex items-center gap-3 text-sm text-slate-500"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full"></span> Trash removal and basic organizing</li>
-                        </ul>
-                    </div>
-                    <div class="p-10 border border-slate-100 hover:border-[var(--gold)] transition-colors group bg-slate-50">
-                        <span class="material-symbols-outlined text-4xl text-[var(--gold)] mb-6">cleaning_services</span>
-                        <h3 class="text-xl serif mb-4 text-[var(--navy)]">PLUS Deep Cleaning Extras</h3>
-                        <ul class="space-y-3">
-                            <li class="flex items-center gap-3 text-sm text-slate-500"><span class="material-symbols-outlined text-[var(--gold)] text-base">add</span> Inside appliances (oven, refrigerator, microwave)</li>
-                            <li class="flex items-center gap-3 text-sm text-slate-500"><span class="material-symbols-outlined text-[var(--gold)] text-base">add</span> Baseboards and window sills throughout</li>
-                            <li class="flex items-center gap-3 text-sm text-slate-500"><span class="material-symbols-outlined text-[var(--gold)] text-base">add</span> Light fixtures and ceiling fans</li>
-                            <li class="flex items-center gap-3 text-sm text-slate-500"><span class="material-symbols-outlined text-[var(--gold)] text-base">add</span> Cabinet interiors and exteriors</li>
-                            <li class="flex items-center gap-3 text-sm text-slate-500"><span class="material-symbols-outlined text-[var(--gold)] text-base">add</span> Window cleaning (interior)</li>
-                            <li class="flex items-center gap-3 text-sm text-slate-500"><span class="material-symbols-outlined text-[var(--gold)] text-base">add</span> Deep scrub of bathrooms and kitchen</li>
-                            <li class="flex items-center gap-3 text-sm text-slate-500"><span class="material-symbols-outlined text-[var(--gold)] text-base">add</span> Detailed dusting of all surfaces</li>
-                            <li class="flex items-center gap-3 text-sm text-slate-500"><span class="material-symbols-outlined text-[var(--gold)] text-base">add</span> Behind and under furniture (moveable)</li>
-                        </ul>
-                    </div>
+                <div class="p-10 border border-slate-100 hover:border-[var(--gold)] transition-colors group bg-slate-50 mobile-center">
+                    <span class="material-symbols-outlined text-4xl text-[var(--gold)] mb-6">cleaning_services</span>
+                    <h3 class="text-xl serif mb-4 text-[var(--navy)]">PLUS Deep Cleaning Extras</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3 text-sm text-slate-500"><span class="material-symbols-outlined text-[var(--gold)] text-base">add</span> Inside appliances (oven, refrigerator, microwave)</li>
+                        <li class="flex items-center gap-3 text-sm text-slate-500"><span class="material-symbols-outlined text-[var(--gold)] text-base">add</span> Baseboards and window sills throughout</li>
+                        <li class="flex items-center gap-3 text-sm text-slate-500"><span class="material-symbols-outlined text-[var(--gold)] text-base">add</span> Light fixtures and ceiling fans</li>
+                        <li class="flex items-center gap-3 text-sm text-slate-500"><span class="material-symbols-outlined text-[var(--gold)] text-base">add</span> Cabinet interiors and exteriors</li>
+                        <li class="flex items-center gap-3 text-sm text-slate-500"><span class="material-symbols-outlined text-[var(--gold)] text-base">add</span> Window cleaning (interior)</li>
+                        <li class="flex items-center gap-3 text-sm text-slate-500"><span class="material-symbols-outlined text-[var(--gold)] text-base">add</span> Deep scrub of bathrooms and kitchen</li>
+                        <li class="flex items-center gap-3 text-sm text-slate-500"><span class="material-symbols-outlined text-[var(--gold)] text-base">add</span> Detailed dusting of all surfaces</li>
+                        <li class="flex items-center gap-3 text-sm text-slate-500"><span class="material-symbols-outlined text-[var(--gold)] text-base">add</span> Behind and under furniture (moveable)</li>
+                    </ul>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Room by Room Breakdown -->
-        <section class="bg-[var(--soft-white)] py-32 px-6">
-            <div class="max-w-7xl mx-auto">
-                <div class="text-center mb-20">
-                    <h2 class="text-4xl serif text-[var(--navy)]">Deep Cleaning Room by Room</h2>
-                    <div class="w-16 h-[1px] bg-[var(--gold)] mx-auto mt-6"></div>
+    <!-- Room by Room Breakdown -->
+    <section class="bg-[var(--soft-white)] py-32 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-20 mobile-center">
+                <h2 class="text-4xl serif text-[var(--navy)]">Deep Cleaning Room by Room</h2>
+                <div class="w-16 h-[1px] bg-[var(--gold)] mx-auto mt-6"></div>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-10 border border-slate-100 hover:border-[var(--gold)] transition-colors group mobile-center">
+                    <span class="material-symbols-outlined text-4xl text-[var(--gold)] mb-6">countertops</span>
+                    <h3 class="text-xl serif mb-4 text-[var(--navy)]">Kitchen Deep Clean</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start gap-2 text-xs text-slate-500"><span class="w-1 h-1 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Inside and outside of all appliances</span></li>
+                        <li class="flex items-start gap-2 text-xs text-slate-500"><span class="w-1 h-1 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Cabinet fronts and hardware</span></li>
+                        <li class="flex items-start gap-2 text-xs text-slate-500"><span class="w-1 h-1 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Backsplash deep scrub</span></li>
+                        <li class="flex items-start gap-2 text-xs text-slate-500"><span class="w-1 h-1 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Inside microwave and oven</span></li>
+                        <li class="flex items-start gap-2 text-xs text-slate-500"><span class="w-1 h-1 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Refrigerator shelves and drawers</span></li>
+                        <li class="flex items-start gap-2 text-xs text-slate-500"><span class="w-1 h-1 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Light fixtures and switches</span></li>
+                        <li class="flex items-start gap-2 text-xs text-slate-500"><span class="w-1 h-1 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Baseboards and windowsills</span></li>
+                    </ul>
                 </div>
-                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div class="bg-white p-10 border border-slate-100 hover:border-[var(--gold)] transition-colors group">
-                        <span class="material-symbols-outlined text-4xl text-[var(--gold)] mb-6">countertops</span>
-                        <h3 class="text-xl serif mb-4 text-[var(--navy)]">Kitchen Deep Clean</h3>
-                        <ul class="space-y-2">
-                            <li class="flex items-start gap-2 text-xs text-slate-500"><span class="w-1 h-1 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Inside and outside of all appliances</span></li>
-                            <li class="flex items-start gap-2 text-xs text-slate-500"><span class="w-1 h-1 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Cabinet fronts and hardware</span></li>
-                            <li class="flex items-start gap-2 text-xs text-slate-500"><span class="w-1 h-1 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Backsplash deep scrub</span></li>
-                            <li class="flex items-start gap-2 text-xs text-slate-500"><span class="w-1 h-1 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Inside microwave and oven</span></li>
-                            <li class="flex items-start gap-2 text-xs text-slate-500"><span class="w-1 h-1 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Refrigerator shelves and drawers</span></li>
-                            <li class="flex items-start gap-2 text-xs text-slate-500"><span class="w-1 h-1 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Light fixtures and switches</span></li>
-                            <li class="flex items-start gap-2 text-xs text-slate-500"><span class="w-1 h-1 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Baseboards and windowsills</span></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="bg-white p-10 border border-slate-100 hover:border-[var(--gold)] transition-colors group">
-                        <span class="material-symbols-outlined text-4xl text-[var(--gold)] mb-6">bathtub</span>
-                        <h3 class="text-xl serif mb-4 text-[var(--navy)]">Bathroom Deep Clean</h3>
-                        <ul class="space-y-2">
-                            <li class="flex items-start gap-2 text-xs text-slate-500"><span class="w-1 h-1 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Shower and tub deep scrub</span></li>
-                            <li class="flex items-start gap-2 text-xs text-slate-500"><span class="w-1 h-1 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Grout cleaning and disinfection</span></li>
-                            <li class="flex items-start gap-2 text-xs text-slate-500"><span class="w-1 h-1 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Toilet inside and behind</span></li>
-                            <li class="flex items-start gap-2 text-xs text-slate-500"><span class="w-1 h-1 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Cabinet interiors</span></li>
-                            <li class="flex items-start gap-2 text-xs text-slate-500"><span class="w-1 h-1 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Exhaust fan cleaning</span></li>
-                            <li class="flex items-start gap-2 text-xs text-slate-500"><span class="w-1 h-1 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Mirror and fixture polishing</span></li>
-                            <li class="flex items-start gap-2 text-xs text-slate-500"><span class="w-1 h-1 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Tile and grout restoration</span></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="bg-white p-10 border border-slate-100 hover:border-[var(--gold)] transition-colors group">
-                        <span class="material-symbols-outlined text-4xl text-[var(--gold)] mb-6">bed</span>
-                        <h3 class="text-xl serif mb-4 text-[var(--navy)]">Bedroom Deep Clean</h3>
-                        <ul class="space-y-2">
-                            <li class="flex items-start gap-2 text-xs text-slate-500"><span class="w-1 h-1 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Under bed cleaning (accessible)</span></li>
-                            <li class="flex items-start gap-2 text-xs text-slate-500"><span class="w-1 h-1 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Closet organization</span></li>
-                            <li class="flex items-start gap-2 text-xs text-slate-500"><span class="w-1 h-1 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Ceiling fan detailed cleaning</span></li>
-                            <li class="flex items-start gap-2 text-xs text-slate-500"><span class="w-1 h-1 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Window treatments dusting</span></li>
-                            <li class="flex items-start gap-2 text-xs text-slate-500"><span class="w-1 h-1 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Baseboards and moldings</span></li>
-                            <li class="flex items-start gap-2 text-xs text-slate-500"><span class="w-1 h-1 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Light switch and outlet cleaning</span></li>
-                            <li class="flex items-start gap-2 text-xs text-slate-500"><span class="w-1 h-1 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Furniture detailed dusting</span></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="bg-white p-10 border border-slate-100 hover:border-[var(--gold)] transition-colors group">
-                        <span class="material-symbols-outlined text-4xl text-[var(--gold)] mb-6">weekend</span>
-                        <h3 class="text-xl serif mb-4 text-[var(--navy)]">Living Areas Deep Clean</h3>
-                        <ul class="space-y-2">
-                            <li class="flex items-start gap-2 text-xs text-slate-500"><span class="w-1 h-1 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Entertainment center deep clean</span></li>
-                            <li class="flex items-start gap-2 text-xs text-slate-500"><span class="w-1 h-1 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Behind furniture (moveable)</span></li>
-                            <li class="flex items-start gap-2 text-xs text-slate-500"><span class="w-1 h-1 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Lampshade and fixture cleaning</span></li>
-                            <li class="flex items-start gap-2 text-xs text-slate-500"><span class="w-1 h-1 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Air vent cleaning</span></li>
-                            <li class="flex items-start gap-2 text-xs text-slate-500"><span class="w-1 h-1 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Wall spot cleaning</span></li>
-                            <li class="flex items-start gap-2 text-xs text-slate-500"><span class="w-1 h-1 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Detailed furniture polishing</span></li>
-                            <li class="flex items-start gap-2 text-xs text-slate-500"><span class="w-1 h-1 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Carpet deep vacuuming</span></li>
-                        </ul>
-                    </div>
+                
+                <div class="bg-white p-10 border border-slate-100 hover:border-[var(--gold)] transition-colors group mobile-center">
+                    <span class="material-symbols-outlined text-4xl text-[var(--gold)] mb-6">bathtub</span>
+                    <h3 class="text-xl serif mb-4 text-[var(--navy)]">Bathroom Deep Clean</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start gap-2 text-xs text-slate-500"><span class="w-1 h-1 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Shower and tub deep scrub</span></li>
+                        <li class="flex items-start gap-2 text-xs text-slate-500"><span class="w-1 h-1 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Grout cleaning and disinfection</span></li>
+                        <li class="flex items-start gap-2 text-xs text-slate-500"><span class="w-1 h-1 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Toilet inside and behind</span></li>
+                        <li class="flex items-start gap-2 text-xs text-slate-500"><span class="w-1 h-1 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Cabinet interiors</span></li>
+                        <li class="flex items-start gap-2 text-xs text-slate-500"><span class="w-1 h-1 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Exhaust fan cleaning</span></li>
+                        <li class="flex items-start gap-2 text-xs text-slate-500"><span class="w-1 h-1 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Mirror and fixture polishing</span></li>
+                        <li class="flex items-start gap-2 text-xs text-slate-500"><span class="w-1 h-1 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Tile and grout restoration</span></li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white p-10 border border-slate-100 hover:border-[var(--gold)] transition-colors group mobile-center">
+                    <span class="material-symbols-outlined text-4xl text-[var(--gold)] mb-6">bed</span>
+                    <h3 class="text-xl serif mb-4 text-[var(--navy)]">Bedroom Deep Clean</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start gap-2 text-xs text-slate-500"><span class="w-1 h-1 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Under bed cleaning (accessible)</span></li>
+                        <li class="flex items-start gap-2 text-xs text-slate-500"><span class="w-1 h-1 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Closet organization</span></li>
+                        <li class="flex items-start gap-2 text-xs text-slate-500"><span class="w-1 h-1 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Ceiling fan detailed cleaning</span></li>
+                        <li class="flex items-start gap-2 text-xs text-slate-500"><span class="w-1 h-1 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Window treatments dusting</span></li>
+                        <li class="flex items-start gap-2 text-xs text-slate-500"><span class="w-1 h-1 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Baseboards and moldings</span></li>
+                        <li class="flex items-start gap-2 text-xs text-slate-500"><span class="w-1 h-1 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Light switch and outlet cleaning</span></li>
+                        <li class="flex items-start gap-2 text-xs text-slate-500"><span class="w-1 h-1 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Furniture detailed dusting</span></li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white p-10 border border-slate-100 hover:border-[var(--gold)] transition-colors group mobile-center">
+                    <span class="material-symbols-outlined text-4xl text-[var(--gold)] mb-6">weekend</span>
+                    <h3 class="text-xl serif mb-4 text-[var(--navy)]">Living Areas Deep Clean</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start gap-2 text-xs text-slate-500"><span class="w-1 h-1 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Entertainment center deep clean</span></li>
+                        <li class="flex items-start gap-2 text-xs text-slate-500"><span class="w-1 h-1 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Behind furniture (moveable)</span></li>
+                        <li class="flex items-start gap-2 text-xs text-slate-500"><span class="w-1 h-1 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Lampshade and fixture cleaning</span></li>
+                        <li class="flex items-start gap-2 text-xs text-slate-500"><span class="w-1 h-1 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Air vent cleaning</span></li>
+                        <li class="flex items-start gap-2 text-xs text-slate-500"><span class="w-1 h-1 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Wall spot cleaning</span></li>
+                        <li class="flex items-start gap-2 text-xs text-slate-500"><span class="w-1 h-1 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Detailed furniture polishing</span></li>
+                        <li class="flex items-start gap-2 text-xs text-slate-500"><span class="w-1 h-1 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Carpet deep vacuuming</span></li>
+                    </ul>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Perfect For Section -->
-        <section class="py-32 px-6 bg-white">
-            <div class="max-w-7xl mx-auto">
-                <div class="text-center mb-20">
-                    <h2 class="text-4xl serif text-[var(--navy)]">Perfect For</h2>
-                    <div class="w-16 h-[1px] bg-[var(--gold)] mx-auto mt-6"></div>
+    <!-- Perfect For Section -->
+    <section class="py-32 px-6 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-20 mobile-center">
+                <h2 class="text-4xl serif text-[var(--navy)]">Perfect For</h2>
+                <div class="w-16 h-[1px] bg-[var(--gold)] mx-auto mt-6"></div>
+            </div>
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="border-[1px] border-[var(--gold)] p-12 text-center group hover:bg-[var(--navy)] hover:text-white transition-all duration-500 mobile-center">
+                    <span class="material-symbols-outlined text-4xl mb-6 text-[var(--gold)]">home</span>
+                    <h3 class="text-2xl serif mb-6 italic">Moving In/Out</h3>
+                    <p class="text-sm font-light leading-relaxed mb-0">Start fresh in your new home or leave your old one spotless</p>
                 </div>
-                <div class="grid md:grid-cols-4 gap-8">
-                    <div class="border-[1px] border-[var(--gold)] p-12 text-center group hover:bg-[var(--navy)] hover:text-white transition-all duration-500">
-                        <span class="material-symbols-outlined text-4xl mb-6 text-[var(--gold)]">home</span>
-                        <h3 class="text-2xl serif mb-6 italic">Moving In/Out</h3>
-                        <p class="text-sm font-light leading-relaxed mb-0">Start fresh in your new home or leave your old one spotless</p>
-                    </div>
-                    <div class="border-[1px] border-[var(--gold)] p-12 text-center group hover:bg-[var(--navy)] hover:text-white transition-all duration-500">
-                        <span class="material-symbols-outlined text-4xl mb-6 text-[var(--gold)]">event</span>
-                        <h3 class="text-2xl serif mb-6 italic">Seasonal Cleaning</h3>
-                        <p class="text-sm font-light leading-relaxed mb-0">Spring cleaning or preparing for the holidays</p>
-                    </div>
-                    <div class="border-[1px] border-[var(--gold)] p-12 text-center group hover:bg-[var(--navy)] hover:text-white transition-all duration-500">
-                        <span class="material-symbols-outlined text-4xl mb-6 text-[var(--gold)]">construction</span>
-                        <h3 class="text-2xl serif mb-6 italic">Post-Construction</h3>
-                        <p class="text-sm font-light leading-relaxed mb-0">Clean up after renovations or construction work</p>
-                    </div>
-                    <div class="border-[1px] border-[var(--gold)] p-12 text-center group hover:bg-[var(--navy)] hover:text-white transition-all duration-500">
-                        <span class="material-symbols-outlined text-4xl mb-6 text-[var(--gold)]">celebration</span>
-                        <h3 class="text-2xl serif mb-6 italic">Special Events</h3>
-                        <p class="text-sm font-light leading-relaxed mb-0">Prepare your home for parties or special occasions</p>
-                    </div>
+                <div class="border-[1px] border-[var(--gold)] p-12 text-center group hover:bg-[var(--navy)] hover:text-white transition-all duration-500 mobile-center">
+                    <span class="material-symbols-outlined text-4xl mb-6 text-[var(--gold)]">event</span>
+                    <h3 class="text-2xl serif mb-6 italic">Seasonal Cleaning</h3>
+                    <p class="text-sm font-light leading-relaxed mb-0">Spring cleaning or preparing for the holidays</p>
+                </div>
+                <div class="border-[1px] border-[var(--gold)] p-12 text-center group hover:bg-[var(--navy)] hover:text-white transition-all duration-500 mobile-center">
+                    <span class="material-symbols-outlined text-4xl mb-6 text-[var(--gold)]">construction</span>
+                    <h3 class="text-2xl serif mb-6 italic">Post-Construction</h3>
+                    <p class="text-sm font-light leading-relaxed mb-0">Clean up after renovations or construction work</p>
+                </div>
+                <div class="border-[1px] border-[var(--gold)] p-12 text-center group hover:bg-[var(--navy)] hover:text-white transition-all duration-500 mobile-center">
+                    <span class="material-symbols-outlined text-4xl mb-6 text-[var(--gold)]">celebration</span>
+                    <h3 class="text-2xl serif mb-6 italic">Special Events</h3>
+                    <p class="text-sm font-light leading-relaxed mb-0">Prepare your home for parties or special occasions</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Eco-Friendly Section -->
-        <section class="py-32 px-6 bg-[var(--navy)] text-white relative overflow-hidden">
-            <div class="absolute top-10 right-10 opacity-10">
-                <span class="material-symbols-outlined text-[var(--gold)] text-9xl">eco</span>
+    <!-- Eco-Friendly Cleaning Section -->
+    <section class="relative py-48 px-6 overflow-hidden bg-[var(--navy)] text-white">
+        <div class="absolute top-10 right-10 opacity-10">
+            <span class="material-symbols-outlined text-[var(--gold)] text-9xl">eco</span>
+        </div>
+        <div class="absolute bottom-10 left-10 opacity-10">
+            <span class="material-symbols-outlined text-[var(--gold)] text-9xl">nest_eco_leaf</span>
+        </div>
+        <div class="relative z-10 max-w-4xl mx-auto text-center mobile-center">
+            <div class="flex justify-center mb-8">
+                <span class="material-symbols-outlined text-5xl text-emerald-400">nest_eco_leaf</span>
             </div>
-            <div class="absolute bottom-10 left-10 opacity-10">
-                <span class="material-symbols-outlined text-[var(--gold)] text-9xl">nest_eco_leaf</span>
+            <h2 class="text-4xl serif mb-8">Eco-Friendly Deep Cleaning in <span class="italic text-[var(--gold)]">Toronto & GTA</span></h2>
+            <p class="text-white/80 text-lg font-light leading-relaxed mb-8">
+                Comprehensive deep cleaning with safe, sustainable products for your family's health
+            </p>
+            <p class="text-white/70 text-base font-light leading-relaxed mb-12">
+                Our eco-friendly deep cleaning services throughout Toronto, Mississauga, Oakville, Brampton, and Milton use green cleaning products and environmentally responsible methods. When we deep clean your home, we eliminate harmful bacteria and allergens using plant-based, non-toxic solutions that are safe for children, pets, and the environment.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-left max-w-5xl mx-auto">
+                <div class="mobile-center">
+                    <span class="material-symbols-outlined text-[var(--gold)] text-4xl mb-4">yard</span>
+                    <h4 class="text-sm tracking-widest uppercase font-bold mb-4 text-[var(--gold)]">Green Products</h4>
+                    <ul class="space-y-2 text-sm text-white/70">
+                        <li>• Natural disinfectants effective against germs without harsh chemicals</li>
+                        <li>• Plant-based degreasers that tackle tough grime safely</li>
+                        <li>• Eco-friendly sanitizers for kitchens and bathrooms</li>
+                        <li>• Non-toxic solutions that protect surfaces and your health</li>
+                    </ul>
+                </div>
+                <div class="mobile-center">
+                    <span class="material-symbols-outlined text-[var(--gold)] text-4xl mb-4">recycling</span>
+                    <h4 class="text-sm tracking-widest uppercase font-bold mb-4 text-[var(--gold)]">Sustainable Methods</h4>
+                    <ul class="space-y-2 text-sm text-white/70">
+                        <li>• Steam cleaning reduces need for chemical cleaners</li>
+                        <li>• Microfiber technology for superior cleaning with less product</li>
+                        <li>• Efficient water usage during deep cleaning processes</li>
+                        <li>• Biodegradable products that break down safely</li>
+                    </ul>
+                </div>
+                <div class="mobile-center">
+                    <span class="material-symbols-outlined text-[var(--gold)] text-4xl mb-4">health_and_safety</span>
+                    <h4 class="text-sm tracking-widest uppercase font-bold mb-4 text-[var(--gold)]">Safety Benefits</h4>
+                    <ul class="space-y-2 text-sm text-white/70">
+                        <li>• Reduces exposure to toxic chemicals during deep cleaning</li>
+                        <li>• Better indoor air quality after thorough eco-friendly cleaning</li>
+                        <li>• Safe for homes with asthma, allergies, or chemical sensitivities</li>
+                        <li>• Protects your family from harmful residues and fumes</li>
+                    </ul>
+                </div>
             </div>
-            <div class="max-w-4xl mx-auto text-center relative z-10">
-                <div class="flex justify-center mb-8">
-                    <span class="material-symbols-outlined text-5xl text-emerald-400">nest_eco_leaf</span>
+            <p class="text-white/70 text-base font-light leading-relaxed mt-16 max-w-3xl mx-auto">
+                Choose eco-friendly deep cleaning services in Toronto, Mississauga, Oakville, Brampton, Milton, Etobicoke, Scarborough, and all GTA communities. Our green cleaning approach ensures your home receives a thorough deep clean while prioritizing environmental sustainability and your family's wellbeing.
+            </p>
+        </div>
+    </section>
+
+    <!-- Our Work Section -->
+    <section class="py-32 px-6 bg-[var(--soft-white)]">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8 mobile-center">
+                <div>
+                    <span class="text-[var(--gold)] text-[10px] tracking-[0.4em] uppercase font-bold block mb-4">Portfolio of Perfection</span>
+                    <h2 class="text-4xl md:text-5xl serif text-[var(--navy)]">Our <span class="italic text-[var(--gold)]">Work</span></h2>
                 </div>
-                <h2 class="text-4xl serif mb-8">Eco-Friendly Deep Cleaning in <span class="italic text-[var(--gold)]">Toronto & GTA</span></h2>
-                <p class="text-white/80 text-lg font-light leading-relaxed mb-8">
-                    Comprehensive deep cleaning with safe, sustainable products for your family's health
-                </p>
-                <p class="text-white/70 text-base font-light leading-relaxed mb-12">
-                    Our eco-friendly deep cleaning services throughout Toronto, Mississauga, Oakville, Brampton, and Milton use green cleaning products and environmentally responsible methods. When we deep clean your home, we eliminate harmful bacteria and allergens using plant-based, non-toxic solutions that are safe for children, pets, and the environment.
-                </p>
-                <div class="grid md:grid-cols-3 gap-8 mt-16">
-                    <div>
-                        <span class="material-symbols-outlined text-[var(--gold)] text-4xl mb-4">yard</span>
-                        <h4 class="text-sm tracking-widest uppercase font-bold mb-4 text-[var(--gold)]">Green Products</h4>
-                        <ul class="space-y-2 text-left text-sm text-white/70">
-                            <li>• Natural disinfectants effective against germs without harsh chemicals</li>
-                            <li>• Plant-based degreasers that tackle tough grime safely</li>
-                            <li>• Eco-friendly sanitizers for kitchens and bathrooms</li>
-                            <li>• Non-toxic solutions that protect surfaces and your health</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <span class="material-symbols-outlined text-[var(--gold)] text-4xl mb-4">recycling</span>
-                        <h4 class="text-sm tracking-widest uppercase font-bold mb-4 text-[var(--gold)]">Sustainable Methods</h4>
-                        <ul class="space-y-2 text-left text-sm text-white/70">
-                            <li>• Steam cleaning reduces need for chemical cleaners</li>
-                            <li>• Microfiber technology for superior cleaning with less product</li>
-                            <li>• Efficient water usage during deep cleaning processes</li>
-                            <li>• Biodegradable products that break down safely</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <span class="material-symbols-outlined text-[var(--gold)] text-4xl mb-4">health_and_safety</span>
-                        <h4 class="text-sm tracking-widest uppercase font-bold mb-4 text-[var(--gold)]">Safety Benefits</h4>
-                        <ul class="space-y-2 text-left text-sm text-white/70">
-                            <li>• Reduces exposure to toxic chemicals during deep cleaning</li>
-                            <li>• Better indoor air quality after thorough eco-friendly cleaning</li>
-                            <li>• Safe for homes with asthma, allergies, or chemical sensitivities</li>
-                            <li>• Protects your family from harmful residues and fumes</li>
-                        </ul>
-                    </div>
-                </div>
-                <p class="text-white/70 text-base font-light leading-relaxed mt-12">
-                    Choose eco-friendly deep cleaning services in Toronto, Mississauga, Oakville, Brampton, Milton, Etobicoke, Scarborough, and all GTA communities. Our green cleaning approach ensures your home receives a thorough deep clean while prioritizing environmental sustainability and your family's wellbeing.
+                <p class="max-w-md text-sm text-slate-500 font-light leading-relaxed">
+                    See the difference our professional deep cleaning services make
                 </p>
             </div>
-        </section>
-
-        <!-- Our Work Section -->
-        <section class="py-32 bg-[var(--soft-white)]">
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="text-center mb-20">
-                    <span class="text-[var(--gold)] text-[11px] tracking-[0.5em] uppercase font-bold block mb-4">Portfolio of Perfection</span>
-                    <h2 class="text-4xl serif text-[var(--navy)]">Our Work</h2>
-                    <p class="mt-6 text-slate-500 font-light italic">See the difference our professional deep cleaning services make</p>
-                </div>
-                <div class="grid md:grid-cols-3 gap-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div class="space-y-6 mobile-center">
                     <div class="gold-frame overflow-hidden group">
                         <img alt="Clean toilet before and after deep cleaning" class="w-full h-[450px] object-cover transition-all duration-700 group-hover:scale-105 grayscale group-hover:grayscale-0" src="../../assets/images/toilet.jpg" loading="lazy"/>
-                        <p class="text-center mt-4 font-semibold text-sm text-[var(--navy)]">Toilet Clean</p>
                     </div>
+                    <div>
+                        <h4 class="text-xs font-bold tracking-[0.2em] uppercase mt-2 mb-3">Toilet Clean</h4>
+                        <p class="text-xs text-slate-500 leading-loose font-light">Spotless toilets restored to pristine condition</p>
+                    </div>
+                </div>
+                <div class="space-y-6 mobile-center">
                     <div class="gold-frame overflow-hidden group">
                         <img alt="Sparkling clean stove after deep cleaning" class="w-full h-[450px] object-cover transition-all duration-700 group-hover:scale-105 grayscale group-hover:grayscale-0" src="../../assets/images/stove.jpg" loading="lazy"/>
-                        <p class="text-center mt-4 font-semibold text-sm text-[var(--navy)]">Stove Clean</p>
                     </div>
+                    <div>
+                        <h4 class="text-xs font-bold tracking-[0.2em] uppercase mt-2 mb-3">Stove Clean</h4>
+                        <p class="text-xs text-slate-500 leading-loose font-light">Stovetops that shine like new</p>
+                    </div>
+                </div>
+                <div class="space-y-6 mobile-center">
                     <div class="gold-frame overflow-hidden group">
                         <img alt="Immaculate fridge interior after deep cleaning" class="w-full h-[450px] object-cover transition-all duration-700 group-hover:scale-105 grayscale group-hover:grayscale-0" src="../../assets/images/fridge 2.jpg" loading="lazy"/>
-                        <p class="text-center mt-4 font-semibold text-sm text-[var(--navy)]">Fridge Clean</p>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-bold tracking-[0.2em] uppercase mt-2 mb-3">Fridge Clean</h4>
+                        <p class="text-xs text-slate-500 leading-loose font-light">Refrigerators cleaned inside and out</p>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- About Section 1 -->
-        <section class="py-32 px-6 bg-white">
-            <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-24">
-                <div class="md:w-1/2 space-y-8">
-                    <h4 class="text-[var(--gold)] text-[11px] tracking-[0.5em] uppercase font-bold">Why Deep Clean</h4>
-                    <h2 class="text-4xl serif text-[var(--navy)]">When a Deep Clean Makes the Most <span class="italic text-[var(--gold)]">Difference</span></h2>
-                    <p class="text-slate-600 font-light leading-loose">
-                        There are moments when deep cleaning brings real comfort. It may be after a long winter, before hosting friends, when moving into a new home, or simply when you feel the space needs attention. These situations call for more than surface cleaning. They require time, patience, and a steady hand.
-                    </p>
-                    <p class="text-slate-600 font-light leading-loose">
-                        Our team focuses on the areas that tend to be forgotten. Baseboards, window tracks, behind appliances, inside cabinets, and spots where dust settles quietly. We also sanitize high-touch areas and refresh rooms that may feel heavy or stale. A deep clean helps your home breathe again and sets a stronger foundation for regular maintenance.
-                    </p>
-                </div>
-                <div class="md:w-1/2">
-                    <img alt="A-Fresh-Thoughtful-Approach-to-a-Healthy-Home" class="w-full h-[600px] object-cover shadow-2xl" src="../../assets/images/new/A-Fresh-Thoughtful-Approach-to-a-Healthy-Home.jpg" loading="lazy"/>
-                </div>
+    <!-- About Section 1 -->
+    <section class="py-32 px-6 bg-white">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-24">
+            <div class="md:w-1/2 space-y-8 mobile-center">
+                <h4 class="text-[var(--gold)] text-[11px] tracking-[0.5em] uppercase font-bold">Why Deep Clean</h4>
+                <h2 class="text-4xl serif text-[var(--navy)]">When a Deep Clean Makes the Most <span class="italic text-[var(--gold)]">Difference</span></h2>
+                <p class="text-slate-600 font-light leading-loose">
+                    There are moments when deep cleaning brings real comfort. It may be after a long winter, before hosting friends, when moving into a new home, or simply when you feel the space needs attention. These situations call for more than surface cleaning. They require time, patience, and a steady hand.
+                </p>
+                <p class="text-slate-600 font-light leading-loose">
+                    Our team focuses on the areas that tend to be forgotten. Baseboards, window tracks, behind appliances, inside cabinets, and spots where dust settles quietly. We also sanitize high-touch areas and refresh rooms that may feel heavy or stale. A deep clean helps your home breathe again and sets a stronger foundation for regular maintenance.
+                </p>
             </div>
-        </section>
-
-        <!-- About Section 2 -->
-        <section class="py-32 px-6 bg-[var(--soft-white)]">
-            <div class="max-w-7xl mx-auto flex flex-col md:flex-row-reverse items-center gap-24">
-                <div class="md:w-1/2 space-y-8">
-                    <h4 class="text-[var(--gold)] text-[11px] tracking-[0.5em] uppercase font-bold">What's Included</h4>
-                    <h2 class="text-4xl serif text-[var(--navy)]">What Our Deep <span class="italic text-[var(--gold)]">Cleaning</span> Includes</h2>
-                    <p class="text-slate-600 font-light leading-loose">
-                        Each deep cleaning appointment is structured to cover the parts of your home that impact comfort the most. Our work usually includes:
-                    </p>
-                    <ul class="space-y-3">
-                        <li class="flex items-start gap-3 text-sm text-slate-500"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-2 shrink-0"></span><span>Detailed cleaning of kitchens, including appliance fronts and accessible interiors</span></li>
-                        <li class="flex items-start gap-3 text-sm text-slate-500"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-2 shrink-0"></span><span>Full bathroom sanitizing with extra attention to grout and fixtures</span></li>
-                        <li class="flex items-start gap-3 text-sm text-slate-500"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-2 shrink-0"></span><span>Dusting of trim, vents, ledges, and light fixtures</span></li>
-                        <li class="flex items-start gap-3 text-sm text-slate-500"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-2 shrink-0"></span><span>Cleaning behind and under furniture where possible</span></li>
-                        <li class="flex items-start gap-3 text-sm text-slate-500"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-2 shrink-0"></span><span>Complete floor care with vacuuming and washing</span></li>
-                        <li class="flex items-start gap-3 text-sm text-slate-500"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-2 shrink-0"></span><span>Organized refresh of living spaces and high-traffic areas</span></li>
-                    </ul>
-                    <p class="text-slate-600 font-light leading-loose">
-                        If there are specific tasks you want added, we are always open to including them. Our job is to make the home feel cared for, like it's our own. Contact us to start.
-                    </p>
-                </div>
-                <div class="md:w-1/2">
-                    <img alt="Cleaning That Supports a Healthier Way of Living" class="w-full h-[600px] object-cover shadow-2xl" src="../../assets/images/new/Cleaning-That-Supports-a-Healthier-Way-of-Living.jpeg" loading="lazy"/>
-                </div>
+            <div class="md:w-1/2">
+                <img alt="A Fresh Thoughtful Approach to a Healthy Home" class="w-full h-[600px] object-cover shadow-2xl" src="../../assets/images/new/A-Fresh-Thoughtful-Approach-to-a-Healthy-Home.jpg" loading="lazy"/>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- About Section 3 -->
-        <section class="py-32 px-6 bg-white">
-            <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-24">
-                <div class="md:w-1/2 space-y-8">
-                    <h4 class="text-[var(--gold)] text-[11px] tracking-[0.5em] uppercase font-bold">The Trust Factor</h4>
-                    <h2 class="text-4xl serif text-[var(--navy)]">Why Homeowners Trust Us With Deep <span class="italic text-[var(--gold)]">Cleaning</span></h2>
-                    <p class="text-slate-600 font-light leading-loose">
-                        Deep cleaning takes time, and it requires cleaners who understand how to work carefully without cutting corners. Every member of our team is trained, insured, and dedicated to creating a pleasant experience from the moment we enter your home. We respect your space, your schedule, and your expectations.
-                    </p>
-                    <p class="text-slate-600 font-light leading-loose">
-                        Our cleaners also rely on eco-friendly products whenever possible to reduce harsh chemical smells and create a healthier home environment. People often tell us that the biggest difference they feel is a sense of relief once everything is refreshed and organized again. Get a deep cleaning service in Toronto today.
-                    </p>
-                </div>
-                <div class="md:w-1/2">
-                    <img alt="A-Team-That-Brings-Skill-Care-and-Consistency" class="w-full h-[600px] object-cover shadow-2xl" src="../../assets/images/new/A-Team-That-Brings-Skill-Care-and-Consistency.jpg" loading="lazy"/>
-                </div>
+    <!-- About Section 2 -->
+    <section class="py-32 px-6 bg-[var(--soft-white)]">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row-reverse items-center gap-24">
+            <div class="md:w-1/2 space-y-8 mobile-center">
+                <h4 class="text-[var(--gold)] text-[11px] tracking-[0.5em] uppercase font-bold">What's Included</h4>
+                <h2 class="text-4xl serif text-[var(--navy)]">What Our Deep <span class="italic text-[var(--gold)]">Cleaning</span> Includes</h2>
+                <p class="text-slate-600 font-light leading-loose">
+                    Each deep cleaning appointment is structured to cover the parts of your home that impact comfort the most. Our work usually includes:
+                </p>
+                <ul class="space-y-3">
+                    <li class="flex items-start gap-3 text-sm text-slate-500"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-2 shrink-0"></span><span>Detailed cleaning of kitchens, including appliance fronts and accessible interiors</span></li>
+                    <li class="flex items-start gap-3 text-sm text-slate-500"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-2 shrink-0"></span><span>Full bathroom sanitizing with extra attention to grout and fixtures</span></li>
+                    <li class="flex items-start gap-3 text-sm text-slate-500"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-2 shrink-0"></span><span>Dusting of trim, vents, ledges, and light fixtures</span></li>
+                    <li class="flex items-start gap-3 text-sm text-slate-500"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-2 shrink-0"></span><span>Cleaning behind and under furniture where possible</span></li>
+                    <li class="flex items-start gap-3 text-sm text-slate-500"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-2 shrink-0"></span><span>Complete floor care with vacuuming and washing</span></li>
+                    <li class="flex items-start gap-3 text-sm text-slate-500"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-2 shrink-0"></span><span>Organized refresh of living spaces and high-traffic areas</span></li>
+                </ul>
+                <p class="text-slate-600 font-light leading-loose">
+                    If there are specific tasks you want added, we are always open to including them. Our job is to make the home feel cared for, like it's our own. Contact us to start.
+                </p>
             </div>
-        </section>
+            <div class="md:w-1/2">
+                <img alt="Cleaning That Supports a Healthier Way of Living" class="w-full h-[600px] object-cover shadow-2xl" src="../../assets/images/new/Cleaning-That-Supports-a-Healthier-Way-of-Living.jpeg" loading="lazy"/>
+            </div>
+        </div>
+    </section>
 
-        <!-- Booking Section -->
-        <section class="py-32 px-6 bg-white" id="booking">
-            <div class="max-w-4xl mx-auto">
-                <div class="glass-card p-12 md:p-24 shadow-[0_40px_100px_rgba(0,0,0,0.08)] border-[3px] border-[var(--gold)] relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-48 h-48 bg-[var(--gold)]/5 rounded-full -mr-24 -mt-24"></div>
-                    <div class="text-center mb-16 relative z-10">
-                        <h2 class="text-4xl serif text-[var(--navy)] mb-6">Get Your Clean Today!</h2>
-                        <p class="text-slate-500 text-sm font-light tracking-widest uppercase">Book your cleaning service in just 60 seconds</p>
-                    </div>
-                    <form id="heroQuoteForm" class="space-y-10 relative z-10">
+    <!-- About Section 3 -->
+    <section class="py-32 px-6 bg-white">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-24">
+            <div class="md:w-1/2 space-y-8 mobile-center">
+                <h4 class="text-[var(--gold)] text-[11px] tracking-[0.5em] uppercase font-bold">The Trust Factor</h4>
+                <h2 class="text-4xl serif text-[var(--navy)]">Why Homeowners Trust Us With Deep <span class="italic text-[var(--gold)]">Cleaning</span></h2>
+                <p class="text-slate-600 font-light leading-loose">
+                    Deep cleaning takes time, and it requires cleaners who understand how to work carefully without cutting corners. Every member of our team is trained, insured, and dedicated to creating a pleasant experience from the moment we enter your home. We respect your space, your schedule, and your expectations.
+                </p>
+                <p class="text-slate-600 font-light leading-loose">
+                    Our cleaners also rely on eco-friendly products whenever possible to reduce harsh chemical smells and create a healthier home environment. People often tell us that the biggest difference they feel is a sense of relief once everything is refreshed and organized again. Get a deep cleaning service in Toronto today.
+                </p>
+            </div>
+            <div class="md:w-1/2">
+                <img alt="A Team That Brings Skill Care and Consistency" class="w-full h-[600px] object-cover shadow-2xl" src="../../assets/images/new/A-Team-That-Brings-Skill-Care-and-Consistency.jpg" loading="lazy"/>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="relative py-32 px-6 bg-white overflow-hidden">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16 mobile-center">
+                <span class="text-[var(--gold)] text-[10px] tracking-[0.5em] uppercase font-bold block mb-6">Booking</span>
+                <h2 class="text-5xl md:text-6xl serif mb-6 leading-tight text-[var(--navy)]">Get Your <span class="italic text-[var(--gold)]">Clean Today!</span></h2>
+                <p class="text-slate-600 font-light leading-loose text-lg">
+                    Book your cleaning service in just 60 seconds
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="relative">
+                    <img alt="Professional cleaning service" class="w-full h-[500px] object-cover" src="../../assets/images/washroom 5.jpg"/>
+                    <div class="absolute inset-0 bg-[var(--navy)]/10"></div>
+                </div>
+                
+                <div class="bg-white/90 backdrop-blur-sm border border-[var(--gold)]/30 p-8 lg:p-12 luxury-shadow mobile-center">
+                    <h3 class="text-center text-[var(--navy)] text-2xl sm:text-3xl serif mb-8 tracking-tight" id="formTitle">How can we reach out to you?</h3>
+                    <form id="heroQuoteForm" class="space-y-6">
                         <!-- Slide 1: Contact Info -->
                         <div id="slide1" class="form-slide">
-                            <h3 class="text-center mb-8 text-lg font-light text-slate-600">How can we reach out to you?</h3>
-                            <div class="space-y-6">
-                                <div class="relative">
-                                    <input class="w-full border-0 border-b border-slate-200 py-4 px-0 focus:ring-0 focus:border-[var(--gold)] text-sm bg-transparent placeholder:text-slate-300 transition-colors" placeholder="Full Name" type="text" id="hero-fullName" name="fullName" required/>
-                                </div>
-                                <div class="relative">
-                                    <input class="w-full border-0 border-b border-slate-200 py-4 px-0 focus:ring-0 focus:border-[var(--gold)] text-sm bg-transparent placeholder:text-slate-300 transition-colors" placeholder="Phone Number" type="tel" id="hero-phone" name="phone" required/>
-                                </div>
-                                <div class="relative">
-                                    <input class="w-full border-0 border-b border-slate-200 py-4 px-0 focus:ring-0 focus:border-[var(--gold)] text-sm bg-transparent placeholder:text-slate-300 transition-colors" placeholder="Email Address" type="email" id="hero-email" name="email" required/>
-                                </div>
+                            <div class="group">
+                                <label class="block mb-2 text-[10px] font-bold tracking-widest text-[var(--navy)] uppercase" for="hero-fullName">Full Name</label>
+                                <input class="w-full px-0 py-3 bg-transparent border-t-0 border-l-0 border-r-0 border-b border-[var(--navy)]/20 focus:border-[var(--gold)] focus:ring-0 text-[var(--navy)] placeholder-[var(--navy)]/30 transition-colors" placeholder="Full Name" type="text" id="hero-fullName" name="fullName" required/>
                             </div>
-                            <button type="button" class="w-full mt-8 py-6 text-[11px] font-bold tracking-[0.4em] uppercase bg-[var(--navy)] text-white hover:bg-[var(--gold)] transition-all shadow-xl" onclick="goToSlide2()">
+                            <div class="group mt-6">
+                                <label class="block mb-2 text-[10px] font-bold tracking-widest text-[var(--navy)] uppercase" for="hero-phone">Phone Number</label>
+                                <input class="w-full px-0 py-3 bg-transparent border-t-0 border-l-0 border-r-0 border-b border-[var(--navy)]/20 focus:border-[var(--gold)] focus:ring-0 text-[var(--navy)] placeholder-[var(--navy)]/30 transition-colors" placeholder="(123) 456-7890" type="tel" id="hero-phone" name="phone" required/>
+                            </div>
+                            <div class="group mt-6">
+                                <label class="block mb-2 text-[10px] font-bold tracking-widest text-[var(--navy)] uppercase" for="hero-email">Email</label>
+                                <input class="w-full px-0 py-3 bg-transparent border-t-0 border-l-0 border-r-0 border-b border-[var(--navy)]/20 focus:border-[var(--gold)] focus:ring-0 text-[var(--navy)] placeholder-[var(--navy)]/30 transition-colors" placeholder="your@email.com" type="email" id="hero-email" name="email" required/>
+                            </div>
+                            <button type="button" class="w-full py-5 mt-6 text-sm font-bold tracking-widest text-white uppercase transition-all bg-[var(--navy)] hover:bg-[var(--gold)]" onclick="goToSlide2()">
                                 Next
                             </button>
                         </div>
 
                         <!-- Slide 2: Location & Timeline -->
                         <div id="slide2" class="form-slide" style="display: none;">
-                            <h3 class="text-center mb-8 text-lg font-light text-slate-600">How Soon Are You Looking For Cleaning?</h3>
-                            <div class="space-y-6">
-                                <div class="relative">
-                                    <input class="w-full border-0 border-b border-slate-200 py-4 px-0 focus:ring-0 focus:border-[var(--gold)] text-sm bg-transparent placeholder:text-slate-300 transition-colors" placeholder="City (e.g., Toronto)" type="text" id="hero-city" name="city" required/>
-                                </div>
+                            <div class="group">
+                                <label class="block mb-2 text-[10px] font-bold tracking-widest text-[var(--navy)] uppercase" for="hero-city">City</label>
+                                <input class="w-full px-0 py-3 bg-transparent border-t-0 border-l-0 border-r-0 border-b border-[var(--navy)]/20 focus:border-[var(--gold)] focus:ring-0 text-[var(--navy)] placeholder-[var(--navy)]/30 transition-colors" placeholder="e.g., Toronto" type="text" id="hero-city" name="city" required/>
+                            </div>
+                            <div class="group mt-6">
+                                <label class="block mb-2 text-[10px] font-bold tracking-widest text-[var(--navy)] uppercase">How Soon Are You Looking For Cleaning?</label>
                                 <div class="space-y-3">
-                                    <label class="flex items-center gap-3 p-4 border border-slate-200 rounded cursor-pointer hover:border-[var(--gold)] transition-colors">
-                                        <input type="radio" id="timeline-asap" name="timeline" value="asap" class="text-[var(--gold)] focus:ring-[var(--gold)]" required/>
-                                        <span class="text-sm">ASAP (Within 7 Days)</span>
+                                    <label class="flex items-center gap-3 p-3 border border-[var(--navy)]/20 hover:border-[var(--gold)] cursor-pointer transition-all bg-white/50">
+                                        <input type="radio" id="timeline-asap" name="timeline" value="asap" required class="text-[var(--gold)] focus:ring-[var(--gold)]">
+                                        <span class="text-[var(--navy)] text-sm">ASAP (Within 7 Days)</span>
                                     </label>
-                                    <label class="flex items-center gap-3 p-4 border border-slate-200 rounded cursor-pointer hover:border-[var(--gold)] transition-colors">
-                                        <input type="radio" id="timeline-30days" name="timeline" value="30days" class="text-[var(--gold)] focus:ring-[var(--gold)]" required/>
-                                        <span class="text-sm">Less Than 30 Days</span>
+                                    <label class="flex items-center gap-3 p-3 border border-[var(--navy)]/20 hover:border-[var(--gold)] cursor-pointer transition-all bg-white/50">
+                                        <input type="radio" id="timeline-30days" name="timeline" value="30days" required class="text-[var(--gold)] focus:ring-[var(--gold)]">
+                                        <span class="text-[var(--navy)] text-sm">Less Than 30 Days</span>
                                     </label>
-                                    <label class="flex items-center gap-3 p-4 border border-slate-200 rounded cursor-pointer hover:border-[var(--gold)] transition-colors">
-                                        <input type="radio" id="timeline-30plus" name="timeline" value="30plus" class="text-[var(--gold)] focus:ring-[var(--gold)]" required/>
-                                        <span class="text-sm">More Than 30 Days</span>
+                                    <label class="flex items-center gap-3 p-3 border border-[var(--navy)]/20 hover:border-[var(--gold)] cursor-pointer transition-all bg-white/50">
+                                        <input type="radio" id="timeline-30plus" name="timeline" value="30plus" required class="text-[var(--gold)] focus:ring-[var(--gold)]">
+                                        <span class="text-[var(--navy)] text-sm">More Than 30 Days</span>
                                     </label>
                                 </div>
                             </div>
-                            <button type="submit" class="w-full mt-8 py-6 text-[11px] font-bold tracking-[0.4em] uppercase bg-[var(--navy)] text-white hover:bg-[var(--gold)] transition-all shadow-xl">
+                            <button type="submit" class="w-full py-5 mt-6 text-sm font-bold tracking-widest text-white uppercase transition-all bg-[var(--navy)] hover:bg-[var(--gold)]">
                                 Submit
                             </button>
                         </div>
 
                         <!-- Success Message -->
                         <div class="form-success text-center" id="formSuccess" style="display: none;">
-                            <span class="material-symbols-outlined text-6xl text-[var(--gold)] mb-6">check_circle</span>
-                            <h3 class="text-2xl serif mb-4">Thank You!</h3>
-                            <p class="text-slate-600 mb-8">Your quote request has been submitted successfully. We'll contact you shortly!</p>
-                            <button type="button" class="px-8 py-4 text-[11px] font-bold tracking-[0.2em] uppercase bg-[var(--navy)] text-white hover:bg-[var(--gold)] transition-all" onclick="resetQuoteForm()">
-                                Submit Another Request
-                            </button>
+                            <span class="material-symbols-outlined text-[var(--gold)] text-5xl mb-4 inline-block">check_circle</span>
+                            <h3 class="text-2xl mb-4 serif text-[var(--navy)]">Thank You!</h3>
+                            <p class="text-[var(--navy)]">Your quote request has been submitted successfully. We'll contact you shortly!</p>
                         </div>
                     </form>
-                    <div class="text-center mt-8 relative z-10">
-                        <p class="text-slate-400 text-xs mb-4">Have questions?</p>
-                        <a href="tel:+14375458704" class="text-[var(--gold)] font-bold hover:text-[var(--navy)] transition-colors">
-                            <span class="material-symbols-outlined text-sm align-middle">phone</span> (437) 545-8704
-                        </a>
-                    </div>
                 </div>
             </div>
-        </section>
+            
+            <div class="text-center mt-16 mobile-center">
+                <a href="tel:+14375458704" class="inline-flex items-center gap-3 px-10 py-5 border-[2px] border-[var(--navy)] text-[var(--navy)] font-bold tracking-[0.2em] uppercase hover:bg-[var(--navy)] hover:text-white transition-all text-xs">
+                    <span class="material-symbols-outlined text-lg">phone</span>
+                    Have Questions? Call Us!
+                </a>
+            </div>
+        </div>
+    </section>
 
-        <!-- Contact CTA / FAQ Section -->
-        <section class="bg-[var(--navy)] py-32 px-6">
-            <div class="max-w-4xl mx-auto">
-                <div class="text-center mb-20">
-                    <span class="text-[var(--gold)] text-[11px] tracking-[0.5em] uppercase font-bold block mb-4">FAQ</span>
-                    <h2 class="text-4xl serif text-white">Answers to our most common <span class="italic text-[var(--gold)]">questions</span></h2>
-                    <p class="mt-6 text-white/60 font-light">Quick, clear answers about booking, what's included, and how we work. Browse a few highlights below or view the full FAQ.</p>
-                </div>
-                <div class="space-y-4">
-                    <div class="p-8 border border-white/10 hover:border-[var(--gold)] transition-all bg-white/5">
-                        <div class="flex items-center gap-4 text-white">
-                            <span class="material-symbols-outlined text-[var(--gold)]">help</span>
-                            <span class="text-sm font-light">How far in advance should I book?</span>
-                        </div>
-                    </div>
-                    <div class="p-8 border border-white/10 hover:border-[var(--gold)] transition-all bg-white/5">
-                        <div class="flex items-center gap-4 text-white">
-                            <span class="material-symbols-outlined text-[var(--gold)]">help</span>
-                            <span class="text-sm font-light">Do you bring supplies and equipment?</span>
-                        </div>
-                    </div>
-                    <div class="p-8 border border-white/10 hover:border-[var(--gold)] transition-all bg-white/5">
-                        <div class="flex items-center gap-4 text-white">
-                            <span class="material-symbols-outlined text-[var(--gold)]">help</span>
-                            <span class="text-sm font-light">What if I'm not satisfied with the clean?</span>
-                        </div>
+    <!-- Contact CTA Section (above footer) -->
+    <section class="py-32 px-6 bg-[var(--navy)]" aria-labelledby="contact-cta-title">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-24 mobile-center">
+                <span class="text-[var(--gold)] text-[10px] tracking-[0.4em] uppercase font-bold block mb-4">FAQ</span>
+                <h2 id="contact-cta-title" class="text-4xl serif text-white">Answers to our most common <span class="italic text-[var(--gold)]">questions</span></h2>
+                <p class="text-sm text-white/70 font-light mt-6 leading-relaxed">Quick, clear answers about booking, what's included, and how we work. Browse a few highlights below or view the full FAQ.</p>
+            </div>
+            <div class="space-y-6 mb-20">
+                <div class="group p-8 border border-white/10 hover:border-[var(--gold)] transition-all bg-white/5 mobile-center">
+                    <div class="flex justify-start items-start gap-4">
+                        <span class="material-symbols-outlined text-[var(--gold)]">help</span>
+                        <span class="text-base font-medium serif text-white group-hover:text-[var(--gold)] transition-colors">How far in advance should I book?</span>
                     </div>
                 </div>
-                <div class="mt-20 text-center space-y-6">
-                    <a class="inline-block px-10 py-5 border-2 border-[var(--gold)] text-[var(--gold)] text-[11px] font-bold tracking-[0.3em] uppercase hover:bg-[var(--gold)] hover:text-[var(--navy)] transition-all" href="../../#faq">
-                        See All FAQs
-                    </a>
-                    <div class="text-white/40 text-xs">or</div>
-                    <a class="inline-block px-10 py-5 bg-[var(--gold)] text-[var(--navy)] text-[11px] font-bold tracking-[0.3em] uppercase hover:bg-[var(--gold-light)] transition-all" href="../contact.html">
-                        Make An Appointment
-                    </a>
+                <div class="group p-8 border border-white/10 hover:border-[var(--gold)] transition-all bg-white/5 mobile-center">
+                    <div class="flex justify-start items-start gap-4">
+                        <span class="material-symbols-outlined text-[var(--gold)]">help</span>
+                        <span class="text-base font-medium serif text-white group-hover:text-[var(--gold)] transition-colors">Do you bring supplies and equipment?</span>
+                    </div>
+                </div>
+                <div class="group p-8 border border-white/10 hover:border-[var(--gold)] transition-all bg-white/5 mobile-center">
+                    <div class="flex justify-start items-start gap-4">
+                        <span class="material-symbols-outlined text-[var(--gold)]">help</span>
+                        <span class="text-base font-medium serif text-white group-hover:text-[var(--gold)] transition-colors">What if I'm not satisfied with the clean?</span>
+                    </div>
                 </div>
             </div>
-        </section>
+            <div class="text-center flex flex-col sm:flex-row justify-center gap-4 mobile-center">
+                <a class="inline-block px-12 py-5 text-[11px] font-bold tracking-[0.2em] text-[var(--gold)] uppercase border-2 border-[var(--gold)] hover:bg-[var(--gold)] hover:text-[var(--navy)] transition-all shadow-lg hover:shadow-xl" href="../../#faq">
+                    <span class="material-symbols-outlined text-lg align-middle mr-2">list</span>
+                    See All FAQs
+                </a>
+                <a class="inline-block px-12 py-5 text-[11px] border-[2px] border-[var(--gold)] bg-[var(--gold)] text-[var(--navy)] font-bold tracking-[0.2em] uppercase hover:bg-[var(--gold-light)] transition-all" href="../contact.html">Make An Appointment</a>
+            </div>
+        </div>
+    </section>
 
-        <!-- Final CTA Section -->
-        <section class="relative h-[600px] flex items-center justify-center overflow-hidden">
-            <img alt="Cleaning That Supports a Healthier Way of Living" class="absolute inset-0 w-full h-full object-cover" src="../../assets/images/stove.jpg" loading="lazy"/>
-            <div class="absolute inset-0 bg-black/50"></div>
-            <div class="relative z-10 text-center text-white px-6">
-                <h2 class="text-5xl md:text-6xl serif mb-10 leading-tight">A Home That Feels <br/><span class="italic text-[var(--gold)]">New</span> Again</h2>
-                <p class="text-white/90 text-lg font-light max-w-2xl mx-auto mb-10">
-                    Pristine Clean Services is here to help Toronto homeowners who want their space to feel bright and welcoming again. A proper deep clean gives your home the reset it needs and helps you feel more settled. If you want to explore options, schedule a visit, or ask questions, our team is always ready to assist. If you have questions or want to discuss the schedule, contact us today.
-                </p>
-                <a class="inline-block bg-[var(--gold)] text-white px-16 py-6 text-[11px] font-bold tracking-[0.4em] uppercase hover:bg-white hover:text-[var(--navy)] transition-all shadow-2xl" href="../contact.html">Book Now</a>
-            </div>
-        </section>
-    </main>
+    <!-- Final CTA Section -->
+    <section class="relative h-[600px] flex items-center justify-center overflow-hidden">
+        <img alt="Cleaning That Supports a Healthier Way of Living" class="absolute inset-0 w-full h-full object-cover" src="../../assets/images/stove.jpg" loading="lazy"/>
+        <div class="absolute inset-0 bg-black/50"></div>
+        <div class="relative z-10 text-center text-white px-6 mobile-center">
+            <h2 class="text-5xl md:text-6xl serif mb-10 leading-tight">A Home That Feels <br/><span class="italic text-[var(--gold)]">New</span> Again</h2>
+            <p class="text-white/90 text-lg font-light max-w-2xl mx-auto mb-10">
+                Pristine Clean Services is here to help Toronto homeowners who want their space to feel bright and welcoming again. A proper deep clean gives your home the reset it needs and helps you feel more settled. If you want to explore options, schedule a visit, or ask questions, our team is always ready to assist. If you have questions or want to discuss the schedule, contact us today.
+            </p>
+            <a class="inline-block bg-[var(--gold)] text-white px-16 py-6 text-[11px] font-bold tracking-[0.4em] uppercase hover:bg-white hover:text-[var(--navy)] transition-all shadow-2xl" href="../contact.html">Book Now</a>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="text-white bg-[var(--navy)] border-t border-[var(--gold)]/20">
@@ -825,40 +846,54 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
+    <script src="../../assets/js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="../../assets/js/hero-form.js" defer></script>
     
     <script>
         // Mobile Menu Functionality
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const closeMobileMenu = document.getElementById('closeMobileMenu');
-        const mobileMenu = document.getElementById('mobileMenu');
-        const mobileBackdrop = document.getElementById('mobileBackdrop');
-        const mobileServicesToggle = document.getElementById('mobileServicesToggle');
-        const mobileServicesMenu = document.getElementById('mobileServicesMenu');
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const closeMobileMenu = document.getElementById('closeMobileMenu');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileBackdrop = document.getElementById('mobileBackdrop');
+            const mobileServicesToggle = document.getElementById('mobileServicesToggle');
+            const mobileServicesMenu = document.getElementById('mobileServicesMenu');
 
-        mobileMenuBtn?.addEventListener('click', () => {
-            mobileMenu.classList.add('active');
-            mobileBackdrop.classList.add('active');
+            function openMenu() {
+                mobileMenu.classList.add('active');
+                mobileBackdrop.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeMenu() {
+                mobileMenu.classList.remove('active');
+                mobileBackdrop.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', openMenu);
+            }
+            if (closeMobileMenu) {
+                closeMobileMenu.addEventListener('click', closeMenu);
+            }
+            if (mobileBackdrop) {
+                mobileBackdrop.addEventListener('click', closeMenu);
+            }
+            if (mobileServicesToggle) {
+                mobileServicesToggle.addEventListener('click', function() {
+                    mobileServicesMenu.classList.toggle('hidden');
+                    const icon = this.querySelector('.material-symbols-outlined');
+                    if (icon) {
+                        icon.textContent = mobileServicesMenu.classList.contains('hidden') ? 'expand_more' : 'expand_less';
+                    }
+                });
+            }
         });
 
-        closeMobileMenu?.addEventListener('click', () => {
-            mobileMenu.classList.remove('active');
-            mobileBackdrop.classList.remove('active');
-        });
-
-        mobileBackdrop?.addEventListener('click', () => {
-            mobileMenu.classList.remove('active');
-            mobileBackdrop.classList.remove('active');
-        });
-
-        mobileServicesToggle?.addEventListener('click', () => {
-            mobileServicesMenu.classList.toggle('hidden');
-        });
-
-        // Form slide navigation
+        // Form Navigation
         function goToSlide2() {
             const fullName = document.getElementById('hero-fullName');
             const phone = document.getElementById('hero-phone');
@@ -873,28 +908,20 @@
             
             const slide1 = document.getElementById('slide1');
             const slide2 = document.getElementById('slide2');
+            const formTitle = document.getElementById('formTitle');
+            
             slide1.style.display = 'none';
             slide2.style.display = 'block';
+            if (formTitle) formTitle.textContent = 'How Soon Are You Looking For Cleaning?';
         }
-        
         window.goToSlide2 = goToSlide2;
-
-        // Reset form function
-        function resetQuoteForm() {
-            document.getElementById('heroQuoteForm').reset();
-            document.getElementById('slide1').style.display = 'block';
-            document.getElementById('slide2').style.display = 'none';
-            document.getElementById('formSuccess').style.display = 'none';
-        }
-        
-        window.resetQuoteForm = resetQuoteForm;
         
         // Auto-hide Navigation on Scroll
         (function() {
             let scrollTimeout;
             let isScrolling = false;
             const header = document.querySelector('header');
-            const banner = document.querySelector('header').previousElementSibling; // The top banner
+            const banner = document.querySelector('header').previousElementSibling;
             const scrollThreshold = 100;
             
             if (!header) return;
