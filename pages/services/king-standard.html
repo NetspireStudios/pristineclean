@@ -134,6 +134,168 @@
             background: var(--gold);
             transition: all 0.3s;
         }
+        
+        /* Mobile Text Centering and Alignment */
+        @media screen and (max-width: 1023px) {
+            /* Hero Section - Center text on mobile */
+            section.relative.h-screen .relative.z-10 {
+                text-align: center;
+            }
+            
+            section.relative.h-screen h1,
+            section.relative.h-screen p,
+            section.relative.h-screen span {
+                text-align: center;
+            }
+            
+            /* YouTube Video Section - Center text on mobile */
+            section.py-32.px-6.bg-white .text-center {
+                text-align: center !important;
+            }
+            
+            section.py-32.px-6.bg-white h2 {
+                text-align: center;
+            }
+            
+            /* Why Choose Section - Center text on mobile */
+            section.py-40 .text-center {
+                text-align: center !important;
+            }
+            
+            section.py-40 h2,
+            section.py-40 p {
+                text-align: center;
+            }
+            
+            section.py-40 .grid > div {
+                text-align: center;
+            }
+            
+            section.py-40 h3,
+            section.py-40 .text-sm {
+                text-align: center;
+            }
+            
+            /* Checklist Section - Center text on mobile */
+            section.py-32.border-y .text-center {
+                text-align: center !important;
+            }
+            
+            section.py-32.border-y h2,
+            section.py-32.border-y p,
+            section.py-32.border-y span {
+                text-align: center;
+            }
+            
+            section.py-32.border-y .grid > div {
+                justify-content: center;
+                text-align: center;
+            }
+            
+            /* Lookbook Sections - Center text on mobile */
+            .lookbook-text {
+                text-align: center;
+                position: relative !important;
+                transform: none !important;
+                width: 100% !important;
+                margin-top: 2rem;
+            }
+            
+            .lookbook-text h2,
+            .lookbook-text p,
+            .lookbook-text span,
+            .lookbook-text a {
+                text-align: center;
+            }
+            
+            /* Process Section - Center text on mobile */
+            section.py-32.bg-\[var\(--soft-white\)\] .text-center {
+                text-align: center !important;
+            }
+            
+            section.py-32.bg-\[var\(--soft-white\)\] h2,
+            section.py-32.bg-\[var\(--soft-white\)\] p {
+                text-align: center;
+            }
+            
+            section.py-32.bg-\[var\(--soft-white\)\] .space-y-4 {
+                text-align: center;
+            }
+            
+            section.py-32.bg-\[var\(--soft-white\)\] h4,
+            section.py-32.bg-\[var\(--soft-white\)\] .text-\[12px\] {
+                text-align: center;
+            }
+            
+            /* Service Areas Section - Center text on mobile */
+            section.py-32.px-6.bg-white h2,
+            section.py-32.px-6.bg-white p,
+            section.py-32.px-6.bg-white span {
+                text-align: center;
+            }
+            
+            section.py-32.px-6.bg-white .flex.flex-col {
+                text-align: center;
+            }
+            
+            /* CTA Section - Center text on mobile */
+            section.bg-\[var\(--navy\)\].py-40 {
+                text-align: center !important;
+            }
+            
+            section.bg-\[var\(--navy\)\].py-40 h2,
+            section.bg-\[var\(--navy\)\].py-40 p,
+            section.bg-\[var\(--navy\)\].py-40 a {
+                text-align: center;
+            }
+            
+            /* Booking Form Section - Center text on mobile */
+            section#book .text-center {
+                text-align: center !important;
+            }
+            
+            section#book h2,
+            section#book p,
+            section#book span {
+                text-align: center;
+            }
+            
+            /* FAQ Section - Center text on mobile */
+            section.py-32.px-6.bg-white h2,
+            section.py-32.px-6.bg-white h4,
+            section.py-32.px-6.bg-white p {
+                text-align: center;
+            }
+            
+            section.py-32.px-6.bg-white .text-center {
+                text-align: center !important;
+            }
+            
+            /* Footer - Center text on mobile */
+            footer .grid {
+                text-align: center;
+            }
+            
+            footer h5,
+            footer p,
+            footer li {
+                text-align: center;
+            }
+            
+            footer .flex.gap-4 {
+                justify-content: center;
+            }
+            
+            footer ul {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            footer .flex.items-center {
+                justify-content: center;
+            }
+        }
     </style>
 </head>
 <body>
@@ -231,7 +393,7 @@
                 <a class="block py-3 text-sm font-bold tracking-widest uppercase text-white hover:text-[var(--gold)] transition-colors border-b border-white/10" href="../../#about">About</a>
                 <a class="block py-3 text-sm font-bold tracking-widest uppercase text-white hover:text-[var(--gold)] transition-colors border-b border-white/10" href="../../#testimonials">Reviews</a>
                 <a class="block py-3 text-sm font-bold tracking-widest uppercase text-white hover:text-[var(--gold)] transition-colors border-b border-white/10" href="/blogs">Blog</a>
-                <a class="block mt-6 px-6 py-4 text-center text-xs font-bold tracking-widest uppercase bg-[var(--gold)] text-[var(--navy)] hover:bg-[var(--gold-light)] transition-all" href="#book">Book Now</a>
+                <a class="block mt-6 px-6 py-4 text-center text-xs font-bold tracking-widest uppercase bg-[var(--gold)] text-[var(--navy)] hover:bg-[var(--gold-light)] transition-all" href="/contact">Book Now</a>
             </div>
         </div>
     </header>
