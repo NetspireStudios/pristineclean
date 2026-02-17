@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Standard House Cleaning Service | Weekly, Bi-weekly & Monthly | Pristine Clean Services</title>
+    <meta name="description" content="Professional standard house cleaning service by Pristine Clean Services. Weekly, bi-weekly, or monthly cleaning with detailed room-by-room checklist. Starting at $80. Book your regular cleaning today!">
+    <meta name="keywords" content="standard house cleaning, regular cleaning service, weekly house cleaning, bi-weekly cleaning, monthly cleaning, residential cleaning checklist, professional house cleaners, eco-friendly cleaning Toronto, green cleaning GTA, eco cleaning Mississauga, sustainable cleaning Oakville, green house cleaning Brampton">
+    <meta name="author" content="Pristine Clean Services Cleaning Services">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Standard House Cleaning Service | Pristine Clean Services">
+    <meta property="og:description" content="Professional standard cleaning service with detailed checklist. Weekly, bi-weekly, or monthly options starting at $80.">
+    <meta property="og:type" content="service">
+    <meta property="og:url" content="https://www.pristinecleanservices.ca/services/standard-cleaning">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.pristinecleanservices.ca/services/standard-cleaning">
+    
+    <!-- Preload Resources -->
+    <link rel="preload" href="../../assets/css/style.css?v=1.1" as="style">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../assets/css/style.css?v=1.1">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style type="text/tailwindcss">
+        :root {
+            --navy: #02024C;
+            --gold: #C5A059;
+            --gold-light: #E2D1B0;
+            --soft-white: #FCFAFA;
+        }
+        @layer base {
+            body {
+                @apply font-['Montserrat'] bg-white text-[var(--navy)] antialiased;
+            }
+            h1, h2, h3, .serif {
+                @apply font-['Playfair_Display'];
+            }
+        }
+        .nav-link {
+            @apply relative py-1 text-[11px] tracking-[0.15em] uppercase font-semibold transition-colors flex items-center gap-1;
+        }
+        .nav-link::after {
+            content: '';
+            @apply absolute bottom-0 left-0 w-0 h-[2px] bg-[var(--gold)] transition-all duration-300;
+        }
+        .nav-link:hover::after {
+            @apply w-full;
+        }
+        .dropdown-item {
+            @apply block px-6 py-3 text-[10px] tracking-widest uppercase text-[var(--navy)] hover:bg-slate-50 hover:text-[var(--gold)] transition-colors border-b border-slate-50 last:border-0;
+        }
+        .luxury-shadow {
+            box-shadow: 0 20px 50px rgba(2, 2, 76, 0.05);
+        }
+        .promo-banner { position: fixed; top: 0; left: 0; right: 0; z-index: 1001; background: var(--gold); }
+        @media (max-width: 1024px) {
+            .promo-banner { z-index: 50 !important; }
+        }
+        /* Mobile Menu Styles */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 80%;
+            max-width: 400px;
+            height: 100vh;
+            background: var(--navy);
+            z-index: 10001;
+            padding: 2rem;
+            overflow-y: auto;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
+        .mobile-menu.active {
+            display: block;
+            transform: translateX(0);
+        }
+        .mobile-backdrop {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 10000;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .mobile-backdrop.active {
+            display: block;
+        }
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+        }
+        .hamburger span {
+            width: 25px;
+            height: 2px;
+            background: var(--gold);
+            transition: all 0.3s;
+        }
+        
+        /* Mobile Centering Styles */
+        @media (max-width: 768px) {
+            h1, h2, h3, h4, h5, h6 {
+                text-align: center !important;
+            }
+            section p, section span:not(.material-symbols-outlined) {
+                text-align: center !important;
+            }
+            section > div {
+                text-align: center;
+            }
+            .text-left {
+                text-align: center !important;
+            }
+            section ul, section ol {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            /* Mobile Carousel for Our Work Section */
+            .work-carousel {
+                display: flex !important;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+                gap: 1rem;
+                padding: 0 1.5rem;
+                margin: 0 -1.5rem;
+            }
+            .work-carousel::-webkit-scrollbar {
+                display: none;
+            }
+            .work-carousel > div {
+                flex: 0 0 85%;
+                scroll-snap-align: center;
+                max-width: 85%;
+            }
+            
+            /* Reduce spacing between Our Work and Booking sections on mobile */
+            section:has(.work-carousel) {
+                padding-bottom: 3rem !important;
+            }
+            section:has(.work-carousel) + section {
+                padding-top: 3rem !important;
+            }
+        }
+    </style>
+     <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-65SGS6S839"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-65SGS6S839');
+</script>
+
+<meta name="google-site-verification" content="TXpqjXFvFjIQq_nZPzFqf2eOiTgTKymEA_WJPUI35kw" />
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Standard House Cleaning Service",
+        "description": "Professional standard house cleaning with detailed room-by-room checklist. Available weekly, bi-weekly, or monthly.",
+        "provider": {
+            "@type": "LocalBusiness",
+            "name": "Pristine Clean Services Cleaning Services",
+            "url": "https://www.pristinecleanservices.ca",
+            "telephone": "+1-555-CLEAN-01",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Your City",
+                "addressRegion": "Your State",
+                "addressCountry": "US"
+            }
+        },
+        "offers": {
+            "@type": "Offer",
+            "description": "Professional standard cleaning service",
+            "availability": "https://schema.org/InStock"
+        },
+        "serviceType": "House Cleaning",
+        "areaServed": "Local Metropolitan Area",
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Standard Cleaning Options",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "name": "Weekly Cleaning",
+                    "description": "Weekly standard house cleaning service"
+                },
+                {
+                    "@type": "Offer", 
+                    "name": "Bi-weekly Cleaning",
+                    "description": "Bi-weekly standard house cleaning service"
+                },
+                {
+                    "@type": "Offer",
+                    "name": "Monthly Cleaning", 
+                    "description": "Monthly standard house cleaning service"
+                }
+            ]
+        }
+    }
+    </script>
+ <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NPQCLFBX');</script>
+<!-- End Google Tag Manager -->
+ <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Pristine Clean Services",
+  "url": "https://www.pristinecleanservices.ca/",
+  "logo": "https://www.pristinecleanservices.ca/assets/images/logo.png"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "WebSite",
+  "name": "Pristine Clean Services",
+  "url": "https://www.pristinecleanservices.ca/",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://www.pristinecleanservices.ca/blogs/blog.html{search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+</head>
+<body>
+    <!-- Body Code -->
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NPQCLFBX"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    <!-- Top Banner -->
+    <div class="promo-banner bg-[var(--gold)] text-white text-center py-1.5 px-4 text-[9px] font-bold tracking-[0.3em] uppercase relative">
+        Refer a Friend and Get 30% Off Your Next Clean
+    </div>
+
+    <!-- Navigation -->
+    <header class="fixed top-10 left-0 right-0 z-50 px-6 lg:top-8 lg:px-12">
+        <nav class="mx-auto flex items-center justify-between h-24 bg-white shadow-sm border-b border-slate-100 px-10">
+            <a href="/" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+                <span class="text-[var(--navy)] material-symbols-outlined text-3xl">diamond</span>
+                <div class="flex flex-col">
+                    <span class="text-xl font-bold tracking-widest text-[var(--navy)] serif uppercase leading-none">Pristine</span>
+                    <span class="text-[9px] tracking-[0.4em] text-[var(--gold)] uppercase font-bold">Clean Services</span>
+                </div>
+            </a>
+            <div class="hidden lg:flex items-center gap-10">
+                <a class="nav-link text-[var(--navy)]" href="../../">Home</a>
+                <div class="relative group h-full flex items-center">
+                    <button class="nav-link text-[var(--navy)]">
+                            Services 
+                        <span class="material-symbols-outlined text-sm">expand_more</span>
+                    </button>
+                    <div class="absolute top-[100%] left-0 w-64 bg-white shadow-2xl border-t-2 border-[var(--gold)] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[60]">
+                        <a class="dropdown-item" href="https://www.pristinecleanservices.ca/services/standard-cleaning">Standard Cleaning</a>
+                        <a class="dropdown-item" href="https://www.pristinecleanservices.ca/services/deep-cleaning">Deep Cleaning</a>
+                        <a class="dropdown-item" href="https://www.pristinecleanservices.ca/services/move-in-out-cleaning">Move In/Out Cleaning</a>
+                        <a class="dropdown-item" href="https://www.pristinecleanservices.ca/services/carpet-cleaning">Carpet Cleaning</a>
+                        <a class="dropdown-item" href="https://www.pristinecleanservices.ca/services/house-cleaning">House Cleaning</a>
+                        <a class="dropdown-item" href="https://www.pristinecleanservices.ca/services/kitchen-cleaning">Kitchen Cleaning</a>
+                        <a class="dropdown-item" href="https://www.pristinecleanservices.ca/services/office-cleaning">Office Cleaning</a>
+                        <a class="dropdown-item" href="https://www.pristinecleanservices.ca/services/post-construction">Post Construction</a>
+                        <a class="dropdown-item" href="https://www.pristinecleanservices.ca/services/vacation-rental-cleaning">Air B&B / Rental</a>
+                    </div>
+                </div>
+                <a class="nav-link text-[var(--navy)]" href="https://www.pristinecleanservices.ca/king-standard">King Standard</a>
+                <a class="nav-link text-[var(--navy)]" href="../../#about">About</a>
+                <a class="nav-link text-[var(--navy)]" href="../../#testimonials">Reviews</a>
+                <a class="nav-link text-[var(--navy)]" href="/blogs">Blog</a>
+            </div>
+            <div class="flex items-center gap-4 shrink-0">
+                <a class="hidden lg:block px-8 py-4 text-[11px] font-bold tracking-[0.2em] text-white uppercase bg-[var(--navy)] hover:bg-[var(--gold)] transition-all shadow-lg hover:shadow-xl" href="/contact">Book Now</a>
+                <button class="lg:hidden hamburger" id="mobileMenuBtn" aria-label="Open navigation menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                </div>
+        </nav>
+        
+        <!-- Mobile Menu Backdrop -->
+        <div class="mobile-backdrop" id="mobileBackdrop"></div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="flex items-center justify-between mb-8">
+                <div class="flex items-center gap-2">
+                    <span class="text-[var(--gold)] material-symbols-outlined text-2xl">diamond</span>
+                    <div class="flex flex-col leading-tight">
+                        <span class="text-base font-bold tracking-widest text-[var(--gold)] serif uppercase">Pristine</span>
+                        <span class="text-[10px] tracking-[0.2em] text-[var(--gold)] uppercase font-semibold">Clean Services</span>
+                    </div>
+                </div>
+                <button class="text-[var(--gold)] text-3xl" id="closeMobileMenu" aria-label="Close menu">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+                </div>
+            <div class="space-y-4">
+                <a class="block py-3 text-sm font-bold tracking-widest uppercase text-white hover:text-[var(--gold)] transition-colors border-b border-white/10" href="../../">Home</a>
+                <div class="border-b border-white/10">
+                    <button class="flex items-center justify-between w-full py-3 text-sm font-bold tracking-widest uppercase text-white hover:text-[var(--gold)] transition-colors" id="mobileServicesToggle">
+                        Services
+                        <span class="material-symbols-outlined">expand_more</span>
+                    </button>
+                    <div class="pl-4 pb-3 space-y-2 hidden" id="mobileServicesMenu">
+                        <a class="block py-2 text-xs text-white/80 hover:text-[var(--gold)] transition-colors" href="https://www.pristinecleanservices.ca/services/standard-cleaning">Standard Cleaning</a>
+                        <a class="block py-2 text-xs text-white/80 hover:text-[var(--gold)] transition-colors" href="https://www.pristinecleanservices.ca/services/deep-cleaning">Deep Cleaning</a>
+                        <a class="block py-2 text-xs text-white/80 hover:text-[var(--gold)] transition-colors" href="https://www.pristinecleanservices.ca/services/move-in-out-cleaning">Move In/Out Cleaning</a>
+                        <a class="block py-2 text-xs text-white/80 hover:text-[var(--gold)] transition-colors" href="https://www.pristinecleanservices.ca/services/carpet-cleaning">Carpet Cleaning</a>
+                        <a class="block py-2 text-xs text-white/80 hover:text-[var(--gold)] transition-colors" href="https://www.pristinecleanservices.ca/services/house-cleaning">House Cleaning</a>
+                        <a class="block py-2 text-xs text-white/80 hover:text-[var(--gold)] transition-colors" href="https://www.pristinecleanservices.ca/services/kitchen-cleaning">Kitchen Cleaning</a>
+                        <a class="block py-2 text-xs text-white/80 hover:text-[var(--gold)] transition-colors" href="https://www.pristinecleanservices.ca/services/office-cleaning">Office Cleaning</a>
+                        <a class="block py-2 text-xs text-white/80 hover:text-[var(--gold)] transition-colors" href="https://www.pristinecleanservices.ca/services/post-construction">Post Construction</a>
+                        <a class="block py-2 text-xs text-white/80 hover:text-[var(--gold)] transition-colors" href="https://www.pristinecleanservices.ca/services/vacation-rental-cleaning">Air B&B / Rental</a>
+                </div>
+                </div>
+                <a class="block py-3 text-sm font-bold tracking-widest uppercase text-white hover:text-[var(--gold)] transition-colors border-b border-white/10" href="https://www.pristinecleanservices.ca/king-standard">King Standard</a>
+                <a class="block py-3 text-sm font-bold tracking-widest uppercase text-white hover:text-[var(--gold)] transition-colors border-b border-white/10" href="../../#about">About</a>
+                <a class="block py-3 text-sm font-bold tracking-widest uppercase text-white hover:text-[var(--gold)] transition-colors border-b border-white/10" href="../../#testimonials">Reviews</a>
+                <a class="block py-3 text-sm font-bold tracking-widest uppercase text-white hover:text-[var(--gold)] transition-colors border-b border-white/10" href="/blogs">Blog</a>
+                <a class="block mt-6 px-6 py-4 text-center text-xs font-bold tracking-widest uppercase bg-[var(--gold)] text-[var(--navy)] hover:bg-[var(--gold-light)] transition-all" href="/contact">Book Now</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Service Hero -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden pt-32">
+        <img alt="Professional standard house cleaning service in modern condo" class="absolute inset-0 w-full h-full object-cover" src="../../assets/images/condo1.jpg" onerror="this.onerror=null;this.src='../../assets/images/@condo1.jpg';"/>
+        <div class="absolute inset-0 bg-black/30"></div>
+        <div class="relative z-10 text-center px-6 max-w-4xl">
+            <span class="text-white text-[10px] tracking-[0.6em] uppercase mb-6 block font-medium">Standard Cleaning Service</span>
+            <h1 class="text-6xl md:text-8xl text-white serif font-normal mb-8 leading-tight">Standard <span class="italic">Cleaning</span></h1>
+            <p class="text-white/90 text-lg md:text-xl font-light tracking-wide max-w-2xl mx-auto mb-6 leading-relaxed">
+                Discover the unparalleled cleanliness that comes with our Pristine Clean Services standard cleaning package. Perfect for keeping your home impeccably neat with weekly, bi-weekly, or monthly cleanings for ultimate convenience.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-6 mb-10 text-white/90">
+                <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-[var(--gold)]">calendar_month</span>
+                    <span class="text-sm font-light">Weekly, Bi-weekly, or Monthly</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-[var(--gold)]">schedule</span>
+                    <span class="text-sm font-light">2-4 Hours Average</span>
+                </div>
+            </div>
+            <a class="inline-block border border-white text-white px-10 py-4 text-[10px] tracking-[0.3em] uppercase hover:bg-white hover:text-[var(--navy)] transition-all font-bold" href="/contact">Get Inquiry</a>
+        </div>
+    </section>
+
+    <!-- Service Details -->
+    <section class="py-32 px-6 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-20 text-center">
+                <h2 class="text-[var(--gold)] text-[10px] tracking-[0.5em] uppercase font-bold mb-4">The Standard</h2>
+                <h3 class="text-4xl md:text-5xl serif text-[var(--navy)]">What's Included in Standard <span class="italic text-[var(--gold)]">Cleaning</span></h3>
+                <p class="text-sm text-slate-500 font-light mt-6 max-w-3xl leading-loose mx-auto">Our comprehensive standard cleaning service covers every room in your home with meticulous attention to detail. Our dedicated team ensures a clutter-free environment that simplifies your life and enhances the welcoming atmosphere of your home.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-x-24 gap-y-12">
+                <div class="text-center md:text-left">
+                    <div class="flex items-center gap-3 mb-6 justify-center md:justify-start">
+                        <span class="material-symbols-outlined text-[var(--gold)] text-3xl">countertops</span>
+                        <h3 class="text-lg font-bold tracking-wide uppercase text-[var(--navy)]">Kitchen</h3>
+                    </div>
+                    <ul class="space-y-3 flex flex-col items-center md:items-start">
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Inside Microwave</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Glass Surfaces</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Stovetop</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Outside of Appliances</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Empty Trash</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Backsplash</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Exterior of Trash Can</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Sweep Floors</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Outside of Stove Hood</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Mop Floors</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Counter Tops</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Sink</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Mirrors</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Shelves</span></li>
+                    </ul>
+                </div>
+
+                <div class="text-center md:text-left">
+                    <div class="flex items-center gap-3 mb-6 justify-center md:justify-start">
+                        <span class="material-symbols-outlined text-[var(--gold)] text-3xl">bathtub</span>
+                        <h3 class="text-lg font-bold tracking-wide uppercase text-[var(--navy)]">Bathrooms</h3>
+                    </div>
+                    <ul class="space-y-3 flex flex-col items-center md:items-start">
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Shower</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Tub</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Polish Faucets</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Mirrors</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Empty Trash</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Toilets</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Glass Surfaces</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Sweep Floors</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Counters</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Shelves</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Mop Floors</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Sink</span></li>
+                    </ul>
+                </div>
+
+                <div class="text-center md:text-left">
+                    <div class="flex items-center gap-3 mb-6 justify-center md:justify-start">
+                        <span class="material-symbols-outlined text-[var(--gold)] text-3xl">bed</span>
+                        <h3 class="text-lg font-bold tracking-wide uppercase text-[var(--navy)]">Bedrooms</h3>
+                    </div>
+                    <ul class="space-y-3 flex flex-col items-center md:items-start">
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Sweep Floors</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Make Beds</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Mirrors</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Shelves</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Empty Trash</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Mop Floors</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Light Dusting of Furniture</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Vacuum Floors</span></li>
+                    </ul>
+                </div>
+
+                <div class="text-center md:text-left">
+                    <div class="flex items-center gap-3 mb-6 justify-center md:justify-start">
+                        <span class="material-symbols-outlined text-[var(--gold)] text-3xl">weekend</span>
+                        <h3 class="text-lg font-bold tracking-wide uppercase text-[var(--navy)]">Living Area</h3>
+                    </div>
+                    <ul class="space-y-3 flex flex-col items-center md:items-start">
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Glass Surfaces</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Empty Trash</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Mirrors</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Shelves</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Mop Floor</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Light Dusting of Furniture</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Vacuum Floors & Rugs</span></li>
+                    </ul>
+                </div>
+
+                <div class="text-center md:text-left">
+                    <div class="flex items-center gap-3 mb-6 justify-center md:justify-start">
+                        <span class="material-symbols-outlined text-[var(--gold)] text-3xl">local_laundry_service</span>
+                        <h3 class="text-lg font-bold tracking-wide uppercase text-[var(--navy)]">Laundry Room</h3>
+                    </div>
+                    <ul class="space-y-3 flex flex-col items-center md:items-start">
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Outside of Appliances</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Glass Surfaces</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Empty Trash</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Sinks</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Sweep Floors</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Counters</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Light Dusting of Furniture</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Mop Floor</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Mirrors</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Shelves</span></li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600"><span class="w-1.5 h-1.5 bg-[var(--gold)] rounded-full mt-1.5 shrink-0"></span><span>Vacuum Rugs</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Features Section -->
+            <div class="mt-32 pt-32 border-t border-slate-100">
+                <h2 class="text-4xl md:text-5xl serif text-[var(--navy)] mb-16 text-center">Why Choose Our Standard <span class="italic text-[var(--gold)]">Cleaning</span>?</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+                    <div class="text-center">
+                        <div class="mb-6">
+                            <span class="material-symbols-outlined text-[var(--gold)] text-5xl">eco</span>
+                        </div>
+                        <h4 class="text-sm font-bold tracking-widest uppercase mb-3">Eco-Friendly Products</h4>
+                        <p class="text-sm text-slate-500 font-light">Safe for your family, pets, and the environment</p>
+                            </div>
+                    <div class="text-center">
+                        <div class="mb-6">
+                            <span class="material-symbols-outlined text-[var(--gold)] text-5xl">shield</span>
+                        </div>
+                        <h4 class="text-sm font-bold tracking-widest uppercase mb-3">Insured & Bonded</h4>
+                        <p class="text-sm text-slate-500 font-light">Complete peace of mind with full coverage</p>
+                            </div>
+                    <div class="text-center">
+                        <div class="mb-6">
+                            <span class="material-symbols-outlined text-[var(--gold)] text-5xl">event_available</span>
+                        </div>
+                        <h4 class="text-sm font-bold tracking-widest uppercase mb-3">Flexible Scheduling</h4>
+                        <p class="text-sm text-slate-500 font-light">Weekly, bi-weekly, or monthly options</p>
+                            </div>
+                    <div class="text-center">
+                        <div class="mb-6">
+                            <span class="material-symbols-outlined text-[var(--gold)] text-5xl">workspace_premium</span>
+                        </div>
+                        <h4 class="text-sm font-bold tracking-widest uppercase mb-3">Quality Guaranteed</h4>
+                        <p class="text-sm text-slate-500 font-light">100% satisfaction or we return for free</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Eco-Friendly Cleaning Section -->
+    <section class="relative py-48 px-6 overflow-hidden bg-[var(--soft-white)]">
+        <div class="absolute top-10 right-10 opacity-10">
+            <span class="material-symbols-outlined text-[var(--gold)] text-9xl">eco</span>
+        </div>
+        <div class="absolute bottom-10 left-10 opacity-10">
+            <span class="material-symbols-outlined text-[var(--gold)] text-9xl">spa</span>
+            </div>
+        <div class="relative z-10 max-w-4xl mx-auto text-center">
+            <span class="text-[var(--gold)] text-[11px] tracking-[0.5em] uppercase font-bold block mb-8">The Philosophy</span>
+            <h2 class="text-5xl md:text-7xl serif text-[var(--navy)] mb-10 italic"><span class="text-[var(--gold)]">Eco-Friendly</span> Cleaning in Toronto & GTA</h2>
+            <p class="text-lg md:text-xl text-[var(--navy)]/80 font-light leading-loose mb-12 max-w-2xl mx-auto">
+                Safe, sustainable cleaning solutions for your family and the environment
+            </p>
+            <p class="text-base text-slate-600 font-light leading-relaxed mb-16 max-w-3xl mx-auto">
+                At Pristine Clean Services, we're committed to eco-friendly cleaning practices that protect your family, pets, and the environment. Our Toronto, Mississauga, Oakville, Brampton, and Milton cleaning services use green cleaning products and sustainable methods that deliver exceptional results without harmful chemicals.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-left max-w-5xl mx-auto">
+                <div class="text-center md:text-left">
+                    <div class="flex items-center gap-3 mb-4 justify-center md:justify-start">
+                        <span class="material-symbols-outlined text-[var(--gold)] text-3xl">grass</span>
+                        <h3 class="text-sm font-bold tracking-widest uppercase text-[var(--navy)]">Green Cleaning Products</h3>
+            </div>
+                    <ul class="space-y-2 text-sm text-slate-600 font-light leading-relaxed">
+                        <li>• Plant-based, biodegradable cleaners safe for children and pets</li>
+                        <li>• No harsh chemicals, ammonia, or bleach fumes</li>
+                        <li>• Certified eco-friendly products that meet strict environmental standards</li>
+                        <li>• Effective cleaning power without toxic residues</li>
+                    </ul>
+                </div>
+                <div class="text-center md:text-left">
+                    <div class="flex items-center gap-3 mb-4 justify-center md:justify-start">
+                        <span class="material-symbols-outlined text-[var(--gold)] text-3xl">recycling</span>
+                        <h3 class="text-sm font-bold tracking-widest uppercase text-[var(--navy)]">Sustainable Practices</h3>
+                    </div>
+                    <ul class="space-y-2 text-sm text-slate-600 font-light leading-relaxed">
+                        <li>• Reusable microfiber cloths and mops reduce waste</li>
+                        <li>• Water-efficient cleaning methods conserve resources</li>
+                        <li>• Efficient scheduling reduces carbon footprint</li>
+                        <li>• Environmentally responsible disposal of cleaning materials</li>
+                    </ul>
+                </div>
+                <div class="text-center md:text-left">
+                    <div class="flex items-center gap-3 mb-4 justify-center md:justify-start">
+                        <span class="material-symbols-outlined text-[var(--gold)] text-3xl">health_and_safety</span>
+                        <h3 class="text-sm font-bold tracking-widest uppercase text-[var(--navy)]">Health Benefits</h3>
+                    </div>
+                    <ul class="space-y-2 text-sm text-slate-600 font-light leading-relaxed">
+                        <li>• Improved indoor air quality for allergy and asthma sufferers</li>
+                        <li>• Safe for sensitive skin and respiratory conditions</li>
+                        <li>• No chemical odors or lingering fumes</li>
+                        <li>• Protection for your family's long-term health</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="text-base text-slate-600 font-light leading-relaxed mt-16 max-w-3xl mx-auto">
+                Our eco-friendly cleaning services are available throughout the Greater Toronto Area, including Toronto, Mississauga, Oakville, Brampton, Milton, Etobicoke, Scarborough, and surrounding GTA communities. We believe that exceptional cleanliness and environmental responsibility go hand in hand.
+            </p>
+        </div>
+    </section>
+
+    <!-- Our Work Section -->
+    <section class="py-32 px-6 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-20">
+                <span class="text-[var(--gold)] text-[10px] tracking-[0.4em] uppercase font-bold block mb-4">The Results</span>
+                <h2 class="text-4xl md:text-5xl serif text-[var(--navy)] mb-6">Our <span class="italic text-[var(--gold)]">Work</span></h2>
+                <p class="max-w-md text-sm text-slate-500 font-light leading-relaxed mx-auto">
+                    See the difference our professional cleaning services make
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 work-carousel">
+                <div class="space-y-6">
+                    <div class="aspect-[4/5] overflow-hidden">
+                        <img alt="Clean polished floor" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" src="../../assets/images/floor.jpg" loading="lazy" onerror="this.onerror=null;this.src='../../assets/images/@floor.jpg';"/>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-bold tracking-[0.2em] uppercase mt-2 mb-3">Floor Clean</h4>
+                        <p class="text-xs text-slate-500 leading-loose font-light">Pristine polished floors that shine with meticulous care</p>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <div class="aspect-[4/5] overflow-hidden">
+                        <img alt="Clean glass-top stove before and after" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" src="../../assets/images/stove 2.jpg" loading="lazy" onerror="this.onerror=null;this.src='../../assets/images/@stove 2.jpg';"/>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-bold tracking-[0.2em] uppercase mt-2 mb-3">Stove Clean</h4>
+                        <p class="text-xs text-slate-500 leading-loose font-light">Spotless stovetops restored to their original brilliance</p>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <div class="aspect-[4/5] overflow-hidden">
+                        <img alt="Clean kitchen sink before and after" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" src="../../assets/images/sink1.jpg" loading="lazy" onerror="this.onerror=null;this.src='../../assets/images/@sink1.jpg';"/>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-bold tracking-[0.2em] uppercase mt-2 mb-3">Sink Clean</h4>
+                        <p class="text-xs text-slate-500 leading-loose font-light">Kitchen sinks that sparkle with professional attention</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="relative py-32 px-6 bg-white overflow-hidden">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="text-[var(--gold)] text-[10px] tracking-[0.5em] uppercase font-bold block mb-6">Booking</span>
+                <h2 class="text-5xl md:text-6xl serif mb-6 leading-tight text-[var(--navy)]">Get Your <span class="italic text-[var(--gold)]">Clean Today!</span></h2>
+                <p class="text-slate-600 font-light leading-loose text-lg">
+                    Book your cleaning service in just 60 seconds
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="relative">
+                    <img alt="Professional cleaning service" class="w-full h-[500px] object-cover" src="../../assets/images/condo1.jpg" onerror="this.onerror=null;this.src='../../assets/images/@condo1.jpg';"/>
+                    <div class="absolute inset-0 bg-[var(--navy)]/10"></div>
+                </div>
+                
+                <div class="bg-white/90 backdrop-blur-sm border border-[var(--gold)]/30 p-8 lg:p-12 luxury-shadow">
+                    <h3 class="text-center text-[var(--navy)] text-2xl sm:text-3xl serif mb-8 tracking-tight" id="formTitle">How can we reach out to you?</h3>
+                    <form id="heroQuoteForm" class="space-y-6">
+                        <!-- Slide 1: Contact Info -->
+                        <div id="slide1" class="form-slide">
+                            <div class="group">
+                                <label class="block mb-2 text-[10px] font-bold tracking-widest text-[var(--navy)] uppercase" for="hero-fullName">Full Name</label>
+                                <input class="w-full px-0 py-3 bg-transparent border-t-0 border-l-0 border-r-0 border-b border-[var(--navy)]/20 focus:border-[var(--gold)] focus:ring-0 text-[var(--navy)] placeholder-[var(--navy)]/30 transition-colors" placeholder="Full Name" type="text" id="hero-fullName" name="fullName" required/>
+                        </div>
+                            <div class="group mt-6">
+                                <label class="block mb-2 text-[10px] font-bold tracking-widest text-[var(--navy)] uppercase" for="hero-phone">Phone Number</label>
+                                <input class="w-full px-0 py-3 bg-transparent border-t-0 border-l-0 border-r-0 border-b border-[var(--navy)]/20 focus:border-[var(--gold)] focus:ring-0 text-[var(--navy)] placeholder-[var(--navy)]/30 transition-colors" placeholder="(123) 456-7890" type="tel" id="hero-phone" name="phone" required/>
+                        </div>
+                            <div class="group mt-6">
+                                <label class="block mb-2 text-[10px] font-bold tracking-widest text-[var(--navy)] uppercase" for="hero-email">Email</label>
+                                <input class="w-full px-0 py-3 bg-transparent border-t-0 border-l-0 border-r-0 border-b border-[var(--navy)]/20 focus:border-[var(--gold)] focus:ring-0 text-[var(--navy)] placeholder-[var(--navy)]/30 transition-colors" placeholder="your@email.com" type="email" id="hero-email" name="email" required/>
+                        </div>
+                            <button type="button" class="w-full py-5 mt-6 text-sm font-bold tracking-widest text-white uppercase transition-all bg-[var(--navy)] hover:bg-[var(--gold)]" onclick="goToSlide2()">
+                                Next
+                            </button>
+                        </div>
+
+                        <!-- Slide 2: Location & Timeline -->
+                        <div id="slide2" class="form-slide" style="display: none;">
+                            <div class="group">
+                                <label class="block mb-2 text-[10px] font-bold tracking-widest text-[var(--navy)] uppercase" for="hero-city">City</label>
+                                <input class="w-full px-0 py-3 bg-transparent border-t-0 border-l-0 border-r-0 border-b border-[var(--navy)]/20 focus:border-[var(--gold)] focus:ring-0 text-[var(--navy)] placeholder-[var(--navy)]/30 transition-colors" placeholder="e.g., Toronto" type="text" id="hero-city" name="city" required/>
+                            </div>
+                            <div class="group mt-6">
+                                <label class="block mb-2 text-[10px] font-bold tracking-widest text-[var(--navy)] uppercase">How Soon Are You Looking For Cleaning?</label>
+                                <div class="space-y-3">
+                                    <label class="flex items-center gap-3 p-3 border border-[var(--navy)]/20 hover:border-[var(--gold)] cursor-pointer transition-all bg-white/50">
+                                        <input type="radio" id="timeline-asap" name="timeline" value="asap" required class="text-[var(--gold)] focus:ring-[var(--gold)]">
+                                        <span class="text-[var(--navy)] text-sm">ASAP (Within 7 Days)</span>
+                                    </label>
+                                    <label class="flex items-center gap-3 p-3 border border-[var(--navy)]/20 hover:border-[var(--gold)] cursor-pointer transition-all bg-white/50">
+                                        <input type="radio" id="timeline-30days" name="timeline" value="30days" required class="text-[var(--gold)] focus:ring-[var(--gold)]">
+                                        <span class="text-[var(--navy)] text-sm">Less Than 30 Days</span>
+                                    </label>
+                                    <label class="flex items-center gap-3 p-3 border border-[var(--navy)]/20 hover:border-[var(--gold)] cursor-pointer transition-all bg-white/50">
+                                        <input type="radio" id="timeline-30plus" name="timeline" value="30plus" required class="text-[var(--gold)] focus:ring-[var(--gold)]">
+                                        <span class="text-[var(--navy)] text-sm">More Than 30 Days</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <button type="submit" class="w-full py-5 mt-6 text-sm font-bold tracking-widest text-white uppercase transition-all bg-[var(--navy)] hover:bg-[var(--gold)]">
+                                Submit
+                            </button>
+                        </div>
+
+                        <!-- Success Message -->
+                        <div class="form-success text-center" id="formSuccess" style="display: none;">
+                            <span class="material-symbols-outlined text-[var(--gold)] text-5xl mb-4 inline-block">check_circle</span>
+                            <h3 class="text-2xl mb-4 serif text-[var(--navy)]">Thank You!</h3>
+                            <p class="text-[var(--navy)]">Your quote request has been submitted successfully. We'll contact you shortly!</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="text-center mt-16">
+                <a href="tel:+14375458704" class="inline-flex items-center gap-3 px-10 py-5 border-[2px] border-[var(--navy)] text-[var(--navy)] font-bold tracking-[0.2em] uppercase hover:bg-[var(--navy)] hover:text-white transition-all text-xs">
+                    <span class="material-symbols-outlined text-lg">phone</span>
+                        Have Questions? Call Us!
+                    </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA Section (above footer) -->
+    <section class="py-32 px-6 bg-white" aria-labelledby="contact-cta-title">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-24">
+                <span class="text-[var(--gold)] text-[10px] tracking-[0.4em] uppercase font-bold block mb-4">FAQ</span>
+                <h2 id="contact-cta-title" class="text-4xl serif text-[var(--navy)]">Answers to our most common <span class="italic text-[var(--gold)]">questions</span></h2>
+                <p class="text-sm text-slate-500 font-light mt-6 leading-relaxed">Quick, clear answers about booking, what's included, and how we work. Browse a few highlights below or view the full FAQ.</p>
+            </div>
+            <div class="space-y-6 mb-20">
+                <div class="group border-b border-slate-100 pb-6">
+                    <div class="flex justify-between items-start gap-4">
+                        <div class="flex items-start gap-4">
+                            <span class="material-symbols-outlined text-[var(--gold)]">help</span>
+                            <span class="text-base font-medium serif text-[var(--navy)] group-hover:text-[var(--gold)] transition-colors">How far in advance should I book?</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="group border-b border-slate-100 pb-6">
+                    <div class="flex justify-between items-start gap-4">
+                        <div class="flex items-start gap-4">
+                            <span class="material-symbols-outlined text-[var(--gold)]">help</span>
+                            <span class="text-base font-medium serif text-[var(--navy)] group-hover:text-[var(--gold)] transition-colors">Do you bring supplies and equipment?</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="group border-b border-slate-100 pb-6">
+                    <div class="flex justify-between items-start gap-4">
+                        <div class="flex items-start gap-4">
+                            <span class="material-symbols-outlined text-[var(--gold)]">help</span>
+                            <span class="text-base font-medium serif text-[var(--navy)] group-hover:text-[var(--gold)] transition-colors">What if I'm not satisfied with the clean?</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center flex flex-col sm:flex-row justify-center gap-4">
+                <a class="inline-block px-12 py-5 text-[11px] font-bold tracking-[0.2em] text-white uppercase bg-[var(--navy)] hover:bg-[var(--gold)] transition-all shadow-lg hover:shadow-xl" href="../../#faq">
+                    <span class="material-symbols-outlined text-lg align-middle mr-2">list</span>
+                    See All FAQs
+                </a>
+                <a class="inline-block px-12 py-5 border-[2px] border-[var(--navy)] text-[var(--navy)] font-bold tracking-[0.2em] uppercase hover:bg-[var(--navy)] hover:text-white transition-all text-[11px]" href="/contact">Make An Appointment</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-white bg-[var(--navy)] border-t border-[var(--gold)]/20">
+        <div class="container px-8 py-24 mx-auto">
+            <div class="grid gap-16 lg:grid-cols-4">
+                <div class="col-span-1 lg:col-span-1">
+                    <div class="flex items-center gap-3 mb-8">
+                        <div class="flex items-center justify-center w-10 h-10 border border-[var(--gold)]">
+                            <span class="text-[var(--gold)] text-xl material-symbols-outlined">cleaning_services</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-xl font-bold tracking-widest text-[var(--gold)] serif uppercase">Pristine</span>
+                            <span class="text-[8px] tracking-[0.3em] text-white/50 uppercase">Clean Services</span>
+                        </div>
+                    </div>
+                    <p class="mb-10 text-sm font-light leading-relaxed text-slate-400">Professional home cleaning services you can trust. Making homes sparkle since 2018.</p>
+                    <div class="flex gap-4">
+                        <a href="https://www.facebook.com/profile.php?id=61581666118073" target="_blank" rel="noopener noreferrer" class="w-10 h-10 border border-[var(--gold)]/30 flex items-center justify-center hover:bg-[var(--gold)] hover:text-[var(--navy)] transition-all">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 border border-[var(--gold)]/30 flex items-center justify-center hover:bg-[var(--gold)] hover:text-[var(--navy)] transition-all">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 border border-[var(--gold)]/30 flex items-center justify-center hover:bg-[var(--gold)] hover:text-[var(--navy)] transition-all">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h5 class="mb-8 text-xs font-bold tracking-[0.3em] uppercase text-[var(--gold)]">Policies</h5>
+                    <ul class="space-y-4 text-[10px] tracking-widest uppercase font-medium text-slate-400">
+                        <li><a class="hover:text-[var(--gold)] transition-colors" href="/policy#booking">Booking & Scheduling</a></li>
+                        <li><a class="hover:text-[var(--gold)] transition-colors" href="/policy#cancellation">Cancellation Policy</a></li>
+                        <li><a class="hover:text-[var(--gold)] transition-colors" href="/policy#payment">Payment Terms</a></li>
+                        <li><a class="hover:text-[var(--gold)] transition-colors" href="/policy#quality">Quality Guarantee</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h5 class="mb-8 text-xs font-bold tracking-[0.3em] uppercase text-[var(--gold)]">Contact</h5>
+                    <ul class="space-y-6 text-[10px] tracking-widest uppercase font-medium text-slate-400">
+                        <li class="flex items-center gap-3"><span class="material-symbols-outlined text-sm text-[var(--gold)]">call</span> <a href="tel:+14375458704" class="hover:text-[var(--gold)] transition-colors">(437) 545-8704</a></li>
+                        <li class="flex items-center gap-3"><span class="material-symbols-outlined text-sm text-[var(--gold)]">mail</span> <a href="mailto:contact@pristineandclean.ca" class="hover:text-[var(--gold)] transition-colors">contact@pristineandclean.ca</a></li>
+                        <li class="flex items-center gap-3"><span class="material-symbols-outlined text-sm text-[var(--gold)]">location_on</span> Toronto, Canada</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h5 class="mb-8 text-xs font-bold tracking-[0.3em] uppercase text-[var(--gold)]">Hours</h5>
+                    <ul class="space-y-4 text-[10px] tracking-widest uppercase font-medium text-slate-400">
+                        <li>Monday - Sunday</li>
+                        <li class="text-white">9AM - 7PM</li>
+                        <li class="pt-4">All Days of the Week</li>
+                        <li>Emergency service available</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="pt-12 mt-20 text-[10px] tracking-[0.4em] uppercase text-center border-t border-white/5 text-slate-500">
+                <p>&copy; 2025 Pristine Clean Services. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <!-- EmailJS for sending email notifications -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="../../assets/js/script.js" defer></script>
+    <script src="../../assets/js/hero-form.js" defer></script>
+    
+    <script>
+        // Mobile Menu Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const closeMobileMenu = document.getElementById('closeMobileMenu');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileBackdrop = document.getElementById('mobileBackdrop');
+            const mobileServicesToggle = document.getElementById('mobileServicesToggle');
+            const mobileServicesMenu = document.getElementById('mobileServicesMenu');
+
+            function closeMenu() {
+                if (mobileMenu) mobileMenu.classList.remove('active');
+                if (mobileBackdrop) mobileBackdrop.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            function openMenu(e) {
+                e.stopPropagation();
+                if (mobileMenu) mobileMenu.classList.add('active');
+                if (mobileBackdrop) mobileBackdrop.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', openMenu);
+            }
+            if (closeMobileMenu) {
+                closeMobileMenu.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    closeMenu();
+                });
+            }
+            if (mobileBackdrop) {
+                mobileBackdrop.addEventListener('click', function(e) {
+                    if (e.target === mobileBackdrop) {
+                        closeMenu();
+                    }
+                });
+            }
+            if (mobileMenu) {
+                mobileMenu.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                });
+            }
+            if (mobileServicesToggle) {
+                mobileServicesToggle.addEventListener('click', function() {
+                    mobileServicesMenu.classList.toggle('hidden');
+                    const icon = this.querySelector('.material-symbols-outlined');
+                    if (icon) {
+                        icon.textContent = mobileServicesMenu.classList.contains('hidden') ? 'expand_more' : 'expand_less';
+                    }
+                });
+            }
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && mobileMenu && mobileMenu.classList.contains('active')) {
+                    closeMenu();
+                }
+            });
+        });
+
+        // Form Navigation
+        function goToSlide2() {
+            const fullName = document.getElementById('hero-fullName');
+            const phone = document.getElementById('hero-phone');
+            const email = document.getElementById('hero-email');
+            
+            if (!fullName.value.trim()) { alert('Please enter your full name'); fullName.focus(); return; }
+            if (!phone.value.trim()) { alert('Please enter your phone number'); phone.focus(); return; }
+            if (!email.value.trim()) { alert('Please enter your email'); email.focus(); return; }
+            
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email.value)) { alert('Please enter a valid email address'); email.focus(); return; }
+            
+            const slide1 = document.getElementById('slide1');
+            const slide2 = document.getElementById('slide2');
+            const formTitle = document.getElementById('formTitle');
+            
+                slide1.style.display = 'none';
+                slide2.style.display = 'block';
+            if (formTitle) formTitle.textContent = 'How Soon Are You Looking For Cleaning?';
+        }
+        window.goToSlide2 = goToSlide2;
+        
+        // Auto-hide Navigation on Scroll
+        (function() {
+            let scrollTimeout;
+            let isScrolling = false;
+            const header = document.querySelector('header');
+            const banner = document.querySelector('header').previousElementSibling;
+            const scrollThreshold = 100;
+            
+            if (!header) return;
+            
+            window.addEventListener('scroll', function() {
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                if (scrollTop > scrollThreshold) {
+                    if (!isScrolling) {
+                        isScrolling = true;
+                        header.style.transform = 'translateY(-100%)';
+                        header.style.transition = 'transform 0.3s ease-in-out';
+                        if (banner) {
+                            banner.style.transform = 'translateY(-100%)';
+                            banner.style.transition = 'transform 0.3s ease-in-out';
+                        }
+                    }
+                    
+                    clearTimeout(scrollTimeout);
+                    
+                    scrollTimeout = setTimeout(function() {
+                        isScrolling = false;
+                        header.style.transform = 'translateY(0)';
+                        if (banner) {
+                            banner.style.transform = 'translateY(0)';
+                        }
+                    }, 150);
+                } else {
+                    isScrolling = false;
+                    header.style.transform = 'translateY(0)';
+                    if (banner) {
+                        banner.style.transform = 'translateY(0)';
+                    }
+                }
+            }, false);
+        })();
+    </script>
+</body>
+</html>
