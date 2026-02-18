@@ -327,7 +327,7 @@ p {
 
 .navbar.navbar-hidden {
     opacity: 0;
-    transform: translateY(-20px);
+    transform: translateY(-200%);
     pointer-events: none;
 }
 

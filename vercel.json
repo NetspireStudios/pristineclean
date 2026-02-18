@@ -5,35 +5,23 @@
       "destination": "/blogs/blog.html"
     },
     {
-      "source": "/blog",
-      "destination": "/blogs/blog.html"
-    },
-    {
-      "source": "/blog/Seasonal-Allergies",
+      "source": "/blogs/seasonal-allergies",
       "destination": "/blogs/blog-seasonal-allergies.html"
     },
     {
-      "source": "/blog/Asthma-Cleaning",
+      "source": "/blogs/asthma-cleaning",
       "destination": "/blogs/blog-asthma-cleaning.html"
     },
     {
-      "source": "/blog/Eco-Friendly-Cleaning",
+      "source": "/blogs/eco-friendly-cleaning",
       "destination": "/blogs/blog-eco-friendly-cleaning.html"
     },
     {
-      "source": "/blog/Drain-Cleaning",
+      "source": "/blogs/drain-cleaning",
       "destination": "/blogs/blog-drain-cleaning.html"
     },
     {
-      "source": "/blog/:path*",
-      "destination": "/blogs/:path*"
-    },
-    {
       "source": "/contact",
-      "destination": "/pages/contact.html"
-    },
-    {
-      "source": "/contact.html",
       "destination": "/pages/contact.html"
     },
     {
@@ -80,6 +68,17 @@
       "source": "/policy",
       "destination": "/pages/policy.html"
     }
+  ],
+  "redirects": [
+    {
+      "source": "/:path*/index.html",
+      "destination": "/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*.html",
+      "destination": "/:path*",
+      "permanent": true
+    }
   ]
 }
-
