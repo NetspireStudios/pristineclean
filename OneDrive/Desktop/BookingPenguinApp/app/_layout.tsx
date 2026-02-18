@@ -14,7 +14,7 @@ export { ErrorBoundary } from 'expo-router';
 SplashScreen.preventAutoHideAsync();
 
 function AuthGate() {
-  const { isAuthenticated, isLoading, role } = useAuth();
+  const { isAuthenticated, isLoading, role, authRoute } = useAuth();
   const segments = useSegments();
   const router = useRouter();
 
@@ -37,7 +37,18 @@ function AuthGate() {
       firstSegment === 'staff-settings' ||
       firstSegment === 'analytics' ||
       firstSegment === 'gallery' ||
-      firstSegment === 'client-detail';
+      firstSegment === 'client-detail' ||
+      firstSegment === 'verify-email' ||
+      firstSegment === 'onboarding' ||
+      firstSegment === 'waiting' ||
+      firstSegment === 'accept-invite';
+
+    if (!isAuthenticated && authRoute === 'login') {
+      if (!inAuthGroup) {
+        router.replace('/(auth)/login');
+      }
+      return;
+    }
 
     if (!isAuthenticated) {
       if (!inAuthGroup) {
@@ -46,16 +57,51 @@ function AuthGate() {
       return;
     }
 
-    // Already authenticated -- don't redirect if on a shared screen
-    if (inSharedScreen || inAdminGroup || inStaffGroup) return;
-
-    // Redirect from auth/index to the correct dashboard
-    if (role === 'owner' || role === 'admin') {
-      router.replace('/(admin)/schedule');
-    } else if (role === 'staff') {
-      router.replace('/(staff)/schedule');
+    // User is authenticated — route based on authRoute
+    if (authRoute === 'verify-email') {
+      if (firstSegment !== 'verify-email') {
+        router.replace('/verify-email');
+      }
+      return;
     }
-  }, [isAuthenticated, isLoading, role, segments]);
+
+    if (authRoute === 'onboarding') {
+      if (firstSegment !== 'onboarding') {
+        router.replace('/onboarding');
+      }
+      return;
+    }
+
+    if (authRoute === 'waiting') {
+      if (firstSegment !== 'waiting') {
+        router.replace('/waiting');
+      }
+      return;
+    }
+
+    if (authRoute === 'accept-invite') {
+      if (firstSegment !== 'accept-invite') {
+        router.replace('/accept-invite');
+      }
+      return;
+    }
+
+    if (authRoute === 'dashboard') {
+      if (inSharedScreen || inAdminGroup || inStaffGroup) return;
+
+      if (role === 'owner' || role === 'admin') {
+        router.replace('/(admin)/schedule');
+      } else if (role === 'staff') {
+        router.replace('/(staff)/schedule');
+      }
+      return;
+    }
+
+    // role-selector is handled inline on the login screen as a modal
+    if (authRoute === 'role-selector') {
+      return;
+    }
+  }, [isAuthenticated, isLoading, role, authRoute, segments]);
 
   if (isLoading) {
     return (
@@ -118,6 +164,22 @@ function AuthGate() {
       <Stack.Screen
         name="client-detail"
         options={{ headerShown: true, presentation: 'card' }}
+      />
+      <Stack.Screen
+        name="verify-email"
+        options={{ headerShown: false, gestureEnabled: false }}
+      />
+      <Stack.Screen
+        name="onboarding"
+        options={{ headerShown: false, gestureEnabled: false }}
+      />
+      <Stack.Screen
+        name="waiting"
+        options={{ headerShown: false, gestureEnabled: false }}
+      />
+      <Stack.Screen
+        name="accept-invite"
+        options={{ headerShown: false, gestureEnabled: false }}
       />
     </Stack>
   );

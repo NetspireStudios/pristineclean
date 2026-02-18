@@ -6,9 +6,11 @@ export type UserRole = 'owner' | 'admin' | 'staff' | 'client';
 
 export interface Membership {
   businessId: string;
+  businessName?: string;
   role: UserRole;
   status: 'active' | 'inactive' | 'pending';
   joinedAt?: Timestamp | string;
+  reactivatedAt?: string;
 }
 
 export interface AuthUids {

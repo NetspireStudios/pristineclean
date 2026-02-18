@@ -13,6 +13,7 @@ import {
 } from 'firebase/firestore';
 import { httpsCallable } from 'firebase/functions';
 import { db, functions } from './firebase';
+
 import type { ChatDoc, ChatMessage, ChatParticipantDetail } from '@/types';
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
@@ -94,7 +95,7 @@ export async function sendMessage(
   senderId: string,
   senderName: string,
   text: string,
-  businessId?: string
+  _businessId?: string
 ): Promise<void> {
   const trimmed = text.trim();
   if (!trimmed) return;
@@ -135,10 +136,6 @@ export async function sendMessage(
   });
 
   await updateDoc(doc(db, 'chats', chatId), updateData);
-
-  if (businessId) {
-    notifyParticipants(chatId, senderId, senderName, trimmed, businessId).catch(() => {});
-  }
 }
 
 /**
@@ -199,39 +196,3 @@ export async function deleteChat(chatId: string, businessId: string): Promise<vo
   await fn({ chatId, businessId });
 }
 
-// ── Internal ─────────────────────────────────────────────────────────────────
-
-async function notifyParticipants(
-  chatId: string,
-  senderId: string,
-  senderName: string,
-  text: string,
-  businessId: string
-): Promise<void> {
-  try {
-    const chatSnap = await getDoc(doc(db, 'chats', chatId));
-    if (!chatSnap.exists()) return;
-
-    const chatData = chatSnap.data();
-    const participants: string[] = chatData.participants || [];
-    const others = participants.filter((id) => id !== senderId);
-    if (others.length === 0) return;
-
-    const createNotification = httpsCallable(functions, 'createNotificationSecure');
-    const preview = text.length > 80 ? text.substring(0, 80) + '...' : text;
-
-    await Promise.allSettled(
-      others.map((recipientId) =>
-        createNotification({
-          userId: recipientId,
-          title: `Message from ${senderName}`,
-          message: preview,
-          type: 'chat_message',
-          businessId,
-        })
-      )
-    );
-  } catch {
-    // Best-effort
-  }
-}

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import {
   View,
   Text,
@@ -20,6 +20,29 @@ export default function ForgotPasswordScreen() {
   const [email, setEmail] = useState('');
   const [loading, setLoading] = useState(false);
   const [sent, setSent] = useState(false);
+  const [cooldown, setCooldown] = useState(0);
+
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (timerRef.current) clearInterval(timerRef.current);
+    };
+  }, []);
+
+  const startCooldown = () => {
+    setCooldown(30);
+    if (timerRef.current) clearInterval(timerRef.current);
+    timerRef.current = setInterval(() => {
+      setCooldown((prev) => {
+        if (prev <= 1) {
+          if (timerRef.current) clearInterval(timerRef.current);
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+  };
 
   const handleReset = async () => {
     if (!email.trim()) {
@@ -31,10 +54,13 @@ export default function ForgotPasswordScreen() {
     try {
       await requestPasswordReset(email);
       setSent(true);
+      startCooldown();
     } catch (error: any) {
       let message = 'Something went wrong. Please try again.';
 
-      if (error?.code === 'functions/resource-exhausted') {
+      if (error?.code === 'auth/rate-limited') {
+        message = error.message;
+      } else if (error?.code === 'functions/resource-exhausted') {
         message = error.message || 'Too many requests. Please try again later.';
       } else if (error?.message) {
         message = error.message;
@@ -50,12 +76,30 @@ export default function ForgotPasswordScreen() {
     return (
       <View style={styles.container}>
         <View style={styles.centeredContent}>
-          <Text style={styles.checkIcon}>✓</Text>
+          <View style={styles.successCircle}>
+            <Text style={styles.checkIcon}>✓</Text>
+          </View>
           <Text style={styles.sentTitle}>Check Your Email</Text>
           <Text style={styles.sentMessage}>
-            If an account exists with {email}, you'll receive a password reset
-            link shortly.
+            If an account exists with{' '}
+            <Text style={{ fontWeight: '600' }}>{email}</Text>, you'll receive a
+            password reset link shortly.
           </Text>
+
+          <Pressable
+            style={[styles.resendButton, cooldown > 0 && styles.buttonDisabled]}
+            onPress={handleReset}
+            disabled={cooldown > 0 || loading}
+          >
+            {loading ? (
+              <ActivityIndicator color={Colors.light.tint} size="small" />
+            ) : (
+              <Text style={styles.resendText}>
+                {cooldown > 0 ? `Resend in ${cooldown}s` : 'Resend Reset Link'}
+              </Text>
+            )}
+          </Pressable>
+
           <Pressable
             style={styles.button}
             onPress={() => router.replace('/(auth)/login')}
@@ -165,10 +209,18 @@ const styles = StyleSheet.create({
     lineHeight: 22,
     maxWidth: 300,
   },
+  successCircle: {
+    width: 72,
+    height: 72,
+    borderRadius: 36,
+    backgroundColor: '#f0fdf4',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 20,
+  },
   checkIcon: {
-    fontSize: 48,
+    fontSize: 36,
     color: Colors.light.success,
-    marginBottom: 16,
     fontWeight: '700',
   },
   sentTitle: {
@@ -182,8 +234,18 @@ const styles = StyleSheet.create({
     color: Colors.light.textSecondary,
     textAlign: 'center',
     lineHeight: 22,
-    marginBottom: 32,
+    marginBottom: 24,
     maxWidth: 300,
+  },
+  resendButton: {
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    marginBottom: 16,
+  },
+  resendText: {
+    color: Colors.light.tint,
+    fontSize: 14,
+    fontWeight: '600',
   },
   form: {
     width: '100%',
