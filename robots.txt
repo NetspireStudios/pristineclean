@@ -1,9 +1,4 @@
 User-agent: *
-Allow: /
-
-# Sitemap
-Sitemap: https://www.pristinecleanservices.ca/sitemap.xml
-
 # Disallow common non-content files
 Disallow: /server.js
 Disallow: /package.json
@@ -11,7 +6,13 @@ Disallow: /README.md
 Disallow: /*.pdf$
 Disallow: /*.doc$
 Disallow: /*.docx$
-
+# Block access to sensitive files
+Disallow: /admin/
+Disallow: /private/
+Disallow: /.env
+Disallow: /config/
+Disallow: /logs/
+Allow: /
 # Allow important directories
 Allow: /style.css
 Allow: /script.js
@@ -24,9 +25,5 @@ Allow: /*.webp$
 Allow: /*.svg$
 Allow: /*.ico$
 
-# Block access to sensitive files
-Disallow: /admin/
-Disallow: /private/
-Disallow: /.env
-Disallow: /config/
-Disallow: /logs/
+# Sitemap
+Sitemap: https://www.pristinecleanservices.ca/sitemap.xml
