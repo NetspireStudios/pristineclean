@@ -10,12 +10,19 @@ const EMAILJS_PUBLIC_KEY = 'mDVai_5tMMMLPNwAH';
 const EMAILJS_SERVICE_ID = 'service_lph1kb7';
 const EMAILJS_TEMPLATE_ID = 'template_24tnsnn';
 
-// Supabase Configuration
-const SUPABASE_URL = 'https://beqjprowrjkuvtdrjize.supabase.co';
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJlcWpwcm93cmprdXZ0ZHJqaXplIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjYyNjQwMDcsImV4cCI6MjA4MTg0MDAwN30.NAEGtnyf_-Cl8_t77kllf7W1R1AMrczJyaohiM5GfRU';
+// Firebase Configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyBt9pptS7lOawwiN9vB7sdp5qk30pIDvOg",
+  authDomain: "pristineclean-3e06f.firebaseapp.com",
+  projectId: "pristineclean-3e06f",
+  storageBucket: "pristineclean-3e06f.firebasestorage.app",
+  messagingSenderId: "733755044806",
+  appId: "1:733755044806:web:d9b1404f0622bb6bf4b8c7",
+  measurementId: "G-3CD96F6J65"
+};
 
-// Global Supabase client variable
-var supabaseClient = null;
+// Global Database Variable
+let db = null;
 
 // Wait for DOM to load
 document.addEventListener('DOMContentLoaded', function() {
@@ -29,20 +36,18 @@ document.addEventListener('DOMContentLoaded', function() {
         console.warn('⚠️ EmailJS not loaded');
     }
     
-    // Initialize Supabase
-    console.log('🔵 Checking for window.supabase:', typeof window.supabase);
-    
-    if (typeof window.supabase !== 'undefined') {
+    // Initialize Firebase
+    if (typeof firebase !== 'undefined') {
         try {
-            console.log('🔵 Creating Supabase client...');
-            supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-            console.log('✅ Supabase client created:', supabaseClient);
-            console.log('✅ Supabase initialized successfully!');
+            console.log('🔵 Initializing Firebase...');
+            firebase.initializeApp(firebaseConfig);
+            db = firebase.firestore();
+            console.log('✅ Firebase Firestore initialized successfully!');
         } catch (error) {
-            console.error('❌ Error creating Supabase client:', error);
+            console.error('❌ Error initializing Firebase:', error);
         }
     } else {
-        console.error('❌ window.supabase is undefined! CDN not loaded.');
+        console.error('❌ Firebase SDK not loaded! Check your internet connection.');
     }
     
     // Initialize form
@@ -158,8 +163,8 @@ async function handleFormSubmit(e) {
     submitBtn.disabled = true;
 
     try {
-        // Submit to Supabase
-        await submitToSupabase(data);
+        // Submit to Firebase
+        await submitToFirebase(data);
         
         // Store timestamp for rate limiting
         localStorage.setItem('lastFormSubmit', now.toString());
@@ -269,19 +274,16 @@ function validateForm() {
 }
 
 /**
- * Submit form data to Supabase
+ * Submit form data to Firebase Firestore
  */
-async function submitToSupabase(data) {
-    console.log('🔵 submitToSupabase called:', data);
+async function submitToFirebase(data) {
+    console.log('🔵 submitToFirebase called:', data);
     
-    if (!supabaseClient) {
-        console.error('❌ Supabase client not initialized!');
-        console.log('SUPABASE_URL:', SUPABASE_URL);
-        console.log('SUPABASE_ANON_KEY exists:', !!SUPABASE_ANON_KEY);
-        throw new Error('Database connection not initialized. Please refresh the page and try again.');
+    if (!db) {
+        throw new Error('Database connection not initialized. Please refresh and try again.');
     }
 
-    // Prepare data for Supabase - handle both old and new form structures
+    // Prepare data
     const submissionData = {
         full_name: data.fullName || `${data.firstName || ''} ${data.lastName || ''}`.trim(),
         phone: data.phone,
@@ -292,58 +294,16 @@ async function submitToSupabase(data) {
         status: 'new'
     };
 
-    console.log('🔵 Submitting data:', submissionData);
+    console.log('🔵 Submitting data to Firestore:', submissionData);
 
     try {
-    // Insert into Supabase
-    const { data: result, error } = await supabaseClient
-        .from('quote_requests')
-            .insert([submissionData])
-            .select();
-
-    if (error) {
-        console.error('❌ Supabase error:', error);
-            console.error('Error details:', JSON.stringify(error, null, 2));
-            
-            // Check for specific error types
-            if (error.code === '42P01') {
-                throw new Error('Database table not found. Please contact support.');
-            } else if (error.code === '23505') {
-                throw new Error('Duplicate submission detected. Please wait before submitting again.');
-            } else if (error.message && error.message.includes('column')) {
-                console.error('Column mismatch. Trying alternative format...');
-                // Try with alternative column names
-                const altData = {
-                    name: submissionData.full_name,
-                    phone: submissionData.phone,
-                    email: submissionData.email,
-                    city: submissionData.city || 'Not provided',
-                    timeline: submissionData.timeline,
-                    created_at: submissionData.submitted_at,
-                    status: 'new'
-                };
-                const { data: altResult, error: altError } = await supabaseClient
-                    .from('quote_requests')
-                    .insert([altData])
-                    .select();
-                
-                if (altError) {
-                    console.error('❌ Alternative format also failed:', altError);
-                    throw new Error('Database schema mismatch. Please call us at (437) 545-8704.');
-                }
-                console.log('✅ Success with alternative format!', altResult);
-                return altResult;
-            } else {
-        throw new Error(error.message || 'Failed to submit. Please try again.');
-            }
-    }
-
-    console.log('✅ Success! Data submitted:', result);
-    return result;
-    } catch (err) {
-        console.error('❌ Submission error:', err);
-        // Show the actual error to the user
-        throw err;
+        // Add to "quote_requests" collection
+        const docRef = await db.collection("quote_requests").add(submissionData);
+        console.log("✅ Document written with ID: ", docRef.id);
+        return docRef;
+    } catch (error) {
+        console.error("❌ Error adding document: ", error);
+        throw new Error('Failed to submit to database. Please try again.');
     }
 }
 
