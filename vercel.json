@@ -67,6 +67,14 @@
     {
       "source": "/policy",
       "destination": "/pages/policy.html"
+    },
+    {
+      "source": "/privacy-policy",
+      "destination": "/pages/privacy-policy.html"
+    },
+    {
+      "source": "/terms-and-conditions",
+      "destination": "/pages/privacy-policy.html"
     }
   ],
   "redirects": [
