@@ -178,11 +178,19 @@ async function handleFormSubmit(e) {
         // Show success message
         showSuccessMessage();
 
-        // Track conversion (optional)
+        // Track conversion
         if (typeof gtag !== 'undefined') {
+            const transactionId = 'pcs_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+
             gtag('event', 'form_submission', {
                 'event_category': 'engagement',
-                'event_label': 'quote_form'
+                'event_label': 'quote_form',
+                'transaction_id': transactionId
+            });
+
+            gtag('event', 'conversion', {
+                'send_to': 'AW-18037100956',
+                'transaction_id': transactionId
             });
         }
     } catch (error) {
