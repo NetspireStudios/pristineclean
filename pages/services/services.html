@@ -598,53 +598,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <p>Book your cleaning service in just 60 seconds</p>
                 </div>
                                 <div class="booking-form-container">
-                    <h3 class="form-title" style="text-align: center; margin-bottom: 1.5rem;">Get Your Free Quote</h3>
-                    <form id="heroQuoteForm" class="hero-quote-form">
-                        <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
-                            <div class="form-group">
-                                <label for="hero-firstName">First Name <span class="required">*</span></label>
-                                <input type="text" id="hero-firstName" name="firstName" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="hero-lastName">Last Name <span class="required">*</span></label>
-                                <input type="text" id="hero-lastName" name="lastName" required>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group" style="margin-bottom: 1rem;">
-                            <label for="hero-phone">Phone Number <span class="required">*</span></label>
-                            <input type="tel" id="hero-phone" name="phone" required placeholder="(123) 456-7890">
-                        </div>
-                        
-                        <div class="form-group" style="margin-bottom: 1rem;">
-                            <label for="hero-email">Email <span class="required">*</span></label>
-                            <input type="email" id="hero-email" name="email" required placeholder="your@email.com">
-                        </div>
-                        
-                        <div class="form-group" style="margin-bottom: 1rem;">
-                            <label for="hero-timeline">When do you need cleaning? <span class="required">*</span></label>
-                            <select id="hero-timeline" name="timeline" required>
-                                <option value="">Select timeline</option>
-                                <option value="asap">ASAP (Within 7 Days)</option>
-                                <option value="30days">Less Than 30 Days</option>
-                                <option value="30plus">More Than 30 Days</option>
-                            </select>
-                        </div>
-
-                        <button type="submit" class="btn btn-form-submit" style="width: 100%; margin-top: 0.5rem;">
-                            Get Free Quote <i class="fas fa-paper-plane"></i>
-                        </button>
-
-                        <!-- Success Message -->
-                        <div class="form-success" id="formSuccess" style="display: none;">
-                            <i class="fas fa-check-circle"></i>
-                            <h3>Thank You!</h3>
-                            <p>Your quote request has been submitted successfully. We'll contact you shortly!</p>
-                            <button type="button" class="btn btn-primary" onclick="resetQuoteForm()">
-                                Submit Another Request
-                            </button>
-                        </div>
-                    </form>
+                    <iframe src="https://crewty.com/embed?id=tdIvWUaw1L0mlsbi91RN" style="width:100%;min-height:640px;border:none;border-radius:16px;" title="Book an Appointment" loading="lazy"></iframe>
                 </div>
                 <div class="call-us-button-container">
                     <a href="tel:+14375458704" class="btn btn-primary call-us-btn">
@@ -755,7 +709,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <script src="../assets/js/script.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
-    <script src="../../assets/js/hero-form.js" defer></script>
+    <!-- hero-form.js removed; booking handled by the Crewty embed -->
     
     <script>
         (function() {

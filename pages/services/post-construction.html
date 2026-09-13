@@ -488,59 +488,7 @@
                         <h2 class="text-4xl serif text-[var(--navy)] mb-6">Get Your Clean Today!</h2>
                         <p class="text-slate-500 text-sm font-light tracking-widest uppercase">Book your cleaning service in just 60 seconds</p>
                     </div>
-                    <form id="heroQuoteForm" class="space-y-10 relative z-10">
-                        <!-- Slide 1: Contact Info -->
-                        <div id="slide1" class="form-slide">
-                            <div class="grid md:grid-cols-2 gap-10">
-                                <div class="relative">
-                                    <input class="w-full border-0 border-b border-slate-200 py-4 px-0 focus:ring-0 focus:border-[var(--gold)] text-sm bg-transparent placeholder:text-slate-300 transition-colors" placeholder="Full Name" type="text" id="hero-fullName" name="fullName" required/>
-                                </div>
-                                <div class="relative">
-                                    <input class="w-full border-0 border-b border-slate-200 py-4 px-0 focus:ring-0 focus:border-[var(--gold)] text-sm bg-transparent placeholder:text-slate-300 transition-colors" placeholder="Phone Number" type="tel" id="hero-phone" name="phone" required/>
-                                </div>
-                            </div>
-                            <div class="relative mt-10">
-                                <input class="w-full border-0 border-b border-slate-200 py-4 px-0 focus:ring-0 focus:border-[var(--gold)] text-sm bg-transparent placeholder:text-slate-300 transition-colors" placeholder="Email" type="email" id="hero-email" name="email" required/>
-                            </div>
-                            <button type="button" class="w-full py-6 text-[11px] font-bold tracking-[0.4em] uppercase bg-[var(--navy)] text-white hover:bg-[var(--gold)] transition-all shadow-xl mt-10" onclick="goToSlide2()">
-                                Next
-                            </button>
-                        </div>
-
-                        <!-- Slide 2: Location & Timeline -->
-                        <div id="slide2" class="form-slide" style="display: none;">
-                            <div class="relative">
-                                <input class="w-full border-0 border-b border-slate-200 py-4 px-0 focus:ring-0 focus:border-[var(--gold)] text-sm bg-transparent placeholder:text-slate-300 transition-colors" placeholder="City (e.g., Toronto)" type="text" id="hero-city" name="city" required/>
-                            </div>
-                            <div class="mt-10">
-                                <label class="block mb-6 text-[10px] tracking-widest uppercase font-bold text-[var(--navy)]">How Soon Are You Looking For Cleaning?</label>
-                                <div class="space-y-4">
-                                    <label class="flex items-center gap-4 p-4 border border-slate-200 hover:border-[var(--gold)] cursor-pointer transition-all">
-                                        <input type="radio" name="timeline" value="asap" required class="text-[var(--gold)] focus:ring-[var(--gold)]">
-                                        <span class="text-[var(--navy)] text-sm">ASAP (Within 7 Days)</span>
-                                    </label>
-                                    <label class="flex items-center gap-4 p-4 border border-slate-200 hover:border-[var(--gold)] cursor-pointer transition-all">
-                                        <input type="radio" name="timeline" value="30days" required class="text-[var(--gold)] focus:ring-[var(--gold)]">
-                                        <span class="text-[var(--navy)] text-sm">Less Than 30 Days</span>
-                                    </label>
-                                    <label class="flex items-center gap-4 p-4 border border-slate-200 hover:border-[var(--gold)] cursor-pointer transition-all">
-                                        <input type="radio" name="timeline" value="30plus" required class="text-[var(--gold)] focus:ring-[var(--gold)]">
-                                        <span class="text-[var(--navy)] text-sm">More Than 30 Days</span>
-                                    </label>
-                                </div>
-                            </div>
-                            <button type="submit" class="w-full py-6 text-[11px] font-bold tracking-[0.4em] uppercase bg-[var(--navy)] text-white hover:bg-[var(--gold)] transition-all shadow-xl mt-10">
-                                Submit Request
-                            </button>
-                        </div>
-
-                        <!-- Success Message -->
-                        <div class="form-success text-center" id="formSuccess" style="display: none;">
-                            <span class="material-symbols-outlined text-[var(--gold)] text-5xl mb-4 inline-block">check_circle</span>
-                            <h3 class="text-2xl mb-4 serif text-[var(--navy)]">Thank You!</h3>
-                            <p class="text-[var(--navy)]">Your quote request has been submitted successfully. We'll contact you shortly!</p>
-                        </div>
-                    </form>
+                    <iframe src="https://crewty.com/embed?id=tdIvWUaw1L0mlsbi91RN" style="width:100%;min-height:640px;border:none;border-radius:16px;" title="Book an Appointment" loading="lazy"></iframe>
                 </div>
             </div>
         </section>
@@ -613,7 +561,7 @@
     <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="../../assets/js/script.js"></script>
-    <script src="../../assets/js/hero-form.js" defer></script>
+    <!-- hero-form.js removed; booking handled by the Crewty embed -->
     
     <script>
         // Countdown Timer

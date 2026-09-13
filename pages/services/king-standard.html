@@ -688,57 +688,7 @@
                         <h2 class="text-4xl serif text-[var(--navy)] mb-4 font-normal">Secure Your Placement</h2>
                         <p class="text-slate-400 text-xs font-light">Response time within 4 business hours.</p>
                     </div>
-                    <form id="heroQuoteForm" class="space-y-8">
-                        <div id="slide1" class="form-slide">
-                            <div class="grid md:grid-cols-2 gap-8">
-                                <div>
-                                    <label class="block text-[9px] font-bold tracking-widest uppercase text-slate-400 mb-2">Full Name</label>
-                                    <input class="w-full border-0 border-b border-slate-200 py-3 px-0 focus:ring-0 focus:border-[var(--gold)] text-sm" placeholder="Your Full Name" type="text" id="hero-fullName" name="fullName" required/>
-                                </div>
-                                <div>
-                                    <label class="block text-[9px] font-bold tracking-widest uppercase text-slate-400 mb-2">Phone Number</label>
-                                    <input class="w-full border-0 border-b border-slate-200 py-3 px-0 focus:ring-0 focus:border-[var(--gold)] text-sm" placeholder="(123) 456-7890" type="tel" id="hero-phone" name="phone" required/>
-                                </div>
-                            </div>
-                            <div class="mt-8">
-                                <label class="block text-[9px] font-bold tracking-widest uppercase text-slate-400 mb-2">Email Address</label>
-                                <input class="w-full border-0 border-b border-slate-200 py-3 px-0 focus:ring-0 focus:border-[var(--gold)] text-sm" placeholder="email@address.com" type="email" id="hero-email" name="email" required/>
-                            </div>
-                            <button type="button" class="w-full py-5 text-[10px] font-bold tracking-[0.3em] uppercase bg-[var(--navy)] text-white hover:bg-[var(--gold)] transition-colors mt-8" onclick="goToSlide2()">
-                                Next
-                            </button>
-                        </div>
-                        
-                        <div id="slide2" class="form-slide" style="display: none;">
-                            <div>
-                                <label class="block text-[9px] font-bold tracking-widest uppercase text-slate-400 mb-2">Service Interest</label>
-                                <select class="w-full border-0 border-b border-slate-200 py-3 px-0 focus:ring-0 focus:border-[var(--gold)] text-sm bg-transparent appearance-none" id="hero-service" name="service" required>
-                                    <option>King Standard Recurring Care</option>
-                                    <option>Estate Cleanout</option>
-                                    <option>One-Time Deep Cleaning</option>
-                                    <option>Window Cleaning Services</option>
-                                </select>
-                            </div>
-                            <div class="mt-8">
-                                <label class="block text-[9px] font-bold tracking-widest uppercase text-slate-400 mb-2">City</label>
-                                <input class="w-full border-0 border-b border-slate-200 py-3 px-0 focus:ring-0 focus:border-[var(--gold)] text-sm" placeholder="e.g., King City" type="text" id="hero-city" name="city" required/>
-                            </div>
-                            <div class="mt-8">
-                                <label class="block text-[9px] font-bold tracking-widest uppercase text-slate-400 mb-2">Additional Details</label>
-                                <textarea class="w-full border-0 border-b border-slate-200 py-3 px-0 focus:ring-0 focus:border-[var(--gold)] text-sm min-h-[100px]" placeholder="Specific requirements or property details..." id="hero-notes" name="notes"></textarea>
-                            </div>
-                            <button type="submit" class="w-full py-5 text-[10px] font-bold tracking-[0.3em] uppercase bg-[var(--navy)] text-white hover:bg-[var(--gold)] transition-colors mt-8">
-                                Submit Inquiry
-                            </button>
-                        </div>
-
-                        <!-- Success Message -->
-                        <div id="formSuccess" style="display: none;" class="text-center">
-                            <span class="material-symbols-outlined text-[var(--gold)] text-5xl mb-4 inline-block">check_circle</span>
-                            <h3 class="text-2xl mb-4 serif text-[var(--navy)]">Thank You!</h3>
-                            <p class="text-[var(--navy)]">Your quote request has been submitted successfully. We'll contact you shortly!</p>
-                        </div>
-                    </form>
+                    <iframe src="https://crewty.com/embed?id=tdIvWUaw1L0mlsbi91RN" style="width:100%;min-height:640px;border:none;border-radius:16px;" title="Book an Appointment" loading="lazy"></iframe>
                 </div>
             </div>
         </section>
@@ -844,7 +794,7 @@
     <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script src="../../assets/js/hero-form.js" defer></script>
+    <!-- hero-form.js removed; booking handled by the Crewty embed -->
     
     <script>
         // Form slide navigation
