@@ -1,0 +1,13 @@
+# Stray nested folder accidentally included in the download (unrelated projects + duplicate copies)
+OneDrive/
+
+# Dependencies
+node_modules/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
